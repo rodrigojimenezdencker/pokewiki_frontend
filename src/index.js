@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './components/Home/Home.jsx';
 import * as serviceWorker from './serviceWorker';
+import Menu from './components/Menu/Menu.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Menu/>
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
