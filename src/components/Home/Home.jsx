@@ -18,7 +18,9 @@ export default class Home extends Component {
                                     <img src={Logo} className="img_logo" alt="" />
                                     <h1 className="title">PokéWiki</h1>
                                 </section>
-                                <img src={Arrow} alt="" className="arrow_down" onClick={() => fullpageApi.moveSectionDown()}/>
+                                <p>Bienvenidos a PokéWiki, una enciplopedia online dedicada al universo Pokémon. En ella podrás encontrar información detallada de cada Pokémon, de los tipos y de los movimientos.</p>
+                                <img src={Arrow} alt="Ir abajo automáticamente" tabindex="0"
+                                    role="button" className="arrow_down" onClick={() => fullpageApi.moveSectionDown()} />
                             </div>
                             <div className="section">
                                 <h1>Pokémon</h1>
