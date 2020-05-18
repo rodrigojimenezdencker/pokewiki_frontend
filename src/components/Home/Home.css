@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Audiowide';
-  src: local('Audiowide'), '../../fonts/Audiowide-Regular.ttf' format('truetype');
-}
-
 .section {
   text-align: center;
 }
@@ -33,7 +28,8 @@
   width: 80%;
   margin: 50px auto;
   font-size: 1.5em;
-  font-family: 'Roboto Mono', monospace;}
+  font-family: 'Roboto Mono', monospace;
+}
 
 .arrow_down {
   position: absolute;
