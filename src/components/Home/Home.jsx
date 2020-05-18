@@ -4,11 +4,12 @@ import './Home.css';
 import Logo from '../../Assets/img/logo_pokewiki.png';
 import Arrow from '../../Assets/svg/down-arrow.svg';
 
-
 export default class Home extends Component {
     render() {
         return (
             <ReactFullpage
+            //Se puede usar gratuitamente, pero si no tienes licencia comprada, saldrá un "error" en la consola.
+                licenseKey = {'OPEN-SOURCE-GPLV3-LICENSE'}
                 scrollingSpeed={1000}
                 render={({ state, fullpageApi }) => {
                     return (
@@ -19,7 +20,7 @@ export default class Home extends Component {
                                     <h1 className="title">PokéWiki</h1>
                                 </section>
                                 <p>Bienvenidos a PokéWiki, una enciplopedia online dedicada al universo Pokémon. En ella podrás encontrar información detallada de cada Pokémon, de los tipos y de los movimientos.</p>
-                                <img src={Arrow} alt="Ir abajo automáticamente" tabindex="0"
+                                <img src={Arrow} alt="Ir abajo automáticamente" tabIndex="0"
                                     role="button" className="arrow_down" onClick={() => fullpageApi.moveSectionDown()} />
                             </div>
                             <div className="section">
