@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './Assets/fonts/Audiowide-Regular.ttf';
 import './index.css';
-import Home from './components/Home/Home.jsx';
 import * as serviceWorker from './serviceWorker';
+import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 
 ReactDOM.render(
