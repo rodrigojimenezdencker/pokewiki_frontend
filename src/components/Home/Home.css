@@ -14,15 +14,21 @@
 }
 
 .homepage {
+  color: #f5f5f5;
   background-image: linear-gradient(to top, #e83e35 0%, #ff9c7d 100%);
 }
 
 .homepage h1 {
   font-size: 5em;
-  color: #f5f5f5;
   text-shadow: 3px 3px 3px rgb(87, 87, 87);
   font-family: "Audiowide", cursive;
 }
+
+.homepage p {
+  width: 80%;
+  margin: 50px auto;
+  font-size: 1.5em;
+  font-family: 'Roboto Mono', monospace;}
 
 .arrow_down {
   position: absolute;
