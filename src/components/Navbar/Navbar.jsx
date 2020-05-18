@@ -25,7 +25,7 @@ export default class Menu extends Component {
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <img src={types_icon} alt=""/>
-                            <span class="link-text">Tipos</span>
+                            <span class="link-text">Tiapos</span>
                         </a>
                     </li>
                     <li class="nav-item">
