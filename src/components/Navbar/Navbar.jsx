@@ -7,10 +7,27 @@ import moves_icon from '../../Assets/svg/moves.svg';
 export default class Menu extends Component {
     render() {
         return (
-            <nav>
-                <img src={pokeball_icon} alt=""/>
-                <img src={types_icon} alt=""/>
-                <img src={moves_icon} alt=""/>
+            <nav class="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src={pokeball_icon} alt=""/>
+                            <span class="link-text">Pokémon</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src={types_icon} alt=""/>
+                            <span class="link-text">Tipos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src={moves_icon} alt=""/>
+                            <span class="link-text">Movimientos</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
         )
     }
