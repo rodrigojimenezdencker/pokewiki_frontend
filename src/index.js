@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import Home from './components/Home/Home.jsx';
 import * as serviceWorker from './serviceWorker';
-import Menu from './components/Menu/Menu.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Menu/>
+    <Navbar/>
     <Home />
   </React.StrictMode>,
   document.getElementById('root')

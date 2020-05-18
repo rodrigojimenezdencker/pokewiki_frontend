@@ -3,7 +3,6 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import './Home.css';
 import Logo from '../../Assets/img/logo_pokewiki.png';
 import Arrow from '../../Assets/down-arrow.svg';
-import Menu from '../Menu/Menu';
 
 
 export default class Home extends Component {
