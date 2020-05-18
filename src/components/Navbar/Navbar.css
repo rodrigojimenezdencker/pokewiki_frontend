@@ -1,19 +1,99 @@
-nav {
-    height: 100vh;
-    width: 60px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: #404969;
-    z-index: 5;
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
 }
 
-nav img  {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: opacity 600ms;
+    }
+}
+
+.navbar {
+   position: fixed;
+   z-index: 100;
+   background-color: #404969;
+   transition: width 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: 600ms;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link:hover {
+    filter:grayscale(0%) opacity(1);
+    background-color: black;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link img {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.logo {
+    font-family: "Audiowide", cursive;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 3px rgb(87, 87, 87);
+    text-align: center;
+    color: #ccc;
+    background: cadetblue;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.logo .link-text {
+    width: 100%;
 }
