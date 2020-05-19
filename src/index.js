@@ -5,11 +5,14 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
+import PokemonList from './components/PokemonList/PokemonList.jsx';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar/>
-    <Home />
+    {/* <Navbar/>
+    <Home /> */}
+    <PokemonList />
   </React.StrictMode>,
   document.getElementById('root')
 );
