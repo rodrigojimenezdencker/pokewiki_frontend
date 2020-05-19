@@ -28,6 +28,7 @@ export default class Home extends Component {
                                 <h1>Pokémon</h1>
                                 <p>Pokémon es un videojuego que salió el 1995 y este ha ido evolucionando hasta ser al día de hoy uno de los juegos más populares del mundo. 
                                     En este apartado encontrarás toda la información general de los 151 Pokémon que existen en la primera generación.</p>
+                                <button>Ver la lista completa</button>
                             </div>
                             <div className="section">
                                 <h1>Movimientos</h1>
