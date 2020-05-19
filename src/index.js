@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './Assets/fonts/Audiowide-Regular.ttf';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
@@ -9,11 +15,15 @@ import PokemonList from './components/PokemonList/PokemonList.jsx';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <Navbar/>
-    <Home /> */}
-    <PokemonList />
-  </React.StrictMode>,
+  <Router>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Navbar />
+    <Route path="/pokemon">
+      <PokemonList />
+    </Route>
+  </Router>,
   document.getElementById('root')
 );
 
