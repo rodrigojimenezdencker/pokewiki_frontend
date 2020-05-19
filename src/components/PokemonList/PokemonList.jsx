@@ -13,14 +13,15 @@ export default class PokemonList extends Component {
         fetch('https://localhost:44316/api/pokemon')
         .then(response => response.json())
         .then(data => {
-            this.setState({pokemonlist: data})
+            this.setState({pokemonlist: data});
+            console.log(this.state.pokemonlist);
         } )
     }
     render() {
         return (
             <div>
                 {this.state.pokemonlist.map(item => {
-                    return <PokemonCard name={item.name} image={item.image} />
+                    return <PokemonCard numPokedex={item.numPokedex} name={item.name} image={item.image} type1={item.type1.image} type1Color={item.type1.color} type2={item.type2.image} type2Color={item.type2.color}/>
                 })}
             </div>
         )
