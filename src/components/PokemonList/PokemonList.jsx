@@ -21,7 +21,7 @@ export default class PokemonList extends Component {
         return (
             <div>
                 {this.state.pokemonlist.map(item => {
-                    return <PokemonCard numPokedex={item.numPokedex} name={item.name} image={item.image} type1={item.type1.image} type1Color={item.type1.color} type2={item.type2.image} type2Color={item.type2.color}/>
+                    return <PokemonCard numPokedex={item.numPokedex} name={item.name} image={item.image} type1={item.type1.image} type1Color={item.type1.color} type2={item.type2 == null ? item.type2 : item.type2.image} type2Color={item.type2 == null ? item.type2 : item.type2.color}/>
                 })}
             </div>
         )
