@@ -1,12 +1,19 @@
-.section {
+body {
   text-align: center;
+  color: #f5f5f5;
 }
 
 .content_container {
   margin-left: 5rem;
 }
 
-.main_logo {
+.section_title {
+  font-size: 4em;
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: 3px 3px 3px rgb(87, 87, 87);
+}
+
+#logo_Container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,12 +21,18 @@
 
 .img_logo {
   width: 200px;
-  height: 200px; 
+  height: 200px;
 }
 
 .homepage {
-  color: #f5f5f5;
-  background-image: radial-gradient(circle at center center, rgb(255, 128, 130),rgb(230, 104, 109),rgb(221, 89, 96),rgb(206, 56, 65),rgb(190, 23, 35));
+  background-image: radial-gradient(
+    circle at center center,
+    rgb(255, 128, 130),
+    rgb(230, 104, 109),
+    rgb(221, 89, 96),
+    rgb(206, 56, 65),
+    rgb(190, 23, 35)
+  );
 }
 
 .homepage h1 {
@@ -32,7 +45,7 @@
   width: 80%;
   margin: 50px auto;
   font-size: 1.5em;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   text-shadow: 0px 0px 5px rgb(114, 114, 114);
 }
 
@@ -45,6 +58,22 @@
   animation-iteration-count: infinite;
   animation-fill-mode: initial;
   cursor: pointer;
+}
+
+.pokemon_section {
+  background-image: radial-gradient(
+    circle at bottom right,
+    rgb(52, 33, 141) 0%,
+    rgb(52, 33, 141) 20%,
+    rgb(52, 50, 168) 20%,
+    rgb(52, 50, 168) 40%,
+    rgb(52, 68, 195) 40%,
+    rgb(52, 68, 195) 60%,
+    rgb(52, 85, 221) 60%,
+    rgb(52, 85, 221) 80%,
+    rgb(52, 102, 248) 80%,
+    rgb(52, 102, 248) 100%
+  );
 }
 
 @keyframes bounce-4 {
@@ -79,7 +108,7 @@
     margin: 0px 0px 12rem 0;
   }
 
-  .homepage h1{
+  .homepage h1 {
     font-size: 3em;
   }
 
@@ -87,8 +116,8 @@
     width: 100px;
     height: 100px;
   }
-  
-  .homepage p{
+
+  .homepage p {
     font-size: 1.2em;
     margin: 20px auto;
   }

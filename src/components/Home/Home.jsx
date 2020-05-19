@@ -16,7 +16,7 @@ export default class Home extends Component {
                         <ReactFullpage.Wrapper>
                             <div className="section homepage">
                                 <div className="content_container">
-                                    <section className="main_logo">
+                                    <section id="logo_container">
                                         <img src={Logo} className="img_logo" alt="" />
                                         <h1 className="title">PokéWiki</h1>
                                     </section>
@@ -25,14 +25,14 @@ export default class Home extends Component {
                                         role="button" className="arrow_down" onClick={() => fullpageApi.moveSectionDown()} />
                                 </div>
                             </div>
-                            <div className="section">
-                                <h1>Pokémon</h1>
+                            <div className="section pokemon_section">
+                                <h2 className="section_title">Pokémon</h2>
                             </div>
                             <div className="section">
-                                <h1>Movimientos</h1>
+                                <h2 className="section_title">Movimientos</h2>
                             </div>
                             <div className="section">
-                                <h1>Tipos</h1>
+                                <h2 className="section_title">Tipos</h2>
                             </div>
                         </ReactFullpage.Wrapper>
                     );
