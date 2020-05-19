@@ -15,7 +15,8 @@
 
 .homepage {
   color: #f5f5f5;
-  background-image: linear-gradient(to top, #e83e35 0%, #ff9c7d 100%);
+  /* background-image: linear-gradient(to top, #e83e35 0%, #ff9c7d 100%); */
+  background-image: radial-gradient(circle at center center, rgb(255, 128, 130),rgb(230, 104, 109),rgb(221, 89, 96),rgb(206, 56, 65),rgb(190, 23, 35));
 }
 
 .homepage h1 {
