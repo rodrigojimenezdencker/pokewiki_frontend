@@ -7,9 +7,9 @@ export default class PokemonCard extends Component {
                 <p>#{this.props.numPokedex} - {this.props.name}</p>
                 <img src={this.props.image} />
                 <img src={this.props.type1} />
-                <p>COLOR: {this.props.type1Color}</p>
+                <p>{this.props.type1Color}</p>
                 <img src={this.props.type2} />
-                <p>COLOR: {this.props.type2Color}</p>
+                <p>{this.props.type2Color}</p>
             </div>
         )
     }
