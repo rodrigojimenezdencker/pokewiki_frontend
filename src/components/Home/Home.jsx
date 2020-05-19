@@ -32,9 +32,15 @@ export default class Home extends Component {
                             </div>
                             <div className="section">
                                 <h1>Movimientos</h1>
+                                <p>Los Pokémon combaten entre ellos en los videojuegos usando movimientos poderosos para dejar a su contrincante fuera de combate.
+                                    En este apartado encontrarás toda la información de los diferentes movimientos que existen y los Pokémon que los aprenden.</p>
+                                <button>Ver la lista completa</button>
                             </div>
                             <div className="section">
                                 <h1>Tipos</h1>
+                                <p>En los juegos tendrás que usar la estrategia de tipos para llegar lejos, para ello, te damos toda la información que necesitas sobre cada tipo,
+                                    que tipos son buenos contra otras y débiles y los tipos de cada Pokémon y movimientos.</p>
+                                <button>Ver la lista completa</button>
                             </div>
                         </ReactFullpage.Wrapper>
                     );
