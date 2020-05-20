@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import './Assets/fonts/Audiowide-Regular.ttf';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home.jsx';
@@ -17,16 +15,18 @@ import PokemonPage from './components/PokemonPage/PokemonPage';
 
 ReactDOM.render(
   <Router>
-    <Route exact path="/">
-      <Home />
-    </Route>
     <Navbar />
-    <Route path="/pokemon">
-      <PokemonList />
-    </Route>
-    <Route path="/pokemonData">
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/pokemon">
+        <PokemonList />
+      </Route>
+      <Route path="/pokemonData">
       <PokemonPage />
-    </Route>
+      </Route>
+    </Switch>
   </Router>,
   document.getElementById('root')
 );
