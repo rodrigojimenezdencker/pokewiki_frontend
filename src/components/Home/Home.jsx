@@ -3,6 +3,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import './Home.css';
 import Logo from '../../Assets/img/logo_pokewiki.png';
 import Arrow from '../../Assets/svg/down-arrow.svg';
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
     render() {
@@ -30,12 +31,14 @@ export default class Home extends Component {
                                 <p className="section_description">Pokémon es un videojuego que salió el 1995 y este ha ido evolucionando hasta ser al día de hoy uno de los juegos más populares del mundo.
                                     En este apartado encontrarás toda la información general de los 151 Pokémon que existen en la primera generación.</p>
                                 <div id="button_container">
+                                    <Link to="/pokemon">
                                     <button class="complete_list">
                                         <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">Ver la lista completa</span>
                                     </button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="section movimientos_section">
