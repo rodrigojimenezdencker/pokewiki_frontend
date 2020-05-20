@@ -46,7 +46,7 @@ export default class Home extends Component {
                                 <p className="section_description">Los Pokémon combaten entre ellos en los videojuegos usando movimientos poderosos para dejar a su contrincante fuera de combate.
                                     En este apartado encontrarás toda la información de los diferentes movimientos que existen y los Pokémon que los aprenden.</p>
                                 <div id="button_container">
-                                    <button class="complete_list">
+                                    <button aria-label="Ver la lista completa" class="complete_list">
                                         <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                         </span>
