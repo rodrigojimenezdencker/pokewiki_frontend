@@ -10,7 +10,8 @@ export default class PokemonPage extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:44316/api/pokemon/3')
+        const { id } = this.props.match.params;
+        fetch('https://localhost:44316/api/pokemon/' + id)
         .then(response => response.json())
         .then(data => {
             this.setState({pokemon: data});
@@ -18,6 +19,7 @@ export default class PokemonPage extends Component {
         } )
     }
     render() {
+
         const {pokemon} = this.state;
         if (pokemon == null) return null;
         return (
