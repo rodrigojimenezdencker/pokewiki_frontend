@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './PokemonPage.css'
 
 export default class PokemonPage extends Component {
     constructor(props){
@@ -45,6 +46,20 @@ export default class PokemonPage extends Component {
                 <img src={pokemon.evolution ? pokemon.evolution.image : pokemon.evolution}></img>
                 <p>{pokemon.evolution ? pokemon.evolution.name : pokemon.evolution}</p>
                 <p>{pokemon.evolutionRequirements}</p>
+                <table>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Movimiento</th>
+                        <th>Tipo</th>
+                    </tr>
+                    {pokemon.moves.map(move => {
+                    return <tr>
+                                <td>{move.level}</td>
+                                <td>{move.name}</td>
+                                <td><img src={move.typeImage} /></td>
+                            </tr>
+                    })}
+                </table>
             </div>
         )
     }
