@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './PokemonPage.css'
 
 export default class PokemonPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             pokemon: null
@@ -12,15 +12,15 @@ export default class PokemonPage extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
         fetch('https://localhost:44316/api/pokemon/' + id)
-        .then(response => response.json())
-        .then(data => {
-            this.setState({pokemon: data});
-            console.log(this.state.pokemon);
-        } )
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ pokemon: data });
+                console.log(this.state.pokemon);
+            })
     }
     render() {
 
-        const {pokemon} = this.state;
+        const { pokemon } = this.state;
         if (pokemon == null) return null;
         return (
             <div>
@@ -55,11 +55,11 @@ export default class PokemonPage extends Component {
                         <th>Tipo</th>
                     </tr>
                     {pokemon.moves.map(move => {
-                    return <tr>
-                                <td>{move.level}</td>
-                                <td>{move.name}</td>
-                                <td><img src={move.typeImage} /></td>
-                            </tr>
+                        return <tr>
+                            <td>{move.level}</td>
+                            <td>{move.name}</td>
+                            <td><img src={move.typeImage} /></td>
+                        </tr>
                     })}
                 </table>
             </div>
