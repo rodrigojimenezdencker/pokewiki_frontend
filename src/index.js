@@ -12,6 +12,7 @@ import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import PokemonList from './components/PokemonList/PokemonList.jsx';
+import PokemonPage from './components/PokemonPage/PokemonPage';
 
 
 ReactDOM.render(
@@ -22,6 +23,9 @@ ReactDOM.render(
     <Navbar />
     <Route path="/pokemon">
       <PokemonList />
+    </Route>
+    <Route path="/pokemonData">
+      <PokemonPage />
     </Route>
   </Router>,
   document.getElementById('root')

@@ -46,12 +46,14 @@ export default class Home extends Component {
                                 <p className="section_description">Los Pokémon combaten entre ellos en los videojuegos usando movimientos poderosos para dejar a su contrincante fuera de combate.
                                     En este apartado encontrarás toda la información de los diferentes movimientos que existen y los Pokémon que los aprenden.</p>
                                 <div id="button_container">
+                                    <Link to="/movimientos">
                                     <button class="complete_list">
                                         <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">Ver la lista completa</span>
                                     </button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="section tipos_section">
@@ -59,12 +61,14 @@ export default class Home extends Component {
                                 <p className="section_description">En los juegos tendrás que usar la estrategia de tipos para llegar lejos, para ello, te damos toda la información que necesitas sobre cada tipo,
                                     que tipos son buenos contra otras y débiles y los tipos de cada Pokémon y movimientos.</p>
                                 <div id="button_container">
+                                    <Link to="/tipos">
                                     <button class="complete_list">
                                         <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">Ver la lista completa</span>
                                     </button>
+                                    </Link>
                                 </div>
                             </div>
                         </ReactFullpage.Wrapper>
