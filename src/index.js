@@ -10,8 +10,8 @@ import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import PokemonList from './components/PokemonList/PokemonList.jsx';
-import PokemonPage from './components/PokemonPage/PokemonPage';
-
+import PokemonPage from './components/PokemonPage/PokemonPage.jsx';
+import TypesList from './components/TypesList/TypesList.jsx'
 
 ReactDOM.render(
   <Router>
@@ -24,7 +24,10 @@ ReactDOM.render(
         <PokemonList />
       </Route>
       <Route path="/pokemonData">
-      <PokemonPage />
+        <PokemonPage />
+      </Route>
+      <Route path="/tipos">
+        <TypesList />
       </Route>
     </Switch>
   </Router>,
