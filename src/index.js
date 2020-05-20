@@ -17,18 +17,10 @@ ReactDOM.render(
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/pokemon">
-        <PokemonList />
-      </Route>
-      <Route path="/pokemonData">
-        <PokemonPage />
-      </Route>
-      <Route path="/tipos">
-        <TypesList />
-      </Route>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/pokemon" component={PokemonList} />
+      <Route path="/pokemon/:id" component={PokemonPage} />
+      <Route path="/tipos" component={TypesList} />
     </Switch>
   </Router>,
   document.getElementById('root')
