@@ -47,11 +47,11 @@ export default class Home extends Component {
                                     En este apartado encontrarás toda la información de los diferentes movimientos que existen y los Pokémon que los aprenden.</p>
                                 <div id="button_container">
                                     <Link to="/movimientos">
-                                        <button aria-label="Ver la lista completa" class="complete_list">
-                                            <span class="circle" aria-hidden="true">
-                                                <span class="icon arrow"></span>
+                                        <button aria-label="Ver la lista completa" className="complete_list">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
                                             </span>
-                                            <span class="button-text">Ver la lista completa</span>
+                                            <span className="button-text">Ver la lista completa</span>
                                         </button>
                                     </Link>
                                 </div>
