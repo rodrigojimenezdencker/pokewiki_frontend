@@ -20,6 +20,7 @@ ReactDOM.render(
       <Route exact path="/" component={Home} />
       <Route exact path="/pokemon" component={PokemonList} />
       <Route path="/pokemon/:id" component={PokemonPage} />
+      <Route path="/pokemon/:name" component={PokemonPage} />
       <Route path="/tipos" component={TypesList} />
     </Switch>
   </Router>,
