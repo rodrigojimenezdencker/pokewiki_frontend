@@ -31,7 +31,8 @@ export default class PokemonList extends Component {
                         type1Name={item.type1.name}
                         type2Image={item.type2 == null ? item.type2 : item.type2.image} 
                         type2Color={item.type2 == null ? item.type2 : item.type2.color}
-                        type2Name={item.type2 == null ? item.type2 : item.type2.name}/>
+                        type2Name={item.type2 == null ? item.type2 : item.type2.name}
+                    />
                     )
                 })}
             </div>
