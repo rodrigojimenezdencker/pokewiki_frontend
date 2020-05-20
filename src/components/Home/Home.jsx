@@ -32,11 +32,11 @@ export default class Home extends Component {
                                     En este apartado encontrarás toda la información general de los 151 Pokémon que existen en la primera generación.</p>
                                 <div id="button_container">
                                     <Link to="/pokemon">
-                                        <button class="complete_list">
-                                            <span class="circle" aria-hidden="true">
-                                                <span class="icon arrow"></span>
+                                        <button aria-label="Ver la lista completa" className="complete_list">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
                                             </span>
-                                            <span class="button-text">Ver la lista completa</span>
+                                            <span className="button-text">Ver la lista completa</span>
                                         </button>
                                     </Link>
                                 </div>
@@ -62,11 +62,11 @@ export default class Home extends Component {
                                     que tipos son buenos contra otras y débiles y los tipos de cada Pokémon y movimientos.</p>
                                 <div id="button_container">
                                     <Link to="/tipos">
-                                        <button class="complete_list">
-                                            <span class="circle" aria-hidden="true">
-                                                <span class="icon arrow"></span>
+                                        <button aria-label="Ver la lista completa" className="complete_list">
+                                            <span className="circle" aria-hidden="true">
+                                                <span className="icon arrow"></span>
                                             </span>
-                                            <span class="button-text">Ver la lista completa</span>
+                                            <span className="button-text">Ver la lista completa</span>
                                         </button>
                                     </Link>
                                 </div>
