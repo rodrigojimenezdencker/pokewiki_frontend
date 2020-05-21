@@ -13,7 +13,6 @@ export default class PokemonPage extends Component {
 
     componentDidMount() {
         const { id, name } = this.props.match.params;
-
         let pokemonToFetch = id ? id : name;
 
         fetch('https://localhost:44316/api/pokemon/' + pokemonToFetch)
