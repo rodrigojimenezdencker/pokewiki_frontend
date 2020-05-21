@@ -12,9 +12,7 @@ export default class PokemonPage extends Component {
     }
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        const { name } = this.props.match.params;
-
+        const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
         fetch('https://localhost:44316/api/pokemon/' + pokemonToFetch)
@@ -24,11 +22,9 @@ export default class PokemonPage extends Component {
                 setTimeout(() => {
                     this.setState({ isLoading: false })
                 }, 2500);
-                console.log(this.state.pokemon);
             })
     }
     render() {
-
         const { pokemon, isLoading } = this.state;
         if (pokemon == null) return null;
         if (isLoading) {
