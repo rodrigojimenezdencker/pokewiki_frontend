@@ -32,9 +32,9 @@ export default class PokemonList extends Component {
                                     name={item.name}
                                     image={item.image}
                                     type1Id={item.type1.typeId}
-                                    type1Image={item.type1.image}
+                                    type1Image={item.type1.secondaryImage}
                                     type1Name={item.type1.name}
-                                    type2Image={item.type2 == null ? item.type2 : item.type2.image}
+                                    type2Image={item.type2 == null ? item.type2 : item.type2.secondaryImage}
                                     type2Name={item.type2 == null ? item.type2 : item.type2.name}
                                 />
                             </Link>
