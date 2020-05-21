@@ -13,6 +13,8 @@ import PokemonList from './components/PokemonList/PokemonList.jsx';
 import PokemonPage from './components/PokemonPage/PokemonPage.jsx';
 import TypesList from './components/TypesList/TypesList.jsx';
 import TypePage from './components/TypePage/TypePage.jsx';
+import MovesList from './components/MovesList/MovesList';
+import MovePage from './components/MovePage/MovePage';
 
 ReactDOM.render(
   <Router>
@@ -25,6 +27,9 @@ ReactDOM.render(
       <Route exact path="/tipos" component={TypesList} />
       <Route path="/tipos/:id" component={TypePage} />
       <Route path="/tipos/:name" component={TypePage} />
+      <Route exact path="/movimientos" component={MovesList} />
+      <Route path="/movimientos/:id" component={MovePage} />
+      <Route path="/movimientos/:name" component={MovePage} />
     </Switch>
   </Router>,
   document.getElementById('root')

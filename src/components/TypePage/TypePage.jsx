@@ -14,8 +14,6 @@ export default class TypePage extends Component {
         const { id } = this.props.match.params;
         const { name } = this.props.match.params;
 
-        console.log(this.props.params);
-
         let typesToFetch = id ? id : name;
 
         fetch('https://localhost:44316/api/types/' + typesToFetch)
