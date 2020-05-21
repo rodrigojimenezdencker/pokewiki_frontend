@@ -16,7 +16,6 @@ export default class PokemonList extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ pokemonlist: data });
-                console.log(this.state.pokemonlist);
             })
     }
     render() {
