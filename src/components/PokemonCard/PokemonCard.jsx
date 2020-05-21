@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './PokemonCard.css';
 
 export default class PokemonCard extends Component {
     render() {
         return (
-            <Link to={`/pokemon/${this.props.numPokedex}`}>
-                <div>
-                    <p>#{this.props.numPokedex} - {this.props.name}</p>
-                    <img src={this.props.image} alt={this.props.name} />
-                    <img src={this.props.type1Image} alt={this.props.type1Name}/>
-                    <p>{this.props.type1Color}</p>
+            <div className={`card test type${this.props.type1Id}`}>
+                <p className="numpokedex">#{this.props.numPokedex}</p>
+                <img src={this.props.image} alt={this.props.name} className="img_pokemon" />
+                <div className="name-type_container">
+                    <p>{this.props.name}</p>
+                    <img src={this.props.type1Image} alt={this.props.type1Name} />
                     <img src={this.props.type2Image} alt={this.props.type2Name} />
-                    <p>{this.props.type2Color}</p>
                 </div>
-            </Link>
+            </div>
         )
     }
 }

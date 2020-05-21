@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
+import { Link } from 'react-router-dom';
 
 export default class PokemonList extends Component {
     constructor(props) {
@@ -21,20 +22,22 @@ export default class PokemonList extends Component {
     render() {
         return (
             <section id="pokemonlist_page">
+                <h1 className="page_title">Lista Pokémon</h1>
                 <div className="pokemonlist_grid">
                     {this.state.pokemonlist.map(item => {
                         return (
-                            <PokemonCard
-                                numPokedex={item.numPokedex}
-                                name={item.name}
-                                image={item.image}
-                                type1Image={item.type1.image}
-                                type1Color={item.type1.color}
-                                type1Name={item.type1.name}
-                                type2Image={item.type2 == null ? item.type2 : item.type2.image}
-                                type2Color={item.type2 == null ? item.type2 : item.type2.color}
-                                type2Name={item.type2 == null ? item.type2 : item.type2.name}
-                            />
+                            <Link to={`/pokemon/${item.numPokedex}`}>
+                                <PokemonCard
+                                    numPokedex={item.numPokedex}
+                                    name={item.name}
+                                    image={item.image}
+                                    type1Id={item.type1.typeId}
+                                    type1Image={item.type1.image}
+                                    type1Name={item.type1.name}
+                                    type2Image={item.type2 == null ? item.type2 : item.type2.image}
+                                    type2Name={item.type2 == null ? item.type2 : item.type2.name}
+                                />
+                            </Link>
                         )
                     })}
                 </div>

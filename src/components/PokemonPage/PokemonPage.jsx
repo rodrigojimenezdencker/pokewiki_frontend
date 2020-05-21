@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './PokemonPage.css'
+import PokemonCard from '../PokemonCard/PokemonCard';
 
 export default class PokemonPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemon: null
+            pokemon: null,
+            isLoading: true
         }
     }
 
@@ -19,17 +21,41 @@ export default class PokemonPage extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ pokemon: data });
+                setTimeout(() => {
+                    this.setState({ isLoading: false })
+                }, 2500);
                 console.log(this.state.pokemon);
             })
     }
     render() {
 
-        const { pokemon } = this.state;
+        const { pokemon, isLoading } = this.state;
         if (pokemon == null) return null;
+        if (isLoading) {
+            return (
+                <div className="loading_container">
+                    <div className="card_container">
+                        <div className="card_container_inner">
+                            <PokemonCard
+                                numPokedex={pokemon.numPokedex}
+                                name={pokemon.name}
+                                image={pokemon.image}
+                                type1Id={pokemon.type1.typeId}
+                                type1Image={pokemon.type1.image}
+                                type1Name={pokemon.type1.name}
+                                type2Image={pokemon.type2 == null ? pokemon.type2 : pokemon.type2.image}
+                                type2Name={pokemon.type2 == null ? pokemon.type2 : pokemon.type2.name}
+                            />
+                            <div className="card2"></div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
         return (
             <div>
                 <p>#{pokemon.numPokedex} - {pokemon.name}</p>
-                <img src={pokemon.image}></img>
+                <img src={pokemon.image} className="img_pkm"></img>
                 <img src={pokemon.type1.secondaryImage}></img>
                 <p>{pokemon.type1.name}</p>
                 <img src={pokemon.type2 ? pokemon.type2.secondaryImage : pokemon.type2}></img>
