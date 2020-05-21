@@ -37,9 +37,9 @@ export default class PokemonPage extends Component {
                                 name={pokemon.name}
                                 image={pokemon.image}
                                 type1Id={pokemon.type1.typeId}
-                                type1Image={pokemon.type1.image}
+                                type1Image={pokemon.type1.secondaryImage}
                                 type1Name={pokemon.type1.name}
-                                type2Image={pokemon.type2 == null ? pokemon.type2 : pokemon.type2.image}
+                                type2Image={pokemon.type2 == null ? pokemon.type2 : pokemon.type2.secondaryImage}
                                 type2Name={pokemon.type2 == null ? pokemon.type2 : pokemon.type2.name}
                             />
                             <div className="card2"></div>
