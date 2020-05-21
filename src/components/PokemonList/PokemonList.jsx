@@ -25,7 +25,7 @@ export default class PokemonList extends Component {
                 <div className="pokemonlist_grid">
                     {this.state.pokemonlist.map(item => {
                         return (
-                            <Link to={`/pokemon/${item.numPokedex}`}>
+                            <Link key={item.numPokedex} to={`/pokemon/${item.numPokedex}`}>
                                 <PokemonCard
                                     numPokedex={item.numPokedex}
                                     name={item.name}
