@@ -18,13 +18,17 @@ export default class PokemonList extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ pokemonlist: data });
-            }).then(() => this.setState({ isLoading: false }))
+                setTimeout(() =>
+                    this.setState({ isLoading: false })
+                ,2000)
+            })                
     }
+
     render() {
         if (this.state.isLoading) {
             return (
                 <section id="pokemonlist_page">
-                    <h1 className="page_title">Lista Pokémon</h1>
+                    <SkeletonLoader width="30%" height={83} style={{ margin: 50 }} />
                     <div className="pokemonlist_grid">
                         <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
                         <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
