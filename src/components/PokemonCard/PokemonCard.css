@@ -1,68 +1,63 @@
 .card {
-  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  color: black;
   background-color: whitesmoke;
-  padding: 15px;
+  box-sizing: border-box;
   border-radius: 20px;
   box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-  text-align: center;
-  transition: 500ms;
   margin: 10px;
-  font-family: "Roboto Mono", monospace;
-  color: black;
+  padding: 15px;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 7px 8px 3px rgba(0,0,0,0.35);
+  box-shadow: 0px 7px 8px 3px rgba(0, 0, 0, 0.35);
 }
 
-.card .img_pokemon {
-    transition: 500ms;
+.card, .card .img_pokemon {
+  transition: .5s;
 }
+
+.card .numpokedex {
+    background: rgb(202, 202, 202, 0.8);
+    border-radius: 25px;
+    max-width: 50px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
 
 .card:hover .img_pokemon {
-    transform: scale(1.1);
-    filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.8));
+  transform: scale(1.1);
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.8));
 }
 
-.name-type_container {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    color: white;
-    padding: 8px 0;
-    transition: 400ms;
+.card .name-type_container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  color: white;
+  padding: 8px 0;
+  transition: 400ms;
 }
 
-.name-type_container p {
-    margin-top: 0;
+.card .name-type_container .type_image {
+    border-radius: 8px;
 }
 
-/* Tipo fuego */
-.type7 {
-  background-image: url("../../Assets/img/fire_background.jpg");
-  background-size: cover;
+.card .name-type_container .type_image:first-of-type {
+    margin-right: 5px;
 }
 
-/* Tipo planta */
-.type12 {
-  background-image: url("../../Assets/img/grass_background.jpg");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+.card .name-type_container p {
+  margin-top: 0;
 }
 
 /* Tipo agua */
 .type2 {
-  /* background-color: #7ed6ff; */
   background-image: url("../../Assets/img/water_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -120px 0;
-}
-
-/* Tipo dragón */
-.type4 {
-    background-image: url("../../Assets/img/dragon_background.jpg");
-    background-size: cover;
 }
 
 /* Tipo bicho */
@@ -72,74 +67,84 @@
   background-position: -100px 0;
 }
 
+/* Tipo dragón */
+.type4 {
+  background-image: url("../../Assets/img/dragon_background.jpg");
+  background-size: cover;
+}
+
+/* Tipo eléctrico */
+.type5 {
+  background-image: url("../../Assets/img/electric_background.jpg");
+  background-size: 400px 450px;
+}
+
+/* Tipo fantasma */
+.type6 {
+  background-image: url("../../Assets/img/ghost_background.jpg");
+  background-size: cover;
+  background-position: -160px 0;
+}
+
+/* Tipo fuego */
+.type7 {
+  background-image: url("../../Assets/img/fire_background.jpg");
+  background-size: cover;
+}
+
+/* Tipo hada */
+.type8 {
+  background-image: url("../../Assets/img/fairy_background.jpg");
+}
+
+/* Tipo hielo */
+.type9 {
+  background-image: url("../../Assets/img/ice_background.jpg");
+  background-size: cover;
+}
+
+/* Tipo lucha */
+.type10 {
+  background-image: url("../../Assets/img/fighting_background.jpg");
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
+  background-position: -60px 0;
+}
+
 /* Tipo normal */
 .type11 {
   background-image: url("../../Assets/img/normal_background.jpg");
   background-size: cover;
 }
 
-/* Tipo veneno */
-.type17 {
-  background-image: url("../../Assets/img/poison_background.jpg");
+/* Tipo planta */
+.type12 {
+  background-image: url("../../Assets/img/grass_background.jpg");
   background-size: cover;
-}
-
-/* Tipo eléctrico */
-.type5 {
-    background-image: url("../../Assets/img/electric_background.jpg");
-    background-size: 400px 450px;
-}
-
-/* Tipo tierra */
-.type16 {
-    background-image: url("../../Assets/img/ground_background.jpg");
-    background-size: 300px 400px;
-}
-
-/* Tipo hada */
-.type8 {
-    background-image: url("../../Assets/img/fairy_background.jpg");
-}
-
-/* Tipo lucha */
-.type10 {
-    background-image: url("../../Assets/img/fighting_background.jpg");
-    background-repeat: no-repeat;
-    background-size: 350px 350px;
-    background-position: -60px 0;
 }
 
 /* Tipo psíquico */
 .type13 {
-    background-image: url("../../Assets/img/psychic_background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -50px 0;
+  background-image: url("../../Assets/img/psychic_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -50px 0;
 }
 
 /* Tipo roca */
 .type14 {
-    background-image: url("../../Assets/img/rock_background.jpg");
-    background-size: cover;
+  background-image: url("../../Assets/img/rock_background.jpg");
+  background-size: cover;
 }
 
-/* Tipo hielo */
-.type9 {
-    background-image: url("../../Assets/img/ice_background.jpg");
-    background-size: cover;
+/* Tipo tierra */
+.type16 {
+  background-image: url("../../Assets/img/ground_background.jpg");
+  background-size: 300px 400px;
 }
 
-/* Tipo fantasma */
-.type6 {
-    background-image: url("../../Assets/img/ghost_background.jpg");
-    background-size: cover;
-    background-position: -160px 0;
-}
-
-.numpokedex {
-  background: rgb(202, 202, 202, 0.8);
-  border-radius: 25px;
-  max-width: 50px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+/* Tipo veneno */
+.type17 {
+  background-image: url("../../Assets/img/poison_background.jpg");
+  background-size: cover;
 }
