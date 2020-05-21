@@ -1,4 +1,6 @@
 .card {
+  width: 230px;
+  height: 330px;
   font-family: "Roboto Mono", monospace;
   text-align: center;
   color: black;
