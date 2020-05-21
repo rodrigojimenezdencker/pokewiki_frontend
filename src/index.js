@@ -11,7 +11,8 @@ import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import PokemonList from './components/PokemonList/PokemonList.jsx';
 import PokemonPage from './components/PokemonPage/PokemonPage.jsx';
-import TypesList from './components/TypesList/TypesList.jsx'
+import TypesList from './components/TypesList/TypesList.jsx';
+import TypePage from './components/TypePage/TypePage.jsx';
 
 ReactDOM.render(
   <Router>
@@ -21,7 +22,9 @@ ReactDOM.render(
       <Route exact path="/pokemon" component={PokemonList} />
       <Route path="/pokemon/:id" component={PokemonPage} />
       <Route path="/pokemon/:name" component={PokemonPage} />
-      <Route path="/tipos" component={TypesList} />
+      <Route exact path="/tipos" component={TypesList} />
+      <Route path="/tipos/:id" component={TypePage} />
+      <Route path="/tipos/:name" component={TypePage} />
     </Switch>
   </Router>,
   document.getElementById('root')
