@@ -21,7 +21,16 @@ export default class TypesList extends Component {
         return (
             <div>
                 {this.state.typeslist.map(item => {
-                    return <TypeCard />
+                    return (
+                            <TypeCard 
+                                key = {item.typeId}
+                                typeId = {item.typeId} 
+                                name = {item.name}
+                                color = {item.color}
+                                image = {item.image}
+                                secondaryImage = {item.secondaryImage}
+                            />
+                    )
                 })}
             </div>
         )
