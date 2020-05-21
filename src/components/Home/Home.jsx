@@ -19,7 +19,7 @@ export default class Home extends Component {
                                 <div className="content_container">
                                     <section id="logo_container">
                                         <img src={Logo} className="img_logo" alt="" />
-                                        <h1 className="title">PokéWiki</h1>
+                                        <h1 id="project_title">PokéWiki</h1>
                                     </section>
                                     <p className="section_description">Bienvenidos a PokéWiki, una enciclopedia online dedicada al universo Pokémon. En ella encontrarás información detallada de cada Pokémon, de los tipos y de los movimientos.</p>
                                     <img src={Arrow} alt="Ir abajo automáticamente" tabIndex="0"

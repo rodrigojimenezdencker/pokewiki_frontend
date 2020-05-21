@@ -56,7 +56,7 @@
     linear-gradient(90deg, rgb(228, 46, 24), rgb(242, 171, 153));
 }
 
-.homepage h1 {
+#project_title {
   font-size: 5em;
   text-shadow: 3px 3px 3px rgb(87, 87, 87);
   font-family: "Audiowide", cursive;
