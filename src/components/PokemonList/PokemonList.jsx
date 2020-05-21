@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
+import SkeletonLoader from "tiny-skeleton-loader-react";
 
 export default class PokemonList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemonlist: []
+            pokemonlist: [],
+            isLoading: true
         }
     }
 
@@ -16,9 +18,27 @@ export default class PokemonList extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ pokemonlist: data });
-            })
+            }).then(() => this.setState({ isLoading: false }))
     }
     render() {
+        if (this.state.isLoading) {
+            return (
+                <section id="pokemonlist_page">
+                    <h1 className="page_title">Lista Pokémon</h1>
+                    <div className="pokemonlist_grid">
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                    </div>
+                </section>
+
+            )
+        }
         return (
             <section id="pokemonlist_page">
                 <h1 className="page_title">Lista Pokémon</h1>
