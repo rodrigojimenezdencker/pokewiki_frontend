@@ -15,6 +15,7 @@ import TypesList from './components/TypesList/TypesList.jsx';
 import TypePage from './components/TypePage/TypePage.jsx';
 import MovesList from './components/MovesList/MovesList';
 import MovePage from './components/MovePage/MovePage';
+import NotFound from './components/NotFound/NotFound';
 
 ReactDOM.render(
   <Router>
@@ -29,6 +30,7 @@ ReactDOM.render(
       <Route exact path="/movimientos" component={MovesList} />
       <Route path="/movimientos/:id" component={MovePage} />
       <Route path="/movimientos/:name" component={MovePage} />
+      <Route exact path="/notfound" component={NotFound} />
       <Route path="/" component={Home} />
     </Switch>
   </Router>,

@@ -82,10 +82,10 @@ export default class PokemonPage extends Component {
                 <p>{pokemon.spAttack}</p>
                 <p>{pokemon.spDefense}</p>
                 <p>{pokemon.speed}</p>
-                <img src={pokemon.prevolution ? pokemon.prevolution.image : pokemon.prevolution}></img>
+                <img src={pokemon.prevolution ? pokemonImages[pokemon.prevolution.image] : pokemon.prevolution}></img>
                 <p>{pokemon.prevolution ? pokemon.prevolution.name : pokemon.prevolution}</p>
                 <p>{pokemon.prevolution ? pokemon.prevolution.evolutionRequirements : pokemon.prevolution}</p>
-                <img src={pokemon.evolution ? pokemon.evolution.image : pokemon.evolution}></img>
+                <img src={pokemon.evolution ? pokemonImages[pokemon.evolution.image] : pokemon.evolution}></img>
                 <p>{pokemon.evolution ? pokemon.evolution.name : pokemon.evolution}</p>
                 <p>{pokemon.evolutionRequirements}</p>
                 <table>
