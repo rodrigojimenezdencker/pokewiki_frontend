@@ -9,7 +9,8 @@ export default class PokemonList extends Component {
         super(props);
         this.state = {
             pokemonlist: [],
-            isLoading: true
+            isLoading: true,
+            textoBuscador: ''
         }
     }
 
@@ -22,6 +23,10 @@ export default class PokemonList extends Component {
                     this.setState({ isLoading: false })
                 ,2000)
             })                
+    }
+
+    handleChange = (e) => {
+        this.setState({ textoBuscador: e.target.value});
     }
 
     render() {
@@ -43,11 +48,16 @@ export default class PokemonList extends Component {
 
             )
         }
+
+        const filteredPokemonList = this.state.pokemonlist.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
+        )
+        console.log(filteredPokemonList);
         return (
             <section id="pokemonlist_page">
                 <h1 className="page_title">Lista Pokémon</h1>
+                <input type="text" value={this.state.textoBuscador} onChange={this.handleChange} />
                 <div className="pokemonlist_grid">
-                    {this.state.pokemonlist.map(item => {
+                    {filteredPokemonList.map(item => {
                         return (
                             <Link key={item.numPokedex} to={`/pokemon/${item.numPokedex}`}>
                                 <PokemonCard
