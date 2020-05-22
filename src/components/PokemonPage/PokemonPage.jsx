@@ -25,6 +25,13 @@ export default class PokemonPage extends Component {
             })
     }
     render() {
+        function importAll(r) {
+            let images = {};
+            r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
+            return images;
+        }
+        
+        const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
         const { pokemon, isLoading } = this.state;
         if (pokemon == null) return null;
         if (isLoading) {
@@ -51,7 +58,7 @@ export default class PokemonPage extends Component {
         return (
             <div>
                 <p>#{pokemon.numPokedex} - {pokemon.name}</p>
-                <img src={pokemon.image} className="img_pkm"></img>
+                <img src={pokemonImages[pokemon.image]} className="img_pkm"></img>
                 <img src={pokemon.type1.secondaryImage}></img>
                 <p>{pokemon.type1.name}</p>
                 <img src={pokemon.type2 ? pokemon.type2.secondaryImage : pokemon.type2}></img>
