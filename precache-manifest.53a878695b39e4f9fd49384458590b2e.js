@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66a8607cd9199622e3c0cec0b88b2da6",
+    "revision": "fd048ff6e30b3f4dbe75929b08efefb7",
     "url": "/pokewiki_frontend/index.html"
   },
   {
-    "revision": "566327efa816cc7629f0",
+    "revision": "1b7cf7d27dae92bea1f9",
     "url": "/pokewiki_frontend/static/css/main.3a4acf57.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/js/2.b4901f72.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "566327efa816cc7629f0",
-    "url": "/pokewiki_frontend/static/js/main.6f120cf4.chunk.js"
+    "revision": "1b7cf7d27dae92bea1f9",
+    "url": "/pokewiki_frontend/static/js/main.bdaeb75a.chunk.js"
   },
   {
     "revision": "5c74d6df055ef8e47c76",
