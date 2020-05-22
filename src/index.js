@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import Home from './components/Home/Home.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
@@ -16,6 +17,7 @@ import TypePage from './components/TypePage/TypePage.jsx';
 import MovesList from './components/MovesList/MovesList';
 import MovePage from './components/MovePage/MovePage';
 import NotFound from './components/NotFound/NotFound';
+import Create from './components/CRUD/Create/Create';
 
 ReactDOM.render(
   <Router>
@@ -30,7 +32,9 @@ ReactDOM.render(
       <Route exact path="/movimientos" component={MovesList} />
       <Route path="/movimientos/:id" component={MovePage} />
       <Route path="/movimientos/:name" component={MovePage} />
-      <Route exact path="/notfound" component={NotFound} />
+      <Route path="/notfound" component={NotFound} />
+      <Route path="/crear" component={Create} />
+
       <Route path="/" component={Home} />
     </Switch>
   </Router>,
