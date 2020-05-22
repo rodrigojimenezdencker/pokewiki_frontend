@@ -20,7 +20,6 @@ ReactDOM.render(
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/" component={Home} />
       <Route exact path="/pokemon" component={PokemonList} />
       <Route path="/pokemon/:id" component={PokemonPage} />
       <Route path="/pokemon/:name" component={PokemonPage} />
@@ -30,6 +29,7 @@ ReactDOM.render(
       <Route exact path="/movimientos" component={MovesList} />
       <Route path="/movimientos/:id" component={MovePage} />
       <Route path="/movimientos/:name" component={MovePage} />
+      <Route path="/" component={Home} />
     </Switch>
   </Router>,
   document.getElementById('root')
