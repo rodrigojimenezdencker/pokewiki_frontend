@@ -61,7 +61,6 @@ export default class Create extends Component {
     }
 
     render() {
-        console.log(this.state.name)
         return (
             <form>
                 <Input
