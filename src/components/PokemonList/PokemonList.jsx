@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
-import SkeletonLoader from "tiny-skeleton-loader-react";
+import { SearchBox } from '../SearchBox/SearchBox';
+import "react-placeholder/lib/reactPlaceholder.css";
+import { PageTitle } from '../PageTitle/PageTitle';
+import { RectShape } from 'react-placeholder/lib/placeholders';
 
 export default class PokemonList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemonlist: [],
+            pokemon: [],
             isLoading: true,
             textoBuscador: ''
         }
@@ -18,65 +21,59 @@ export default class PokemonList extends Component {
         fetch('https://localhost:44316/api/pokemon')
             .then(response => response.json())
             .then(data => {
-                this.setState({ pokemonlist: data });
+                this.setState({ pokemon: data });
                 setTimeout(() =>
                     this.setState({ isLoading: false })
-                ,500)
-            })                
+                    , 1500)
+            })
     }
 
     handleChange = (e) => {
-        this.setState({ textoBuscador: e.target.value});
+        this.setState({ textoBuscador: e.target.value });
     }
 
     render() {
-        if (this.state.isLoading) {
-            return (
-                <section id="pokemonlist_page">
-                    <SkeletonLoader width="30%" height={83} style={{ margin: 50 }} />
-                    <div className="pokemonlist_grid">
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
-                    </div>
-                </section>
+        const { isLoading, pokemon } = this.state;
+        const filteredPokemon = pokemon.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
+        )
 
-            )
+        const SkeletonArray = [];
+
+        for (let i = 0; i < 8; i++) {
+            SkeletonArray.push(<RectShape ready={false} className="background_loading" style={{ width: 230, height: 330 }} />)
         }
 
-        const filteredPokemonList = this.state.pokemonlist.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
-        )
-        console.log(filteredPokemonList);
         return (
             <section id="pokemonlist_page">
-                <h1 className="page_title">Lista Pokémon</h1>
-                <input type="text" value={this.state.textoBuscador} onChange={this.handleChange} />
+                <PageTitle>Lista Pokémon</PageTitle>
+                <SearchBox
+                    placeholder="Buscar Pokémon"
+                    handleChange={this.handleChange}
+                />
                 <div className="pokemonlist_grid">
-                    {filteredPokemonList.map(item => {
-                        return (
-                            <Link key={item.numPokedex} to={`/pokemon/${item.numPokedex}`}>
-                                <PokemonCard
-                                    numPokedex={item.numPokedex}
-                                    name={item.name}
-                                    image={item.image}
-                                    type1Id={item.type1.typeId}
-                                    type1Image={item.type1.secondaryImage}
-                                    type1Name={item.type1.name}
-                                    type2Image={item.type2 == null ? item.type2 : item.type2.secondaryImage}
-                                    type2Name={item.type2 == null ? item.type2 : item.type2.name}
-                                />
-                            </Link>
+                    {isLoading ? (
+                        <>
+                            {SkeletonArray.map(element => element)}
+                        </>
+                    ) : (
+                            filteredPokemon.map(item => {
+                                return (
+                                    <Link key={item.numPokedex} to={`/pokemon/${item.numPokedex}`}>
+                                        <PokemonCard
+                                            numPokedex={item.numPokedex}
+                                            name={item.name}
+                                            image={item.image}
+                                            type1Id={item.type1.typeId}
+                                            type1Image={item.type1.secondaryImage}
+                                            type1Name={item.type1.name}
+                                            type2Image={item.type2 == null ? item.type2 : item.type2.secondaryImage}
+                                            type2Name={item.type2 == null ? item.type2 : item.type2.name}
+                                        />
+                                    </Link>
+                                )
+                            })
                         )
-                    })}
+                    }
                 </div>
             </section>
         )
