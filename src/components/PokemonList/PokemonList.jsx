@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getJSON } from '../CRUD/requests';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
@@ -18,14 +19,14 @@ export default class PokemonList extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:44316/api/pokemon')
-            .then(response => response.json())
+        getJSON('https://localhost:44316/api/pokemon')
             .then(data => {
                 this.setState({ pokemon: data });
                 setTimeout(() =>
                     this.setState({ isLoading: false })
                     , 1500)
             })
+
     }
 
     handleChange = (e) => {
