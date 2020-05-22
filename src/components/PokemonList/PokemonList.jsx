@@ -20,7 +20,7 @@ export default class PokemonList extends Component {
                 this.setState({ pokemonlist: data });
                 setTimeout(() =>
                     this.setState({ isLoading: false })
-                ,2000)
+                ,500)
             })                
     }
 
@@ -30,6 +30,10 @@ export default class PokemonList extends Component {
                 <section id="pokemonlist_page">
                     <SkeletonLoader width="30%" height={83} style={{ margin: 50 }} />
                     <div className="pokemonlist_grid">
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
+                        <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
                         <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
                         <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
                         <SkeletonLoader width={230} height={330} style={{ margin: 10 }} />
