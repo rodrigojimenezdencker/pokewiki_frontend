@@ -1,15 +1,15 @@
 .card {
-  width: 230px;
-  height: 330px;
   font-family: "Roboto Mono", monospace;
-  text-align: center;
-  color: black;
-  background-color: whitesmoke;
-  box-sizing: border-box;
-  border-radius: 20px;
-  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
   margin: 10px;
   padding: 15px;
+  width: 230px;
+  height: 330px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  color: black;
+  background-color: whitesmoke;
 }
 
 .card:hover {
@@ -17,17 +17,18 @@
   box-shadow: 0px 7px 8px 3px rgba(0, 0, 0, 0.35);
 }
 
-.card, .card .img_pokemon {
-  transition: .5s;
+.card,
+.card .img_pokemon {
+  transition: 0.5s;
 }
 
 .card .numpokedex {
-    background: rgb(202, 202, 202, 0.8);
-    border-radius: 25px;
-    max-width: 50px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-  }
+  background: rgb(202, 202, 202, 0.8);
+  border-radius: 25px;
+  max-width: 50px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
 
 .card:hover .img_pokemon {
   transform: scale(1.1);
@@ -43,11 +44,11 @@
 }
 
 .card .name-type_container .type_image {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .card .name-type_container .type_image:first-of-type {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .card .name-type_container p {
