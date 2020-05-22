@@ -26,6 +26,14 @@ export default class TypePage extends Component {
             })
     }
     render() {
+        function importAll(r) {
+            let images = {};
+            r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
+            return images;
+        }
+        
+        const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
+        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
         const { type, isLoading } = this.state;
         if (type == null) return null;
         
@@ -34,8 +42,10 @@ export default class TypePage extends Component {
                 <p>{type.typeId}</p>
                 <p>{type.name}</p>
                 <p>{type.color}</p>
-                <img src={type.image}></img>
-                <img src={type.secondaryImage}></img>
+                <div className={`icon typeImage${type.typeId}`}>
+                    <img src={typesImages[type.image]}></img>
+                </div>
+                <img src={secondaryTypesImages[type.secondaryImage]}></img>
             </div>
         )
     }

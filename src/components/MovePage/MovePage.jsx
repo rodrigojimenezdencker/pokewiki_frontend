@@ -26,6 +26,14 @@ export default class MovePage extends Component {
             })
     }
     render() {
+        function importAll(r) {
+            let images = {};
+            r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
+            return images;
+        }
+        
+        const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
+        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
         const { move, isLoading } = this.state;
         if (move == null) return null;
         
@@ -37,7 +45,7 @@ export default class MovePage extends Component {
                 <p>{move.power}</p>
                 <p>{move.accuracy}</p>
                 <p>{move.quantity}</p>
-                <img src={move.type.image}></img>
+                <img src={secondaryTypesImages[move.type.secondaryImage]}></img>
                 <table>
                     <tr>
                         <th>Num Pokedex</th>
@@ -48,7 +56,7 @@ export default class MovePage extends Component {
                         return <tr>
                             <td>{pokemon.numPokedex}</td>
                             <td>{pokemon.name}</td>
-                            <td><img src={pokemon.image} /></td>
+                            <td><img src={pokemonImages[pokemon.image]} /></td>
                         </tr>
                     })}
                 </table>
