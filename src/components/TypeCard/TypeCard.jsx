@@ -10,6 +10,7 @@ export default class TypeCard extends Component {
         }
         
         const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
+        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
 
         return (
             <div>
@@ -19,7 +20,7 @@ export default class TypeCard extends Component {
                 <div className={`icon typeImage${this.props.typeId}`}>
                     <img src={typesImages[this.props.image]} />
                 </div>
-                <img src={this.props.secondaryImage} />
+                <img src={secondaryTypesImages[this.props.secondaryImage]} />
             </div>
         )
     }

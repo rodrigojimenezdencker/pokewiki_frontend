@@ -27,7 +27,7 @@ export default class MovesList extends Component {
                                     key={item.moveId}
                                     moveId={item.moveId}
                                     name={item.name}
-                                    type={item.type.image}
+                                    type={item.type.secondaryImage}
                                     color={item.type.color}
                                 />
                         )

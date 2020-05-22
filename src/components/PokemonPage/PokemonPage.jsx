@@ -32,6 +32,9 @@ export default class PokemonPage extends Component {
         }
         
         const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
+        const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
+        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
+
         const { pokemon, isLoading } = this.state;
         if (pokemon == null) return null;
         if (isLoading) {
@@ -59,9 +62,13 @@ export default class PokemonPage extends Component {
             <div>
                 <p>#{pokemon.numPokedex} - {pokemon.name}</p>
                 <img src={pokemonImages[pokemon.image]} className="img_pkm"></img>
-                <img src={pokemon.type1.secondaryImage}></img>
                 <p>{pokemon.type1.name}</p>
-                <img src={pokemon.type2 ? pokemon.type2.secondaryImage : pokemon.type2}></img>
+                <div className={`icon typeImage${pokemon.type1.typeId}`}>
+                    <img src={typesImages[pokemon.type1.image]}></img>
+                </div>
+                <div className={pokemon.type2 ? `icon typeImage${pokemon.type2.typeId}` : pokemon.type2}>
+                    <img src={pokemon.type2 ? typesImages[pokemon.type2.image] : pokemon.type2}></img>
+                </div>
                 <p>{pokemon.type2 ? pokemon.type2.name : pokemon.type2}</p>
                 <p>{pokemon.description}</p>
                 <p>{pokemon.ability}</p>
@@ -91,7 +98,7 @@ export default class PokemonPage extends Component {
                         return <tr>
                             <td>{move.level}</td>
                             <td>{move.name}</td>
-                            <td><img src={move.typeImage} /></td>
+                            <td><img src={secondaryTypesImages[move.typeImage]} /></td>
                         </tr>
                     })}
                 </table>
