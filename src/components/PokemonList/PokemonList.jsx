@@ -7,6 +7,7 @@ import { SearchBox } from '../SearchBox/SearchBox';
 import "react-placeholder/lib/reactPlaceholder.css";
 import { PageTitle } from '../PageTitle/PageTitle';
 import { RectShape } from 'react-placeholder/lib/placeholders';
+import { CardGrid } from '../CardGrid/CardGrid';
 
 export default class PokemonList extends Component {
     constructor(props) {
@@ -35,13 +36,17 @@ export default class PokemonList extends Component {
 
     render() {
         const { isLoading, pokemon } = this.state;
-        const filteredPokemon = pokemon.filter(pokemon => pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
+        const filteredPokemon = pokemon.filter(pokemon =>
+            pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
         )
 
-        const SkeletonArray = [];
-
-        for (let i = 0; i < 8; i++) {
-            SkeletonArray.push(<RectShape ready={false} className="background_loading" style={{ width: 230, height: 330 }} />)
+        const skeletonArray = [];
+        const repeatedSkeletons = 8;
+        for (let i = 0; i < repeatedSkeletons; i++) {
+            skeletonArray.push(
+                <RectShape ready={false} className="background_loading" style={{ width: 230, height: 330 }}
+                />
+            )
         }
 
         return (
@@ -51,31 +56,19 @@ export default class PokemonList extends Component {
                     placeholder="Buscar Pokémon"
                     handleChange={this.handleChange}
                 />
-                <div className="pokemonlist_grid">
-                    {isLoading ? (
+                <CardGrid>
+                    {isLoading ?
                         <>
-                            {SkeletonArray.map(element => element)}
+                            {skeletonArray.map(element => element)}
                         </>
-                    ) : (
-                            filteredPokemon.map(item => {
-                                return (
-                                    <Link key={item.numPokedex} to={`/pokemon/${item.numPokedex}`}>
-                                        <PokemonCard
-                                            numPokedex={item.numPokedex}
-                                            name={item.name}
-                                            image={item.image}
-                                            type1Id={item.type1.typeId}
-                                            type1Image={item.type1.secondaryImage}
-                                            type1Name={item.type1.name}
-                                            type2Image={item.type2 == null ? item.type2 : item.type2.secondaryImage}
-                                            type2Name={item.type2 == null ? item.type2 : item.type2.name}
-                                        />
-                                    </Link>
-                                )
-                            })
+                        :
+                        filteredPokemon.map(pokemon =>
+                            <Link key={pokemon.numPokedex} to={`/pokemon/${pokemon.numPokedex}`}>
+                                <PokemonCard pokemon={pokemon} />
+                            </Link>
                         )
                     }
-                </div>
+                </CardGrid>
             </section>
         )
     }
