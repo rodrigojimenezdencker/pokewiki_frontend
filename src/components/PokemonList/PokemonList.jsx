@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getJSON } from '../CRUD/requests';
-import PokemonCard from '../PokemonCard/PokemonCard';
+import { PokemonCard } from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
 import { SearchBox } from '../SearchBox/SearchBox';
