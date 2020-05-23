@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { postJSON } from '../requests';
 import { Input, Form, FormGroup, Label } from 'reactstrap';
 
 export default class Create extends Component {
@@ -31,48 +32,22 @@ export default class Create extends Component {
     }
 
     addPokemon = () => {
-        const params = {
-            method: 'POST',
-            body: JSON.stringify(this.state),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        };
-
-        fetch('https://localhost:44316/api/pokemon', params)
-            .then(response => response.json())
-            .then(() => this.addType())
-            .catch(error => {
-                console.log(error);
-            });
+        postJSON('https://localhost:44316/api/pokemon', this.state)
+            .then(() => this.addPrimaryType());
     }
 
-    addType = () => {
+    addPrimaryType = () => {
         let type1 = {
             pokemonId: this.state.numPokedex,
             typeId: this.state.typeId,
             subtype: false
         }
 
-        console.log(JSON.stringify(type1));
-        const params = {
-            method: 'POST',
-            body: JSON.stringify(type1),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        };
-
-        fetch('https://localhost:44316/api/typepokemon', params)
-            .then(response => console.log(response.json()))
+        postJSON('https://localhost:44316/api/typepokemon', type1)
             .then(() => {
-                if (document.getElementById("type2").value !== "") {
-                    this.addSecondaryType();
-                }
+                if (document.getElementById("type2").value !== "") this.addSecondaryType();
             })
-            .catch(error => {
-                console.log(error);
-            });
+            .catch(error => console.log(error));
     }
 
     addSecondaryType = () => {
@@ -81,28 +56,15 @@ export default class Create extends Component {
             typeId: this.state.typeId2,
             subtype: true
         }
-        const params = {
-            method: 'POST',
-            body: JSON.stringify(type2),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        };
-        fetch('https://localhost:44316/api/typepokemon', params);
+
+        postJSON('https://localhost:44316/api/typepokemon', type2);
     }
 
     handleChangeInput = event => {
-        const { name, value } = event.target;
+        const { name, value, type} = event.target;
         this.setState({
-            [name]: value
-        })
-    }
-
-    handleChangeInputNumber = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: parseInt(value)
-        })
+            [name]: type === 'number' ? parseInt(value) : value
+        });
     }
 
     render() {
@@ -114,7 +76,7 @@ export default class Create extends Component {
                         type="number"
                         id="numPokedex"
                         name="numPokedex"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta el número de la Pokédex"
                         required
                     />
@@ -209,7 +171,7 @@ export default class Create extends Component {
                         type="number"
                         id="ps"
                         name="ps"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta la vida del Pokémon"
                         required
                     />
@@ -218,7 +180,7 @@ export default class Create extends Component {
                         type="number"
                         id="attack"
                         name="attack"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta el ataque del Pokémon"
                         required
                     />
@@ -227,7 +189,7 @@ export default class Create extends Component {
                         type="number"
                         id="defense"
                         name="defense"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta la defensa del Pokémon"
                         required
                     />
@@ -236,7 +198,7 @@ export default class Create extends Component {
                         type="number"
                         id="spAttack"
                         name="spAttack"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta el ataque especial del Pokémon"
                         required
                     />
@@ -245,7 +207,7 @@ export default class Create extends Component {
                         type="number"
                         id="spDefense"
                         name="spDefense"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta la defensa especial del Pokémon"
                         required
                     />
@@ -254,7 +216,7 @@ export default class Create extends Component {
                         type="number"
                         id="speed"
                         name="speed"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta la velocidad del Pokémon"
                         required
                     />
@@ -265,7 +227,7 @@ export default class Create extends Component {
                         type="number"
                         id="prevolution"
                         name="prevolution"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta la preevolución del Pokémon"
                     />
                 </FormGroup>
@@ -275,7 +237,7 @@ export default class Create extends Component {
                         type="number"
                         id="evolution"
                         name="evolution"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta  del Pokémon"
                     />
                     <Label for="evolutionRequirements">Requerimiento para Evolucionar</Label>
@@ -293,7 +255,7 @@ export default class Create extends Component {
                         type="number"
                         id="type1"
                         name="typeId"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta el tipo primario"
                     />
                 </FormGroup>
@@ -303,7 +265,7 @@ export default class Create extends Component {
                         type="number"
                         id="type2"
                         name="typeId2"
-                        onChange={this.handleChangeInputNumber}
+                        onChange={this.handleChangeInput}
                         placeholder="Inserta el tipo primario"
                     />
                 </FormGroup>
