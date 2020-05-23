@@ -18,7 +18,7 @@
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 601px) {
     .navbarPoke {
         top: 0;
         width: 5rem;
@@ -41,6 +41,7 @@
 
 .navbarPoke {
    position: fixed;
+   left: 0;
    z-index: 100;
    background-color: #404969;
    transition: width 200ms ease;
