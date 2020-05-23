@@ -1,5 +1,5 @@
 @media only screen and (max-width: 600px) {
-    .navbar {
+    .navbarPoke {
         bottom: 0;
         width: 100vw;
         height: 5rem;
@@ -9,44 +9,44 @@
         display: none;
     }
 
-    .navbar-nav {
+    .navbarPoke-nav {
         flex-direction: row;
     }
 
-    .nav-link {
+    .navPoke-link {
         justify-content: center;
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .navbar {
+    .navbarPoke {
         top: 0;
         width: 5rem;
         height: 100vh;
     }
 
-    .navbar:hover {
+    .navbarPoke:hover {
         width: 16rem;
     }
 
-    .navbar-nav {
+    .navbarPoke-nav {
         flex-direction: column;
     }
 
-    .navbar:hover .link-text {
+    .navbarPoke:hover .Pokelink-text {
         display: inline;
         transition: opacity 600ms;
     }
 }
 
-.navbar {
+.navbarPoke {
    position: fixed;
    z-index: 100;
    background-color: #404969;
    transition: width 200ms ease;
 }
 
-.navbar-nav {
+.navbarPoke-nav {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -54,7 +54,7 @@
     align-items: center;
 }
 
-.nav-link {
+.navPoke-link {
     display: flex;
     align-items: center;
     height: 5rem;
@@ -64,26 +64,28 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-.navbar-nav li:nth-child(1) .nav-link {
+.navbarPoke-nav li:nth-child(1) .navPoke-link {
     font-family: "Audiowide", cursive;
     font-weight: bold;
 }
 
-.nav-item {
+.navPoke-item {
     width: 100%;
 }
 
-.nav-link:hover {
+.navPoke-link:hover {
     filter:grayscale(0%) opacity(1);
     background-color: #313852;
+    color: inherit;
+    text-decoration: none;
 }
 
-.link-text {
+.Pokelink-text {
     display: none;
     margin-left: 1rem;
 }
 
-.nav-link img {
+.navPoke-link img {
     min-width: 2rem;
     margin: 0 1.5rem;
     max-width: 2rem;
@@ -99,6 +101,6 @@
     width: 100%;
 }
 
-.logo .link-text {
+.logo .Pokelink-text {
     width: 100%;
 }
