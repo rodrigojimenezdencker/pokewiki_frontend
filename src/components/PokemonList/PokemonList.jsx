@@ -4,7 +4,6 @@ import { PokemonCard } from '../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
 import { SearchBox } from '../SearchBox/SearchBox';
-import "react-placeholder/lib/reactPlaceholder.css";
 import { PageTitle } from '../PageTitle/PageTitle';
 import { RectShape } from 'react-placeholder/lib/placeholders';
 import { CardGrid } from '../CardGrid/CardGrid';
