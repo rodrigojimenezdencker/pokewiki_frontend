@@ -22,11 +22,15 @@ export default class Create extends Component {
             speed: 0,
             prevolution: null,
             evolution: null,
-            evolutionRequirements: null
+            evolutionRequirements: null,
+            pokemonId: 0,
+            typeId: 0,
+            typeId2: null,
+            subtype: false
         }
     }
 
-    enviar = () => {
+    addPokemon = () => {
         const params = {
             method: 'POST',
             body: JSON.stringify(this.state),
@@ -37,13 +41,54 @@ export default class Create extends Component {
 
         fetch('https://localhost:44316/api/pokemon', params)
             .then(response => response.json())
-            .then(json => {
-                this.props.history.push('/');
-            }
-            )
+            .then(() => this.addType())
             .catch(error => {
                 console.log(error);
             });
+    }
+
+    addType = () => {
+        let type1 = {
+            pokemonId: this.state.numPokedex,
+            typeId: this.state.typeId,
+            subtype: false
+        }
+
+        console.log(JSON.stringify(type1));
+        const params = {
+            method: 'POST',
+            body: JSON.stringify(type1),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        };
+
+        fetch('https://localhost:44316/api/typepokemon', params)
+            .then(response => console.log(response.json()))
+            .then(() => {
+                if (document.getElementById("type2").value !== "") {
+                    this.addSecondaryType();
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    addSecondaryType = () => {
+        let type2 = {
+            pokemonId: this.state.numPokedex,
+            typeId: this.state.typeId2,
+            subtype: true
+        }
+        const params = {
+            method: 'POST',
+            body: JSON.stringify(type2),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        };
+        fetch('https://localhost:44316/api/typepokemon', params);
     }
 
     handleChangeInput = event => {
@@ -242,7 +287,27 @@ export default class Create extends Component {
                         placeholder="Requerimiento para evolucionar Pokémon"
                     />
                 </FormGroup>
-                <input type="button" onClick={this.enviar} value="Enviar" />
+                <FormGroup>
+                    <Label for="type1">Tipo 1</Label>
+                    <Input
+                        type="number"
+                        id="type1"
+                        name="typeId"
+                        onChange={this.handleChangeInputNumber}
+                        placeholder="Inserta el tipo primario"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="type2">Tipo 2</Label>
+                    <Input
+                        type="number"
+                        id="type2"
+                        name="typeId2"
+                        onChange={this.handleChangeInputNumber}
+                        placeholder="Inserta el tipo primario"
+                    />
+                </FormGroup>
+                <input type="button" onClick={this.addPokemon} value="Enviar" />
                 <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
             </Form>
         )
