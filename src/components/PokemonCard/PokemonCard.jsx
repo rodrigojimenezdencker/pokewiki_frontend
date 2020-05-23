@@ -11,7 +11,7 @@ function importAll(r) {
 const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
 const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
 
-const PokemonCard = ({ pokemon }) => (
+export const PokemonCard = ({ pokemon }) => (
     <div className={`card type${pokemon.type1.typeId}`}>
         <p className="numpokedex">#{pokemon.numPokedex}</p>
         <img
@@ -34,5 +34,3 @@ const PokemonCard = ({ pokemon }) => (
         </div>
     </div>
 )
-
-export default PokemonCard;
