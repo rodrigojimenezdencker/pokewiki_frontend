@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd048ff6e30b3f4dbe75929b08efefb7",
+    "revision": "4b5bcf0d9e22b30cf5ebc0c6e067e164",
     "url": "/pokewiki_frontend/index.html"
   },
   {
-    "revision": "1b7cf7d27dae92bea1f9",
-    "url": "/pokewiki_frontend/static/css/main.3a4acf57.chunk.css"
+    "revision": "81b11a5caa2de8f8f774",
+    "url": "/pokewiki_frontend/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "395d81a42039102c6a80",
-    "url": "/pokewiki_frontend/static/js/2.b4901f72.chunk.js"
+    "revision": "af0996d6e78661094368",
+    "url": "/pokewiki_frontend/static/css/main.7c338c55.chunk.css"
   },
   {
-    "revision": "e95b3ebaec68caad50c330e63af5be13",
-    "url": "/pokewiki_frontend/static/js/2.b4901f72.chunk.js.LICENSE.txt"
+    "revision": "81b11a5caa2de8f8f774",
+    "url": "/pokewiki_frontend/static/js/2.796db05d.chunk.js"
   },
   {
-    "revision": "1b7cf7d27dae92bea1f9",
-    "url": "/pokewiki_frontend/static/js/main.bdaeb75a.chunk.js"
+    "revision": "2843005cfe63620d3a1e752107ef83ca",
+    "url": "/pokewiki_frontend/static/js/2.796db05d.chunk.js.LICENSE.txt"
+  },
+  {
+    "revision": "af0996d6e78661094368",
+    "url": "/pokewiki_frontend/static/js/main.0c9f6ea5.chunk.js"
   },
   {
     "revision": "5c74d6df055ef8e47c76",
@@ -48,6 +52,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/blastoise.485b07f1.png"
   },
   {
+    "revision": "14540979a6685ab378bf0cee1e97f942",
+    "url": "/pokewiki_frontend/static/media/bug.14540979.svg"
+  },
+  {
     "revision": "91fd75fb8cd860aa22bdbad35bc06ebc",
     "url": "/pokewiki_frontend/static/media/bulbasaur.91fd75fb.png"
   },
@@ -68,8 +76,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/cloyster.4da2bb7d.png"
   },
   {
+    "revision": "fe2758f51752b7a0f8adaa5200d58fa4",
+    "url": "/pokewiki_frontend/static/media/dark.fe2758f5.svg"
+  },
+  {
     "revision": "35380958a9eb51d4a7f18c0038978df2",
     "url": "/pokewiki_frontend/static/media/down-arrow.35380958.svg"
+  },
+  {
+    "revision": "c0252e8f6cc7242749d42aa32aa9fc50",
+    "url": "/pokewiki_frontend/static/media/dragon.c0252e8f.svg"
   },
   {
     "revision": "6ac63ddbb97f3c869ab60e6e2a68b87d",
@@ -80,6 +96,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/ekans.cdab5988.png"
   },
   {
+    "revision": "68407837ea4c46505c438a788d5e5406",
+    "url": "/pokewiki_frontend/static/media/electric.68407837.svg"
+  },
+  {
     "revision": "4df3dbcb4cd85f067e5ae3d19fdcd240",
     "url": "/pokewiki_frontend/static/media/electric_type.4df3dbcb.jpg"
   },
@@ -88,20 +108,48 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/exeggutor.59668449.png"
   },
   {
+    "revision": "24d6fd0860d3be8b072d10329a89391b",
+    "url": "/pokewiki_frontend/static/media/fairy.24d6fd08.svg"
+  },
+  {
     "revision": "39feb4981da89f671ff4246eb8b57ed7",
     "url": "/pokewiki_frontend/static/media/fairy_type.39feb498.jpg"
+  },
+  {
+    "revision": "e72e76c442a8d346ff8ed02bd45b44e4",
+    "url": "/pokewiki_frontend/static/media/fighting.e72e76c4.svg"
   },
   {
     "revision": "9a71e0ccd64cf49ad5245197aaf30f99",
     "url": "/pokewiki_frontend/static/media/fighting_type.9a71e0cc.jpg"
   },
   {
+    "revision": "e2e7ff4631fc8d32dd8628f639e4622b",
+    "url": "/pokewiki_frontend/static/media/fire.e2e7ff46.svg"
+  },
+  {
     "revision": "775e0fbceec7abcab2c6ce888d988e39",
     "url": "/pokewiki_frontend/static/media/flechas.775e0fbc.svg"
   },
   {
+    "revision": "84b71c6f40b3145b579b7ccab54960ec",
+    "url": "/pokewiki_frontend/static/media/flying.84b71c6f.svg"
+  },
+  {
+    "revision": "04ad8f7b5b68d3c23ae0f59d50b44603",
+    "url": "/pokewiki_frontend/static/media/ghost.04ad8f7b.svg"
+  },
+  {
+    "revision": "d589dd00e175efada7294faf05f52ac6",
+    "url": "/pokewiki_frontend/static/media/grass.d589dd00.svg"
+  },
+  {
     "revision": "e3c45a0a08af153dcc0b782cd1ddc88c",
     "url": "/pokewiki_frontend/static/media/grass_type.e3c45a0a.jpg"
+  },
+  {
+    "revision": "a3ee3106e244b74dedc9ebadcaf48055",
+    "url": "/pokewiki_frontend/static/media/ground.a3ee3106.svg"
   },
   {
     "revision": "b1618e3c4e84cd4d2433721ae84df98b",
@@ -110,6 +158,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d3acf17b33ab9e44d748e69e19280378",
     "url": "/pokewiki_frontend/static/media/gyarados.d3acf17b.png"
+  },
+  {
+    "revision": "52f29ae5643f3bfdc8193b18af2fcabd",
+    "url": "/pokewiki_frontend/static/media/ice.52f29ae5.svg"
   },
   {
     "revision": "263ad117b91b35af50e9292b2be80b8a",
@@ -152,12 +204,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/ninetales.5ba5360a.png"
   },
   {
+    "revision": "4d8ee5e4178ba62d421ae999fd29ae96",
+    "url": "/pokewiki_frontend/static/media/normal.4d8ee5e4.svg"
+  },
+  {
     "revision": "fea4e249e8b29c1a49a025f3aab07dc4",
     "url": "/pokewiki_frontend/static/media/omastar.fea4e249.png"
   },
   {
     "revision": "f9c681498ba402b2b40d74e4acf829bb",
     "url": "/pokewiki_frontend/static/media/paras.f9c68149.png"
+  },
+  {
+    "revision": "1ff89de56897f31dd698fe9056b524b2",
+    "url": "/pokewiki_frontend/static/media/poison.1ff89de5.svg"
   },
   {
     "revision": "2d59a4e6924c40c0901d9c35ed92a224",
@@ -168,12 +228,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokewiki_frontend/static/media/poliwhirl.92337fc6.png"
   },
   {
+    "revision": "29fd7f9d6a31517326379fe368a16ffb",
+    "url": "/pokewiki_frontend/static/media/psychic.29fd7f9d.svg"
+  },
+  {
     "revision": "b0eb23f9e02453858ad620f086b4b636",
     "url": "/pokewiki_frontend/static/media/psychic_type.b0eb23f9.jpg"
   },
   {
     "revision": "d7a3c2b9d1f276df3906f004d8f967c7",
     "url": "/pokewiki_frontend/static/media/rapidash.d7a3c2b9.png"
+  },
+  {
+    "revision": "58f22152b93c43e659c4d19396452008",
+    "url": "/pokewiki_frontend/static/media/rock.58f22152.svg"
   },
   {
     "revision": "49739a67a170d880f815a99f6a2933a7",
@@ -190,6 +258,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0885914659038055d3d7aa90432fa003",
     "url": "/pokewiki_frontend/static/media/starmie.08859146.png"
+  },
+  {
+    "revision": "585083f6d8fb2f3fd408479a376cd1c6",
+    "url": "/pokewiki_frontend/static/media/steel.585083f6.svg"
   },
   {
     "revision": "2517c93e1e6ddbf8424110ff6e23c6b5",
@@ -210,6 +282,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5469cdae76f1a6e4e9d2603730b817ff",
     "url": "/pokewiki_frontend/static/media/wartortle.5469cdae.png"
+  },
+  {
+    "revision": "fba54fcda2c58ae9350528b07ef8ae5c",
+    "url": "/pokewiki_frontend/static/media/water.fba54fcd.svg"
   },
   {
     "revision": "707082b784a4286feb92be860b8bb0cd",
