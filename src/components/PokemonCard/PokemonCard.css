@@ -57,7 +57,7 @@
 
 /* Tipo agua */
 .type2 {
-  background-image: url("../../Assets/img/card_background/water_type.jpg");
+  background-image: url('../../Assets/img/card_background/water_type.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -120px 0;
@@ -65,50 +65,50 @@
 
 /* Tipo bicho */
 .type3 {
-  background-image: url("../../Assets/img/card_background/bug_type.jpg");
+  background-image: url('../../Assets/img/card_background/bug_type.jpg');
   background-size: 350px 360px;
   background-position: -100px 0;
 }
 
 /* Tipo dragón */
 .type4 {
-  background-image: url("../../Assets/img/card_background/dragon_type.jpg");
+  background-image: url('../../Assets/img/card_background/dragon_type.jpg');
   background-size: cover;
 }
 
 /* Tipo eléctrico */
 .type5 {
-  background-image: url("../../Assets/img/card_background/electric_type.jpg");
+  background-image: url('../../Assets/img/card_background/electric_type.jpg');
   background-size: 400px 450px;
 }
 
 /* Tipo fantasma */
 .type6 {
-  background-image: url("../../Assets/img/card_background/ghost_type.jpg");
+  background-image: url('../../Assets/img/card_background/ghost_type.jpg');
   background-size: cover;
   background-position: -160px 0;
 }
 
 /* Tipo fuego */
 .type7 {
-  background-image: url("../../Assets/img/card_background/fire_type.jpg");
+  background-image: url('../../Assets/img/card_background/fire_type.jpg');
   background-size: cover;
 }
 
 /* Tipo hada */
 .type8 {
-  background-image: url("../../Assets/img/card_background/fairy_type.jpg");
+  background-image: url('../../Assets/img/card_background/fairy_type.jpg');
 }
 
 /* Tipo hielo */
 .type9 {
-  background-image: url("../../Assets/img/card_background/ice_type.jpg");
+  background-image: url('../../Assets/img/card_background/ice_type.jpg');
   background-size: cover;
 }
 
 /* Tipo lucha */
 .type10 {
-  background-image: url("../../Assets/img/card_background/fighting_type.jpg");
+  background-image: url('../../Assets/img/card_background/fighting_type.jpg');
   background-repeat: no-repeat;
   background-size: 350px 350px;
   background-position: -60px 0;
@@ -116,19 +116,19 @@
 
 /* Tipo normal */
 .type11 {
-  background-image: url("../../Assets/img/card_background/normal_type.jpg");
+  background-image: url('../../Assets/img/card_background/normal_type.jpg');
   background-size: cover;
 }
 
 /* Tipo planta */
 .type12 {
-  background-image: url("../../Assets/img/card_background/grass_type.jpg");
+  background-image: url('../../Assets/img/card_background/grass_type.jpg');
   background-size: cover;
 }
 
 /* Tipo psíquico */
 .type13 {
-  background-image: url("../../Assets/img/card_background/psychic_type.jpg");
+  background-image: url('../../Assets/img/card_background/psychic_type.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -50px 0;
@@ -136,18 +136,18 @@
 
 /* Tipo roca */
 .type14 {
-  background-image: url("../../Assets/img/card_background/rock_type.jpg");
+  background-image: url('../../Assets/img/card_background/rock_type.jpg');
   background-size: cover;
 }
 
 /* Tipo tierra */
 .type16 {
-  background-image: url("../../Assets/img/card_background/ground_type.jpg");
+  background-image: url('../../Assets/img/card_background/ground_type.jpg');
   background-size: 300px 400px;
 }
 
 /* Tipo veneno */
 .type17 {
-  background-image: url("../../Assets/img/card_background/poison_type.jpg");
+  background-image: url('../../Assets/img/card_background/poison_type.jpg');
   background-size: cover;
 }
