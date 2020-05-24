@@ -15,7 +15,7 @@ export const Dashboard = () => (
                         <CardBody className="card_dashboard">
                             <CardTitle><h2><strong>Pokémon</strong></h2></CardTitle>
                             <CardText>Crea, elimina o actualiza la lista Pokémon.</CardText>
-                            <Link to={`/CRUDPokemon`}>
+                            <Link to={`/dashboard/pokemon`}>
                                 <Button color="primary">Explorar</Button>
                             </Link>
                         </CardBody>

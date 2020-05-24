@@ -35,9 +35,9 @@ ReactDOM.render(
       <Route path="/movimientos/:id" component={MovePage} />
       <Route path="/movimientos/:name" component={MovePage} />
       <Route path="/notfound" component={NotFound} />
-      <Route path="/crearPokemon" component={CreatePokemon} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/CRUDPokemon" component={ListPokemon} />
+      <Route path="/dashboard/pokemon/crear" component={CreatePokemon} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route path="/dashboard/pokemon" component={ListPokemon} />
 
 
       <Route path="/" component={Home} />

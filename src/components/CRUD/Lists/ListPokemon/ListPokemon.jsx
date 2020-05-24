@@ -34,7 +34,7 @@ export default class PokemonList extends Component {
         return (
             <Container>
                 <h1>Listado de Pokémon</h1>
-                <Link to={`/crearPokemon`}>
+                <Link to={`/dashboard/pokemon/crear`}>
                     <input type="submit" className="btn btn-primary" value="Crear" />
                 </Link>
                 <table class="table table-striped">
