@@ -74,6 +74,5 @@ html {
 @media (max-width: 600px) {
   html {
     width: 100%;
-    margin: 0;
   }
 }
