@@ -48,7 +48,6 @@ export default class CRUDList extends Component {
             id = 'moves'
         }
 
-
         // console.log(objectName)
         const filteredObject = object.filter(obj =>
             obj.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
@@ -57,12 +56,12 @@ export default class CRUDList extends Component {
         return (
             <Container>
                 <Button color="secondary">Back to dashboard</Button>
-                <h1>Listado de Pokémon</h1>
+                <h1>Tabla de datos</h1>
                 <Link to={`/dashboard/${id}/crear`}>
                     <Button color="success" className="mr-2">Nuevo</Button>
                 </Link>
                 <SearchBox
-                    placeholder="Filtrar Pokémon"
+                    placeholder="Filtrar"
                     handleChange={this.handleChange}
                 />
                 <Table striped>
@@ -76,9 +75,18 @@ export default class CRUDList extends Component {
                     <tbody>
                         {filteredObject.map(obj =>
                             <tr>
-                                <th scope="row">{id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}</th>
+                                <th scope="row">
+                                    {id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}
+                                </th>
                                 <td>{obj.name}</td>
-                                <td><Button color="primary">Modificar</Button> | <Button color="danger">Eliminar</Button></td>
+                                <td>
+                                    <Link to={`${window.location.pathname}/modificar/${id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}`}>
+                                        <Button color="primary" className="mr-2">Modificar</Button>
+                                    </Link>
+                                    <Link to={`${window.location.pathname}/eliminar/${id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}`}>
+                                        <Button color="danger">Eliminar</Button>
+                                    </Link>
+                                </td>
                             </tr>
                         )}
                     </tbody>
