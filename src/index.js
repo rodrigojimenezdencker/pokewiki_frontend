@@ -19,7 +19,7 @@ import MovePage from './components/MovePage/MovePage';
 import NotFound from './components/NotFound/NotFound';
 import CreatePokemon from './components/CRUD/Create/CreatePokemon/CreatePokemon';
 import { Dashboard } from './components/CRUD/Dashboard/Dashboard';
-import ListPokemon from './components/CRUD/Lists/ListPokemon/ListPokemon'
+import List from './components/CRUD/List/List'
 
 ReactDOM.render(
   <Router>
@@ -35,9 +35,9 @@ ReactDOM.render(
       <Route path="/movimientos/:id" component={MovePage} />
       <Route path="/movimientos/:name" component={MovePage} />
       <Route path="/notfound" component={NotFound} />
-      <Route path="/dashboard/pokemon/crear" component={CreatePokemon} />
       <Route exact path="/dashboard" component={Dashboard} />
-      <Route path="/dashboard/pokemon" component={ListPokemon} />
+      <Route exact path="/dashboard/:objectName" component={List} />
+      <Route path="/dashboard/pokemon/crear" component={CreatePokemon} />
 
 
       <Route path="/" component={Home} />
