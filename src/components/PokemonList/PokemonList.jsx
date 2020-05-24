@@ -43,7 +43,7 @@ export default class PokemonList extends Component {
         const repeatedSkeletons = 8;
         for (let i = 0; i < repeatedSkeletons; i++) {
             skeletonArray.push(
-                <RectShape ready={false} className="background_loading" style={{ width: 230, height: 330 }}
+                <RectShape key={i} ready={false} className="background_loading" style={{ width: 230, height: 330 }}
                 />
             )
         }
