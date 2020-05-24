@@ -53,7 +53,7 @@ export default class Create extends Component {
     addPrimaryType = () => {
         let type1 = {
             pokemonId: this.state.numPokedex,
-            typeId: this.state.typeId,
+            typeId: parseInt(this.state.typeId),
             subtype: false
         }
 
@@ -67,7 +67,7 @@ export default class Create extends Component {
     addSecondaryType = () => {
         let type2 = {
             pokemonId: this.state.numPokedex,
-            typeId: this.state.typeId2,
+            typeId: parseInt(this.state.typeId2),
             subtype: true
         }
 
@@ -88,7 +88,7 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === 'number' ? parseInt() : value
+            [name]: type === ('number' || 'select') ? parseInt(value) : value
         });
     }
 
@@ -103,7 +103,7 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === 'number' ? parseInt() : value
+            [name]: type === ('number' || 'select') ? parseInt(value) : value
         });
     }
 
@@ -118,7 +118,7 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === 'number' ? parseInt() : value
+            [name]: type === ('number' || 'select') ? parseInt(value) : value
         });
     }
 
@@ -126,7 +126,7 @@ export default class Create extends Component {
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type === 'number' || 'select' ? parseInt(value) : value
+            [name]: type === ('number' || 'select') ? parseInt(value) : value
         });
     }
 
@@ -135,7 +135,7 @@ export default class Create extends Component {
         return (
         <Container className="create_container">
             <h1>Crear Pokémon</h1>
-                <Form className="form bg-light" data-widget="create_form">
+                <Form className="form bg-light" id="createForm" data-widget="create_form">
                     <Row form>
                         <Col md={6}>
                             <FormGroup>
