@@ -67,7 +67,7 @@ export default class PokemonList extends Component {
                                         className="img_pokemon"
                                     />
                                 </td>
-                                <td><Button color="warning">Modificar</Button> | <Button color="danger">danger</Button></td>
+                                <td><Button color="primary">Modificar</Button> | <Button color="danger">Borrar</Button></td>
                             </tr>
                         )}
                     </tbody>
