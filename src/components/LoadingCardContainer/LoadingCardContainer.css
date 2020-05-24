@@ -106,11 +106,11 @@
   );
 }
 
-.loading_container .card {
+.loading_container .custom_card {
   text-decoration: none;
 }
 
-.loading_container .card,
+.loading_container .custom_card,
 .loading_container .card_backside {
   backface-visibility: hidden;
   transform-style: preserve-3d;

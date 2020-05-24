@@ -1,4 +1,4 @@
-.card {
+.custom_card {
   font-family: "Roboto Mono", monospace;
   margin: 10px;
   padding: 15px;
@@ -12,17 +12,17 @@
   background-color: whitesmoke;
 }
 
-.card:hover {
+.custom_card:hover {
   transform: translateY(-10px);
   box-shadow: 0px 7px 8px 3px rgba(0, 0, 0, 0.35);
 }
 
-.card,
-.card .img_pokemon {
+.custom_card,
+.custom_card .img_pokemon {
   transition: 0.5s;
 }
 
-.card .numpokedex {
+.custom_card .numpokedex {
   background: rgb(202, 202, 202, 0.8);
   border-radius: 25px;
   min-width: 50px;
@@ -30,12 +30,12 @@
   margin-bottom: 15px;
 }
 
-.card:hover .img_pokemon {
+.custom_card:hover .img_pokemon {
   transform: scale(1.1);
   filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.8));
 }
 
-.card .name-type_container {
+.custom_card .name-type_container {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   color: white;
@@ -43,15 +43,15 @@
   transition: 400ms;
 }
 
-.card .name-type_container .type_image {
+.custom_card .name-type_container .type_image {
   border-radius: 8px;
 }
 
-.card .name-type_container .type_image:first-of-type {
+.custom_card .name-type_container .type_image:first-of-type {
   margin-right: 5px;
 }
 
-.card .name-type_container p {
+.custom_card .name-type_container p {
   margin-top: 0;
 }
 
