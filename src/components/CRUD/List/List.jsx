@@ -78,7 +78,7 @@ export default class CRUDList extends Component {
                             <tr>
                                 <th scope="row">{id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}</th>
                                 <td>{obj.name}</td>
-                                <td><Button color="warning">Modificar</Button> | <Button color="danger">danger</Button></td>
+                                <td><Button color="primary">Modificar</Button> | <Button color="danger">Eliminar</Button></td>
                             </tr>
                         )}
                     </tbody>
