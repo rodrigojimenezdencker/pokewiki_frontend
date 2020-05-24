@@ -204,7 +204,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution != "" && evolutionRequirements == "") {
+    if (evolution != "DEFAULT" && evolutionRequirements == "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -213,7 +213,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution == "" && evolutionRequirements != "") {
+    if (evolution == "DEFAULT" && evolutionRequirements != "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',

@@ -30,13 +30,16 @@ export default class Create extends Component {
             typeId: 0,
             typeId2: null,
             subtype: false,
-            types: []
+            types: [],
+            pokemons: []
         }
     }
 
     componentDidMount() {
         getJSON('https://localhost:44316/api/types')
             .then(data => this.setState({ types: data }));
+        getJSON('https://localhost:44316/api/pokemon')
+            .then(data => this.setState({ pokemons: data }))
     }
 
     submitForm = (event) => {
@@ -95,7 +98,7 @@ export default class Create extends Component {
     handleChangeEvolution = event => {
         const { name, value, type} = event.target;
 
-        if (value != "" && name == "evolution") {
+        if (value != "DEFAULT" && name == "evolution") {
             document.getElementById("evolutionRequirements").disabled = false;
         } else {
             document.getElementById("evolutionRequirements").disabled = true;
@@ -122,7 +125,6 @@ export default class Create extends Component {
         });
     }
 
-
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
@@ -131,7 +133,7 @@ export default class Create extends Component {
     }
 
     render() {
-        const { types } = this.state;
+        const { types, pokemons } = this.state;
         return (
         <Container className="create_container">
             <h1>Crear Pokémon</h1>
@@ -318,25 +320,21 @@ export default class Create extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="prevolution">Preevolución</Label>
-                        <Input
-                            type="number"
-                            id="prevolution"
-                            name="prevolution"
-                            onChange={this.handleChangeInput}
-                            placeholder="Inserta la preevolución del Pokémon"
-                            data-hook="prevolution"
-                        />
+                        <Input type="select" name="prevolution" id="prevolution" data-hook="prevolution" defaultValue={'DEFAULT'} onChange={this.handleChangeEvolution}>
+                            <option value="DEFAULT">Selecciona la evolución</option>
+                            {pokemons.map(pokemon =>
+                                <option key={pokemon.numPokedex} value={pokemon.numPokedex}>{pokemon.name}</option>
+                            )}
+                        </Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label for="evolution">Evolución</Label>
-                        <Input
-                            type="number"
-                            id="evolution"
-                            name="evolution"
-                            onChange={this.handleChangeEvolution}
-                            placeholder="Inserta la evolución del Pokémon"
-                            data-hook="evolution"
-                        />
+                    <Label for="evolution">Evolución</Label>
+                        <Input type="select" name="evolution" id="evolution" data-hook="evolution" defaultValue={'DEFAULT'} onChange={this.handleChangeEvolution}>
+                            <option value="DEFAULT">Selecciona la evolución</option>
+                            {pokemons.map(pokemon =>
+                                <option key={pokemon.numPokedex} value={pokemon.numPokedex}>{pokemon.name}</option>
+                            )}
+                        </Input>
                         <Label for="evolutionRequirements">Requerimiento para Evolucionar</Label>
                         <Input
                             type="text"
