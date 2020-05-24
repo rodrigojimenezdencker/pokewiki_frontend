@@ -317,10 +317,6 @@ button.complete_list:hover .button-text {
     margin: 0px 0px 12rem 0;
   }
 
-  #homepage_wrapper > section:not(:last-child) {
-    height: calc(100vh - 5rem);
-  }
-
   #project_title {
     font-size: 3em;
   }
