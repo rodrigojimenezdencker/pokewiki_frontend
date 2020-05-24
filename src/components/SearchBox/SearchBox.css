@@ -1,8 +1,8 @@
-/* input {
+.searchbox {
   width: 200px;
   border-radius: 5px;
-  padding: 12px 20px;
+  padding: 6px 10px;
   margin: 8px 0;
-  border: none;
+  border: 1px solid rgb(77, 77, 77);
   box-sizing: border-box;
-} */
+}
