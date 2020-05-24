@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pokewiki_frontend/static/css/main.7c338c55.chunk.css",
+    "main.css": "/pokewiki_frontend/static/css/main.141e70dc.chunk.css",
     "main.js": "/pokewiki_frontend/static/js/main.0c9f6ea5.chunk.js",
     "main.js.map": "/pokewiki_frontend/static/js/main.0c9f6ea5.chunk.js.map",
     "runtime-main.js": "/pokewiki_frontend/static/js/runtime-main.ff3ba227.js",
@@ -9,10 +9,10 @@
     "static/js/2.796db05d.chunk.js": "/pokewiki_frontend/static/js/2.796db05d.chunk.js",
     "static/js/2.796db05d.chunk.js.map": "/pokewiki_frontend/static/js/2.796db05d.chunk.js.map",
     "index.html": "/pokewiki_frontend/index.html",
-    "precache-manifest.8ea50cf2296389079abfcf45d4c0a707.js": "/pokewiki_frontend/precache-manifest.8ea50cf2296389079abfcf45d4c0a707.js",
+    "precache-manifest.089c5024a1a6a69729ec9603268d1345.js": "/pokewiki_frontend/precache-manifest.089c5024a1a6a69729ec9603268d1345.js",
     "service-worker.js": "/pokewiki_frontend/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/pokewiki_frontend/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.7c338c55.chunk.css.map": "/pokewiki_frontend/static/css/main.7c338c55.chunk.css.map",
+    "static/css/main.141e70dc.chunk.css.map": "/pokewiki_frontend/static/css/main.141e70dc.chunk.css.map",
     "static/js/2.796db05d.chunk.js.LICENSE.txt": "/pokewiki_frontend/static/js/2.796db05d.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pokewiki_frontend/static/media/RobotoMono-Medium.7cfbd428.ttf",
     "static/media/alakazam.png": "/pokewiki_frontend/static/media/alakazam.cb764576.png",
@@ -76,7 +76,7 @@
     "static/js/runtime-main.ff3ba227.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.796db05d.chunk.js",
-    "static/css/main.7c338c55.chunk.css",
+    "static/css/main.141e70dc.chunk.css",
     "static/js/main.0c9f6ea5.chunk.js"
   ]
 }
