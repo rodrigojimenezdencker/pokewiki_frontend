@@ -18,6 +18,7 @@ import MovesList from './components/MovesList/MovesList';
 import MovePage from './components/MovePage/MovePage';
 import NotFound from './components/NotFound/NotFound';
 import Create from './components/CRUD/Create/Create';
+import { Dashboard } from './components/CRUD/Dashboard/Dashboard';
 
 ReactDOM.render(
   <Router>
@@ -34,6 +35,8 @@ ReactDOM.render(
       <Route path="/movimientos/:name" component={MovePage} />
       <Route path="/notfound" component={NotFound} />
       <Route path="/crear" component={Create} />
+      <Route path="/dashboard" component={Dashboard} />
+
 
       <Route path="/" component={Home} />
     </Switch>
