@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { postJSON } from '../requests';
+import  Swal from 'sweetalert2';
+import { checkInputs } from './validateForm'
 import { Input, Form, FormGroup, Label } from 'reactstrap';
 
 export default class Create extends Component {
@@ -60,16 +62,49 @@ export default class Create extends Component {
         postJSON('https://localhost:44316/api/typepokemon', type2);
     }
 
+    handleChangeAbility = event => {
+        const { name, value, type} = event.target;
+
+        if (value != "" && name == "ability") {
+            document.getElementById("secondaryAbility").disabled = false;
+            document.getElementById("hiddenAbility").disabled = false;
+        } else {
+            document.getElementById("secondaryAbility").disabled = true;
+            document.getElementById("secondaryAbility").value = "";
+            document.getElementById("hiddenAbility").disabled = true;
+            document.getElementById("hiddenAbility").value = "";
+        }
+
+        this.setState({
+            [name]: type === 'number' ? parseInt() : value
+        });
+    }
+
+    handleChangeEvolution = event => {
+        const { name, value, type} = event.target;
+
+        if (value != "" && name == "evolution") {
+            document.getElementById("evolutionRequirements").disabled = false;
+        } else {
+            document.getElementById("evolutionRequirements").disabled = true;
+            document.getElementById("evolutionRequirements").value = "";
+        }
+
+        this.setState({
+            [name]: type === 'number' ? parseInt() : value
+        });
+    }
+
     handleChangeInput = event => {
         const { name, value, type} = event.target;
         this.setState({
-            [name]: type === 'number' ? parseInt(value) : value
+            [name]: type === 'number' ? parseInt() : value
         });
     }
 
     render() {
         return (
-            <Form>
+            <Form data-widget="create_form">
                 <FormGroup>
                     <Label for="numPokedex">Num. Pokédex</Label>
                     <Input
@@ -78,6 +113,7 @@ export default class Create extends Component {
                         name="numPokedex"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el número de la Pokédex"
+                        data-hook="numPokedex"
                         required
                     />
                 </FormGroup>
@@ -89,17 +125,19 @@ export default class Create extends Component {
                         name="name"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el nombre del Pokémon"
+                        data-hook="name"
                         required
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="description">Descricpión</Label>
+                    <Label for="description">Descripción</Label>
                     <Input
                         type="textarea"
                         id="description"
                         name="description"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la descripción"
+                        data-hook="description"
                         required
                     />
                 </FormGroup>
@@ -109,8 +147,9 @@ export default class Create extends Component {
                         type="text"
                         id="ability"
                         name="ability"
-                        onChange={this.handleChangeInput}
+                        onChange={this.handleChangeAbility}
                         placeholder="Inserta la habilidad"
+                        data-hook="ability"
                         required
                     />
                 </FormGroup>
@@ -122,6 +161,8 @@ export default class Create extends Component {
                         name="secondaryAbility"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la habilidad secundaria"
+                        data-hook="secondaryAbility"
+                        disabled
                     />
                 </FormGroup>
                 <FormGroup>
@@ -132,6 +173,8 @@ export default class Create extends Component {
                         name="hiddenAbility"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la habilidad oculta"
+                        data-hook="hiddenAbility"
+                        disabled
                     />
                 </FormGroup>
                 <FormGroup>
@@ -142,6 +185,7 @@ export default class Create extends Component {
                         name="image"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la imagen"
+                        data-hook="image"
                         required
                     />
                 </FormGroup>
@@ -153,6 +197,7 @@ export default class Create extends Component {
                         name="weight"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el peso del Pokémon"
+                        data-hook="weight"
                         required
                     />
                     <Label for="height">Altura</Label>
@@ -162,6 +207,7 @@ export default class Create extends Component {
                         name="height"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la altura del Pokémon"
+                        data-hook="height"
                         required
                     />
                 </FormGroup>
@@ -173,6 +219,7 @@ export default class Create extends Component {
                         name="ps"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la vida del Pokémon"
+                        data-hook="ps"
                         required
                     />
                     <Label for="attack">Ataque</Label>
@@ -182,6 +229,7 @@ export default class Create extends Component {
                         name="attack"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el ataque del Pokémon"
+                        data-hook="attack"
                         required
                     />
                     <Label for="defense">Defensa</Label>
@@ -191,6 +239,7 @@ export default class Create extends Component {
                         name="defense"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la defensa del Pokémon"
+                        data-hook="defense"
                         required
                     />
                     <Label for="spAttack">Ataque especial</Label>
@@ -200,6 +249,7 @@ export default class Create extends Component {
                         name="spAttack"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el ataque especial del Pokémon"
+                        data-hook="spAttack"
                         required
                     />
                     <Label for="spDefense">Defensa Especial</Label>
@@ -209,6 +259,7 @@ export default class Create extends Component {
                         name="spDefense"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la defensa especial del Pokémon"
+                        data-hook="spDefense"
                         required
                     />
                     <Label for="speed">Velocidad</Label>
@@ -218,6 +269,7 @@ export default class Create extends Component {
                         name="speed"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la velocidad del Pokémon"
+                        data-hook="speed"
                         required
                     />
                 </FormGroup>
@@ -229,6 +281,7 @@ export default class Create extends Component {
                         name="prevolution"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta la preevolución del Pokémon"
+                        data-hook="prevolution"
                     />
                 </FormGroup>
                 <FormGroup>
@@ -237,8 +290,9 @@ export default class Create extends Component {
                         type="number"
                         id="evolution"
                         name="evolution"
-                        onChange={this.handleChangeInput}
-                        placeholder="Inserta  del Pokémon"
+                        onChange={this.handleChangeEvolution}
+                        placeholder="Inserta la evolución del Pokémon"
+                        data-hook="evolution"
                     />
                     <Label for="evolutionRequirements">Requerimiento para Evolucionar</Label>
                     <Input
@@ -247,29 +301,34 @@ export default class Create extends Component {
                         name="evolutionRequirements"
                         onChange={this.handleChangeInput}
                         placeholder="Requerimiento para evolucionar Pokémon"
+                        data-hook="evolutionRequirements"
+                        disabled
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="type1">Tipo 1</Label>
+                    <Label for="type1">Tipo primario</Label>
                     <Input
                         type="number"
                         id="type1"
                         name="typeId"
                         onChange={this.handleChangeInput}
                         placeholder="Inserta el tipo primario"
+                        data-hook="type1"
+                        required
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="type2">Tipo 2</Label>
+                    <Label for="type2">Tipo secundario</Label>
                     <Input
                         type="number"
                         id="type2"
                         name="typeId2"
                         onChange={this.handleChangeInput}
-                        placeholder="Inserta el tipo primario"
+                        placeholder="Inserta el tipo secundario"
+                        data-hook="type2"
                     />
                 </FormGroup>
-                <input type="button" onClick={this.addPokemon} value="Enviar" />
+                <input type="button" onClick={() => checkInputs()} value="Enviar" />
                 <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
             </Form>
         )
