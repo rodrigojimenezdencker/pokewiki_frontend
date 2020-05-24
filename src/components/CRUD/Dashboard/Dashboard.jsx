@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Card, Button, CardTitle, CardText, CardGroup, CardBody, Container, Row, Col
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { PageTitle } from '../../PageTitle/PageTitle';
 
 export const Dashboard = () => (
@@ -14,7 +15,9 @@ export const Dashboard = () => (
                         <CardBody className="card_dashboard">
                             <CardTitle><h2><strong>Pokémon</strong></h2></CardTitle>
                             <CardText>Crea, elimina o actualiza la lista Pokémon.</CardText>
-                            <Button color="primary">Explorar</Button>
+                            <Link to={`/CRUDPokemon`}>
+                                <Button color="primary">Explorar</Button>
+                            </Link>
                         </CardBody>
                     </Card>
                 </Col>

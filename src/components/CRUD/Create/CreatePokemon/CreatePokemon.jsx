@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { postJSON, getJSON } from '../requests';
-import './Create.css';
-import {checkInputs} from './validateForm.js';
+import { postJSON, getJSON } from '../../requests';
+import './CreatePokemon.css';
+import {checkInputs} from './validateCreatePokemonForm.js';
 import { Input, Form, FormGroup, Label, Container, Row, Col } from 'reactstrap';
 
 export default class Create extends Component {
@@ -39,7 +39,7 @@ export default class Create extends Component {
         getJSON('https://localhost:44316/api/types')
             .then(data => this.setState({ types: data }));
         getJSON('https://localhost:44316/api/pokemon')
-            .then(data => this.setState({ pokemons: data }))
+            .then(data => this.setState({ pokemons: data }));
     }
 
     submitForm = (event) => {
