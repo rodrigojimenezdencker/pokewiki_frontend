@@ -58,7 +58,7 @@ export default class PokemonList extends Component {
                                 className="img_pokemon"
                                 />
                             </td>
-                            <td>MODIFICAR | BORRAR</td>
+                            <td><input type="submit" className="btn btn-primary" value="Modificar" /> | <input type="submit" className="btn btn-danger" value="Borrar" /></td>
                             </tr>
                         )}
                     </tbody>
