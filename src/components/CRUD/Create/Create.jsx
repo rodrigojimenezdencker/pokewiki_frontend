@@ -39,6 +39,12 @@ export default class Create extends Component {
             .then(data => this.setState({ types: data }));
     }
 
+    submitForm = (event) => {
+        if (checkInputs(event)) {
+            this.addPokemon();
+        }
+    }
+
     addPokemon = () => {
         postJSON('https://localhost:44316/api/pokemon', this.state)
             .then(() => this.addPrimaryType());
@@ -100,6 +106,22 @@ export default class Create extends Component {
             [name]: type === 'number' ? parseInt() : value
         });
     }
+
+    handleChangeType = event => {
+        const { name, value, type} = event.target;
+
+        if (value != "DEFAULT" && name == "typeId") {
+            document.getElementById("typeId2").disabled = false;
+        } else {
+            document.getElementById("typeId2").disabled = true;
+            document.getElementById("typeId2").value = "DEFAULT";
+        }
+
+        this.setState({
+            [name]: type === 'number' ? parseInt() : value
+        });
+    }
+
 
     handleChangeInput = event => {
         const { name, value, type } = event.target;
@@ -328,7 +350,7 @@ export default class Create extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="type1">Tipo 1</Label>
-                        <Input type="select" name="typeId" id="typeId" defaultValue={'DEFAULT'} onChange={this.handleChangeInput}>
+                        <Input type="select" name="typeId" id="typeId" data-hook="type1" required defaultValue={'DEFAULT'} onChange={this.handleChangeType}>
                             <option value="DEFAULT" disabled>Selecciona el primer tipo</option>
                             {types.map(type =>
                                 <option key={type.typeId} value={type.typeId}>{type.name}</option>
@@ -337,15 +359,15 @@ export default class Create extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="type2">Tipo 2</Label>
-                        <Input type="select" name="typeId2" id="typeId2" defaultValue={'DEFAULT'} onChange={this.handleChangeInput}>
+                        <Input disabled type="select" name="typeId2" id="typeId2" data-hook="type2" defaultValue={'DEFAULT'} onChange={this.handleChangeInput}>
                             <option value="DEFAULT">Selecciona el segundo tipo</option>
                             {types.map(type =>
                                 <option key={type.typeId} value={type.typeId}>{type.name}</option>
                             )}
                         </Input>
                     </FormGroup>
-                    <input type="button" onClick={() => checkInputs()} value="Enviar" />
-                    <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
+                    <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Crear" />
+                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )

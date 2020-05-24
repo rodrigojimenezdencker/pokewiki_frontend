@@ -1,7 +1,9 @@
 import Swal from "sweetalert2";
 
-export function checkInputs () {
+export function checkInputs (event) {
     var widget = document.querySelector('[data-widget="create_form"]');
+
+    event.preventDefault();
 
     if (widget.querySelector('[data-hook="numPokedex"]').value != null) {
         var numPokedex = widget.querySelector('[data-hook="numPokedex"]').value;
@@ -17,14 +19,6 @@ export function checkInputs () {
 
     if (widget.querySelector('[data-hook="ability"]').value != null) {
         var ability = widget.querySelector('[data-hook="ability"]').value;
-    }
-
-    if (widget.querySelector('[data-hook="secondaryAbility"]').value != null) {
-        var secondaryAbility = widget.querySelector('[data-hook="secondaryAbility"]').value;
-    }
-
-    if (widget.querySelector('[data-hook="hiddenAbility"]').value != null) {
-        var hiddenAbility = widget.querySelector('[data-hook="hiddenAbility"]').value;
     }
 
     if (widget.querySelector('[data-hook="image"]').value != null) {
@@ -63,10 +57,6 @@ export function checkInputs () {
         var speed = widget.querySelector('[data-hook="speed"]').value;
     }
 
-    if (widget.querySelector('[data-hook="prevolution"]').value != null) {
-        var prevolution = widget.querySelector('[data-hook="prevolution"]').value;
-    }
-
     if (widget.querySelector('[data-hook="evolution"]').value != null) {
         var evolution = widget.querySelector('[data-hook="evolution"]').value;
     }
@@ -78,18 +68,14 @@ export function checkInputs () {
     if (widget.querySelector('[data-hook="type1"]').value != null) {
         var type1 = widget.querySelector('[data-hook="type1"]').value;
     }
-
-    if (widget.querySelector('[data-hook="type2"]').value != null) {
-        var type2 = widget.querySelector('[data-hook="type2"]').value;
-    }
-
+    
     if (numPokedex == 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
             text: 'El campo num. de Pokédex es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (isNaN(parseInt(numPokedex))) {
@@ -98,7 +84,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo num. Pokédex tiene que ser un numero!'
         })
-        return;
+        return false;
     }
 
     if (name === "") {
@@ -107,7 +93,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo nombre es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (description === "") {
@@ -116,7 +102,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo descripción es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (ability === "") {
@@ -125,7 +111,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo habilidad es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (image === "") {
@@ -134,7 +120,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo imagen es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (weight === "") {
@@ -143,7 +129,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo peso es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (height === "") {
@@ -152,7 +138,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo peso es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (ps == 0) {
@@ -161,7 +147,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo PS es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (isNaN(parseInt(ps))) {
@@ -170,7 +156,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo PS tiene que ser un numero!'
         })
-        return;
+        return false;
     }
 
     if (attack == 0) {
@@ -179,7 +165,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo ataque es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (defense == 0) {
@@ -188,7 +174,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo defensa es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (spAttack == 0) {
@@ -197,7 +183,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo ataque especial es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (spDefense == 0) {
@@ -206,7 +192,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo defensa especial es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (speed == 0) {
@@ -215,7 +201,7 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo velocidad es obligatorio!'
         });
-        return;
+        return false;
     }
 
     if (evolution != "" && evolutionRequirements == "") {
@@ -224,8 +210,31 @@ export function checkInputs () {
             title: 'Error',
             text: 'El campo requerimiento para evolucionar es obligatorio!'
         });
-        return;
+        return false;
     }
-    
-    widget.submit();
+
+    if (evolution == "" && evolutionRequirements != "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Es necesaria una evolucion para el requerimiento!'
+        });
+        return false;
+    }
+
+    if (type1 == "DEFAULT") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El campo tipo primario es obligatorio!'
+        });
+        return false;
+    }
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Correcto',
+        text: 'Pokémon ' + name + ' creado correctamente'
+    })
+    return true;
 }
