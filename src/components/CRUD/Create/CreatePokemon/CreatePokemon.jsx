@@ -365,7 +365,7 @@ export default class Create extends Component {
                         </Input>
                     </FormGroup>
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Crear" />
-                    <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
+                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )
