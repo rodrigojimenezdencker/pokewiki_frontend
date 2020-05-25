@@ -26,7 +26,9 @@ export const Dashboard = () => (
                         <CardBody>
                             <CardTitle><h2><strong>Tipos</strong></h2></CardTitle>
                             <CardText>Crea, elimina o actualiza la lista de tipos.</CardText>
-                            <Button color="primary">Explorar</Button>
+                            <Link to={`/dashboard/types`}>
+                                <Button color="primary">Explorar</Button>
+                            </Link>
                         </CardBody>
                     </Card>
                 </Col>
@@ -35,7 +37,9 @@ export const Dashboard = () => (
                         <CardBody>
                             <CardTitle><h2><strong>Movimientos</strong></h2></CardTitle>
                             <CardText>Crea, elimina o actualiza la lista de movimientos.</CardText>
-                            <Button color="primary">Explorar</Button>
+                            <Link to={`/dashboard/moves`}>
+                                <Button color="primary">Explorar</Button>
+                            </Link>
                         </CardBody>
                     </Card>
                 </Col>

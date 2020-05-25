@@ -55,7 +55,9 @@ export default class CRUDList extends Component {
 
         return (
             <Container>
-                <Button color="secondary">Back to dashboard</Button>
+                <Link to="/dashboard">
+                    <Button color="secondary">Back to dashboard</Button>
+                </Link>
                 <h1>Tabla de datos</h1>
                 <Link to={`/dashboard/${id}/crear`}>
                     <Button color="success" className="mr-2">Nuevo</Button>
