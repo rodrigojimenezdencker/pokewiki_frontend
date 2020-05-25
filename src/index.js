@@ -22,6 +22,7 @@ import { Dashboard } from './components/CRUD/Dashboard/Dashboard';
 import List from './components/CRUD/List/List';
 import UpdatePokemon from './components/CRUD/Update/UpdatePokemon/UpdatePokemon';
 import DeletePokemon from './components/CRUD/Delete/DeletePokemon/DeletePokemon';
+import CreateType from './components/CRUD/Create/CreateType/CreateType';
 
 ReactDOM.render(
   <Router>
@@ -44,6 +45,7 @@ ReactDOM.render(
       <Route path="/dashboard/pokemon/modificar/:name" component={UpdatePokemon} />
       <Route path="/dashboard/pokemon/eliminar/:id" component={DeletePokemon} />
       <Route path="/dashboard/pokemon/eliminar/:name" component={DeletePokemon} />
+      <Route path="/dashboard/types/crear" component={CreateType} />
 
       <Route path="/" component={Home} />
     </Switch>
