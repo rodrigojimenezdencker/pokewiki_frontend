@@ -25,6 +25,7 @@ import DeletePokemon from './components/CRUD/Delete/DeletePokemon/DeletePokemon'
 import CreateType from './components/CRUD/Create/CreateType/CreateType';
 import UpdateType from './components/CRUD/Update/UpdateType/UpdateType';
 import DeleteType from './components/CRUD/Delete/DeleteType/DeleteType';
+import CreateMove from './components/CRUD/Create/CreateMove/CreateMove';
 
 ReactDOM.render(
   <Router>
@@ -52,6 +53,7 @@ ReactDOM.render(
       <Route path="/dashboard/types/modificar/:name" component={UpdateType} />
       <Route path="/dashboard/types/eliminar/:id" component={DeleteType} />
       <Route path="/dashboard/types/eliminar/:name" component={DeleteType} />
+      <Route path="/dashboard/moves/crear" component={CreateMove} />
 
       <Route path="/" component={Home} />
     </Switch>
