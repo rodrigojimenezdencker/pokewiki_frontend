@@ -53,7 +53,7 @@ export default class Delete extends Component {
                 </Container>
                 <br />
                 <p>Cuidado! Vas eliminar completamente el tipo {this.state.name} de la web, ¿estas seguro?</p>
-                <Link to="/dashboard/types/eliminar">
+                <Link to="/dashboard/types">
                     <input type="button" className="btn btn-primary mr-2" value="Cancelar" />
                 </Link>
                 <input type="button" className="btn btn-danger" onClick={this.deleteType} value="Eliminar" />

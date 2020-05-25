@@ -81,7 +81,7 @@ export default class Delete extends Component {
                 </Container>
                 <br />
                 <p>Cuidado! Vas eliminar completamente a {this.state.name} de la web, ¿estas seguro?</p>
-                <Link to="/dashboard/pokemon/eliminar">
+                <Link to="/dashboard/pokemon">
                     <input type="button" className="btn btn-primary mr-2" value="Cancelar" />
                 </Link>
                 <input type="button" className="btn btn-danger" onClick={this.deletePokemon} value="Eliminar" />
