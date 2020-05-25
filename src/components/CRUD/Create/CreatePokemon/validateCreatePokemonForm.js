@@ -235,6 +235,8 @@ export function checkInputs (event) {
         icon: 'success',
         title: 'Correcto',
         text: 'Pokémon ' + name + ' creado correctamente'
-    })
+    }).then((result) => {
+        widget.reset();
+    });
     return true;
 }

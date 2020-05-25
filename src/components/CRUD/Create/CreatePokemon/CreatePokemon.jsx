@@ -62,7 +62,7 @@ export default class Create extends Component {
 
         postJSON('https://localhost:44316/api/typepokemon', type1)
             .then(() => {
-                if (document.getElementById("type2").value !== "") this.addSecondaryType();
+                if (this.state.typeId2 != null) this.addSecondaryType();
             })
             .catch(error => console.log(error));
     }
@@ -91,7 +91,7 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -106,7 +106,7 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -121,14 +121,14 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
         });
     }
 
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -320,8 +320,8 @@ export default class Create extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="prevolution">Preevolución</Label>
-                        <Input type="select" name="prevolution" id="prevolution" data-hook="prevolution" defaultValue={'DEFAULT'} onChange={this.handleChangeEvolution}>
-                            <option value="DEFAULT">Selecciona la evolución</option>
+                        <Input type="select" name="prevolution" id="prevolution" data-hook="prevolution" defaultValue={'DEFAULT'} onChange={this.handleChangeInput}>
+                            <option value="DEFAULT">Selecciona la preevolución</option>
                             {pokemons.map(pokemon =>
                                 <option key={pokemon.numPokedex} value={pokemon.numPokedex}>{pokemon.name}</option>
                             )}
@@ -365,7 +365,7 @@ export default class Create extends Component {
                         </Input>
                     </FormGroup>
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Crear" />
-                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
+                    <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
                 </Form>
             </Container>
         )
