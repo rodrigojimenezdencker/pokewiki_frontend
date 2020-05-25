@@ -132,7 +132,7 @@ export default class UpdateMove extends Component {
                         </Input>
                     </FormGroup>
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Modificar" />
-                    <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
+                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )
