@@ -27,6 +27,7 @@ import UpdateType from './components/CRUD/Update/UpdateType/UpdateType';
 import DeleteType from './components/CRUD/Delete/DeleteType/DeleteType';
 import CreateMove from './components/CRUD/Create/CreateMove/CreateMove';
 import UpdateMove from './components/CRUD/Update/UpdateMove/UpdateMove';
+import DeleteMove from './components/CRUD/Delete/DeleteMove/DeleteMove';
 
 ReactDOM.render(
   <Router>
@@ -57,6 +58,8 @@ ReactDOM.render(
       <Route path="/dashboard/moves/crear" component={CreateMove} />
       <Route path="/dashboard/moves/modificar/:id" component={UpdateMove} />
       <Route path="/dashboard/moves/modificar/:name" component={UpdateMove} />
+      <Route path="/dashboard/moves/eliminar/:id" component={DeleteMove} />
+      <Route path="/dashboard/moves/eliminar/:name" component={DeleteMove} />
 
       <Route path="/" component={Home} />
     </Switch>
