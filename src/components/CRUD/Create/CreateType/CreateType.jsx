@@ -99,7 +99,7 @@ export default class CreateType extends Component {
                         </Col>
                     </Row>  
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Crear" />
-                    <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" />
+                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )
