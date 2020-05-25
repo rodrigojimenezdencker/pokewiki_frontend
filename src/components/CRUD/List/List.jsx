@@ -67,7 +67,7 @@ export default class CRUDList extends Component {
                     handleChange={this.handleChange}
                 />
                 <Table striped>
-                    <thead>
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
