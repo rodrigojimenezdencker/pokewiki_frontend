@@ -31,7 +31,7 @@ export default class Home extends Component {
                     <p className="section_description">Pokémon es un videojuego que salió el 1995 y este ha ido evolucionando hasta ser al día de hoy uno de los juegos más populares del mundo. En este apartado encontrarás toda la información general de los 151 Pokémon que existen en la primera generación.</p>
                     <div id="button_container">
                         <Link to="/pokemon">
-                            <button tabindex="-1" className="complete_list">
+                            <button tabIndex="-1" className="complete_list">
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
@@ -49,7 +49,7 @@ export default class Home extends Component {
                         En este apartado encontrarás toda la información de los diferentes movimientos que existen y los Pokémon que los aprenden.</p>
                     <div id="button_container">
                         <Link to="/movimientos">
-                            <button tabindex="-1" className="complete_list">
+                            <button tabIndex="-1" className="complete_list">
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
@@ -65,7 +65,7 @@ export default class Home extends Component {
                     <p className="section_description">En los juegos tendrás que usar la estrategia de tipos para llegar lejos, para ello, te damos toda la información que necesitas sobre cada tipo, que tipos son buenos contra otras y débiles y los tipos de cada Pokémon y movimientos.</p>
                     <div id="button_container">
                         <Link to="/tipos">
-                            <button tabindex="-1" className="complete_list">
+                            <button tabIndex="-1" className="complete_list">
                                 <span className="circle" aria-hidden="true">
                                     <span className="icon arrow"></span>
                                 </span>
