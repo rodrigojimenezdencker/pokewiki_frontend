@@ -5,18 +5,6 @@ import { Link } from 'react-router-dom';
 import { Container, Table, Button } from 'reactstrap';
 import { SearchBox } from '../../SearchBox/SearchBox';
 
-function importAll(r) {
-    let images = {};
-    r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
-    return images;
-}
-
-const pokemon = importAll(require.context('../../../Assets/img/pokemon', false, /\.(png)$/));
-// const movements = importAll(require.context('../../../../Assets/img/movements', false, /\.(svg)$/));
-const types = importAll(require.context('../../../Assets/svg/types', false, /\.(svg)$/));
-
-
-
 export default class CRUDList extends Component {
     constructor(props) {
         super(props);
@@ -40,15 +28,21 @@ export default class CRUDList extends Component {
         const { object } = this.state;
         let id = '';
 
-        if (this.props.match.params.objectName === 'pokemon') {
-            id = 'pokemon'
-        } else if (this.props.match.params.objectName === 'types') {
-            id = 'types'
-        } else if (this.props.match.params.objectName === 'moves') {
-            id = 'moves'
+        switch (this.props.match.params.objectName) {
+            case 'pokemon':
+                id = 'pokemon'
+                break;
+            case 'types':
+                id = 'types';
+                break;
+            case 'moves':
+                id = 'moves';
+                break;
+            default:
+                id = 'pokemon';
+                break;
         }
 
-        // console.log(objectName)
         const filteredObject = object.filter(obj =>
             obj.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
         )
