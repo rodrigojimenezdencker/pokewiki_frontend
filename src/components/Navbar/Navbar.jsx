@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 export default class Menu extends Component {
     toggleNav = () => {
         let nav = document.querySelector('.navbarPoke');
-        console.log(nav);
         nav.classList.toggle('hidden_nav');
     }
 
