@@ -28,8 +28,6 @@ export default class PokemonPage extends Component {
             id: params.id
         }
     }
-    statsChart = React.createRef();
-
 
     componentDidMount() {
         this.getPokemon();
