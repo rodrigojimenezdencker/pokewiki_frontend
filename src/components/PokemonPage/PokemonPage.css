@@ -240,24 +240,3 @@
   background: #539ddf;
   box-shadow: 0 0 20px #539ddf;
 }
-
-/* .img_pkm {
-  position: absolute;
-  transform-style: preserve-3d;
-  top: 0;
-  left: 0;
-  margin: 0;
-  animation: loader_animation_reverse 1.2s linear;
-} */
-
-/* @keyframes loader_animation_reverse {
-  0% {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotateY(1320deg);
-  }
-
-  100% {
-    transform: translate(0, 0) rotateY(0deg);
-  }
-} */

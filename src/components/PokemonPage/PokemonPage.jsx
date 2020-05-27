@@ -121,7 +121,6 @@ export default class PokemonPage extends Component {
                                 <p><span style={{ color: pokemon.type1.color }}>{pokemon.type1.name}</span><span>{pokemon.type2 ? " / " : null}</span><span style={{ color: pokemon.type2 ? pokemon.type2.color : null }}>{pokemon.type2 ? pokemon.type2.name : pokemon.type2}</span></p>
                             </div>
                             <img
-                                className="img_pkm"
                                 src={pokemonImages[pokemon.image]}
                                 alt={pokemon.name}
                             />
