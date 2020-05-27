@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import './TypePage.css'
 import { getJSON } from '../CRUD/requests';
+import { Table } from 'reactstrap';
+import { PageTitle } from '../PageTitle/PageTitle';
+import './TypePage.css';
+import { Link } from 'react-router-dom';
 
 export default class TypePage extends Component {
     constructor(props) {
@@ -12,75 +15,89 @@ export default class TypePage extends Component {
 
     componentDidMount() {
         const { id, name } = this.props.match.params;
-
         let typesToFetch = id ? id : name;
 
         getJSON('https://localhost:44316/api/types/' + typesToFetch)
-            .then(data => {
-                this.setState({ type: data });
-            })
+            .then(data => this.setState({ type: data }));
     }
+
+    importAllImages = (r) => {
+        let images = {};
+        r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
+        return images;
+    }
+
     render() {
-        function importAll(r) {
-            let images = {};
-            r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
-            return images;
-        }
-        
-        const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
-        const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
-        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
+        const pokemonImages = this.importAllImages(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
+        const typesImages = this.importAllImages(require.context('../../Assets/svg/types', false, /\.(svg)$/));
+        const secondaryTypesImages = this.importAllImages(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
         const { type } = this.state;
+
         if (type == null) return null;
-        
+
         return (
-            <div>
-                <p>{type.typeId}</p>
-                <p>{type.name}</p>
-                <p>{type.color}</p>
+            <main id="type_page">
+                <PageTitle>TIPO {type.name}</PageTitle>
                 <div className={`icon typeImage${type.typeId}`}>
-                    <img src={typesImages[type.image]}></img>
+                    <img
+                        src={typesImages[type.image]}
+                        alt={type.name}
+                    />
                 </div>
-                <img src={secondaryTypesImages[type.secondaryImage]}></img>
-                <table className="table table-striped">
+                <h2>Lista de Pokémon</h2>
+                <Table striped>
                     <thead>
                         <tr>
-                            <th>Num Pokedex</th>
+                            <th># Pokédex</th>
                             <th>Pokemon</th>
                             <th>Imagen</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {type.pokemons.map(pokemon => 
+                        {type.pokemons.map(pokemon =>
                             <tr key={pokemon.numPokedex}>
                                 <td>{pokemon.numPokedex}</td>
-                                <td>{pokemon.name}</td>
+                                <td>
+                                    <Link to={`/pokemon/${pokemon.name}`}>
+                                        {pokemon.name}
+                                    </Link>
+                                </td>
                                 <td><img src={pokemonImages[pokemon.image]} /></td>
                             </tr>
                         )}
                     </tbody>
-                </table>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Ataque</th>
-                            <th>Poder</th>
-                            <th>Precisión</th>
-                            <th>Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {type.moves.map(move => 
-                            <tr key={move.moveId}>
-                                <td>{move.name}</td>
-                                <td>{move.power}</td>
-                                <td>{move.accuracy}</td>
-                                <td>{move.quantity}</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+                </Table>
+                {type.moves.length !== 0 ?
+                    <>
+                        <h2>Lista de movimientos</h2>
+                        <Table striped>
+                            <thead>
+                                <tr>
+                                    <th>Ataque</th>
+                                    <th>Poder</th>
+                                    <th>Precisión</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {type.moves.map(move =>
+                                    <tr key={move.moveId}>
+                                        <td>
+                                            <Link to={`/movimientos/${move.name.replace(" ", "_")}`}>
+                                                {move.name}
+                                            </Link>
+                                        </td>
+                                        <td>{move.power}</td>
+                                        <td>{move.accuracy}</td>
+                                        <td>{move.quantity}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </Table>
+                    </>
+                    : null
+                }
+            </main>
         )
     }
 }
