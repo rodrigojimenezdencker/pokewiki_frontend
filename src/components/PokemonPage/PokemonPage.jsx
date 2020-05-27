@@ -3,41 +3,86 @@ import './PokemonPage.css'
 import { getJSON } from '../CRUD/requests';
 import { PokemonCard } from '../PokemonCard/PokemonCard';
 import { LoadingCardContainer } from '../LoadingCardContainer/LoadingCardContainer';
+import Chart from "chart.js";
+import { Link } from 'react-router-dom';
+
+function importAll(r) {
+    let images = {};
+    r.keys().map((item) => { return images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
+const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
 
 export default class PokemonPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pokemon: null,
-            isLoading: true
+            isLoading: false
         }
     }
+    statsChart = React.createRef();
+
 
     componentDidMount() {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
         getJSON('https://localhost:44316/api/pokemon/' + pokemonToFetch)
-            .then(data => {
+            .then(async data => {
                 this.setState({ pokemon: data });
                 setTimeout(() => {
                     this.setState({ isLoading: false })
+                    this.loadChart(this.state.pokemon);
                 }, 2500);
-            });
+            })
     }
 
+    loadChart = (pokemon) => {
+        this.myChart = new Chart(this.statsChart.current, {
+            type: 'bar',
+            data: {
+                labels: ['PS', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed'],
+                datasets: [{
+                    label: "Stats",
+                    data: [pokemon.ps, pokemon.attack, pokemon.defense, pokemon.spAttack, pokemon.spDefense, pokemon.speed],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        })
+    }
+
+
     render() {
-        function importAll(r) {
-            let images = {};
-            r.keys().map((item) => { return images[item.replace('./', '')] = r(item); });
-            return images;
-        }
-
-        const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
-        const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
-        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
-
         const { pokemon, isLoading } = this.state;
+
         if (pokemon === null) return null;
         return <>
             {isLoading ?
@@ -45,53 +90,107 @@ export default class PokemonPage extends Component {
                     <PokemonCard pokemon={pokemon} />
                 </LoadingCardContainer>
                 :
-                <div>
-                    <p>#{pokemon.numPokedex} - {pokemon.name}</p>
-                    <img
-                        src={pokemonImages[pokemon.image]}
-                        className="img_pkm"></img>
-                    <p>{pokemon.type1.name}</p>
-                    <div className={`icon typeImage${pokemon.type1.typeId}`}>
-                        <img
-                            src={typesImages[pokemon.type1.image]}></img>
+                <main id="pokemon_page">
+                    <div className="container">
+                        <div className="pokemon_header">
+                            <div className="pokemon_basic-info">
+                                <p className="num_pokedex">#{pokemon.numPokedex}</p>
+                                <h1>{pokemon.name}</h1>
+                                <p><span style={{ color: pokemon.type1.color }}>{pokemon.type1.name}</span><span>{pokemon.type2 ? " / " : null}</span><span style={{ color: pokemon.type2 ? pokemon.type2.color : null }}>{pokemon.type2 ? pokemon.type2.name : pokemon.type2}</span></p>
+                            </div>
+                            <img
+                                className="img_pkm"
+                                src={pokemonImages[pokemon.image]}
+                                alt={pokemon.name}
+                            />
+                        </div>
+                        <p className="component_section description">{pokemon.description}</p>
+                        <div className="component_section abilities_container">
+                            <p>Habilidad: {pokemon.ability}</p>
+                            {pokemon.secondaryAbility ? <p>Habilidad secundaria: {pokemon.secondaryAbility}</p> : null}
+                            {pokemon.hiddenAbility ? <p>Habilidad oculta: {pokemon.hiddenAbility}</p> : null}
+                        </div>
+                        <div className="component_section characteristics">
+                            <p>Peso: {pokemon.weight}</p>
+                            <p>Altura: {pokemon.height}</p>
+                            <canvas
+                                ref={this.statsChart}
+                            />
+                        </div>
+                        {pokemon.prevolution || pokemon.evolution ?
+                            <div className="component_section evolutions">
+                                {pokemon.prevolution ?
+                                    <>
+                                        <div>
+                                            <img
+                                                src={pokemonImages[pokemon.prevolution.image]}
+                                                alt={pokemon.prevolution}
+                                            />
+                                            <p>{pokemon.prevolution.name}</p>
+                                        </div>
+
+                                        <p className="evolution_requirements">{pokemon.prevolution.evolutionRequirements}</p>
+                                    </>
+                                    :
+                                    null
+                                }
+                                <div>
+                                    <img src={pokemonImages[pokemon.image]} alt={pokemon.name} />
+                                    <p>{pokemon.name}</p>
+                                </div>
+                                {pokemon.evolution ?
+                                    <>
+                                        <p className="evolution_requirements">{pokemon.evolutionRequirements}</p>
+                                        <div>
+                                            <img
+                                                src={pokemonImages[pokemon.evolution.image]}
+                                                alt={pokemon.evolution}
+                                            />
+                                            <p>{pokemon.evolution.name}</p>
+                                        </div>
+                                    </>
+                                    :
+                                    null
+                                }
+                            </div>
+                            :
+                            null
+                        }
+                        <div className="component_section movements">
+                            <table id="moves_table" className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nivel</th>
+                                        <th>Movimiento</th>
+                                        <th>Tipo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {pokemon.moves.map(move =>
+                                        (
+                                            <tr key={move.moveId}>
+                                                <td>{move.level}</td>
+                                                <td>
+                                                    <Link to={`../../movimientos/${move.moveId}`}>
+                                                        {move.name}
+                                                    </Link>
+                                                </td>
+                                                <td>
+                                                    <Link to={`../../tipos/${move.typeId}`}>
+                                                        <img
+                                                            src={secondaryTypesImages[move.typeImage]}
+                                                            alt={move.name}
+                                                        />
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        )
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div className={pokemon.type2 ? `icon typeImage${pokemon.type2.typeId}` : pokemon.type2}>
-                        <img src={pokemon.type2 ? typesImages[pokemon.type2.image] : pokemon.type2}></img>
-                    </div>
-                    <p>{pokemon.type2 ? pokemon.type2.name : pokemon.type2}</p>
-                    <p>{pokemon.description}</p>
-                    <p>{pokemon.ability}</p>
-                    <p>{pokemon.secondaryAbility}</p>
-                    <p>{pokemon.hiddenAbility}</p>
-                    <p>{pokemon.weight}</p>
-                    <p>{pokemon.height}</p>
-                    <p>{pokemon.ps}</p>
-                    <p>{pokemon.attack}</p>
-                    <p>{pokemon.defense}</p>
-                    <p>{pokemon.spAttack}</p>
-                    <p>{pokemon.spDefense}</p>
-                    <p>{pokemon.speed}</p>
-                    <img src={pokemon.prevolution ? pokemonImages[pokemon.prevolution.image] : pokemon.prevolution}></img>
-                    <p>{pokemon.prevolution ? pokemon.prevolution.name : pokemon.prevolution}</p>
-                    <p>{pokemon.prevolution ? pokemon.prevolution.evolutionRequirements : pokemon.prevolution}</p>
-                    <img src={pokemon.evolution ? pokemonImages[pokemon.evolution.image] : pokemon.evolution}></img>
-                    <p>{pokemon.evolution ? pokemon.evolution.name : pokemon.evolution}</p>
-                    <p>{pokemon.evolutionRequirements}</p>
-                    <table>
-                        <tr>
-                            <th>Nivel</th>
-                            <th>Movimiento</th>
-                            <th>Tipo</th>
-                        </tr>
-                        {pokemon.moves.map(move => {
-                            return <tr>
-                                <td>{move.level}</td>
-                                <td>{move.name}</td>
-                                <td><img src={secondaryTypesImages[move.typeImage]} /></td>
-                            </tr>
-                        })}
-                    </table>
-                </div >
+                </main>
             }
         </>
     }

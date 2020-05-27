@@ -1,11 +1,145 @@
+#pokemon_page {
+  background-color: rgb(240, 240, 240);
+  margin: 0 auto;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2em;
+}
+
+.pokemon_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.component_section {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid gray;
+  margin-bottom: 40px;
+}
+
+.component_section.description::before {
+  content: "Descripción";
+  box-sizing: border-box;
+  position: absolute;
+  top: -15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px;
+  border-color: gray;
+  box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.3);
+  border-style: solid;
+  padding: 0 5px;
+}
+
+#pokemon_page .num_pokedex {
+  margin: 0;
+}
+
+.abilities_container {
+  position: relative;
+}
+
+.component_section.abilities_container::before {
+  content: "Habilidades";
+  box-sizing: border-box;
+  position: absolute;
+  top: -15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px;
+  border-color: gray;
+  box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.3);
+  border-style: solid;
+  padding: 0 5px;
+}
+
+.characteristics {
+  position: relative;
+}
+
+.component_section.characteristics::before {
+  content: "Características";
+  box-sizing: border-box;
+  position: absolute;
+  top: -15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px;
+  border-color: gray;
+  box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.3);
+  border-style: solid;
+  padding: 0 5px;
+}
+
+.component_section.movements {
+  position: relative;
+}
+
+.component_section.movements::before {
+  content: "Movimientos";
+  box-sizing: border-box;
+  position: absolute;
+  top: -15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px;
+  border-color: gray;
+  box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.3);
+  border-style: solid;
+  padding: 0 5px;
+}
+
+.component_section.evolutions {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.component_section.evolutions::before {
+  content: "Evoluciones";
+  box-sizing: border-box;
+  position: absolute;
+  top: -15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px;
+  border-color: gray;
+  box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.3);
+  border-style: solid;
+  padding: 0 5px;
+}
+
+.evolution_requirements {
+  position: relative;
+}
+
+.evolution_requirements::before {
+  content: 'Requisito:';
+  position: absolute;
+  top: -25px;
+  font-size: 1rem;
+}
+
 .icon {
   border-radius: 100%;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   transition: 200ms all;
 }
 
-.icon:hover{
+.icon:hover {
   filter: saturate(200%);
   transform: scale(1.1);
   cursor: pointer;
@@ -18,8 +152,8 @@
 }
 
 .typeImage3 {
-  background: #92BC2C;
-  box-shadow: 0 0 20px #92BC2C;
+  background: #92bc2c;
+  box-shadow: 0 0 20px #92bc2c;
 }
 
 .typeImage15 {
@@ -28,95 +162,95 @@
 }
 
 .typeImage4 {
-  background: #0C69C8;
-  box-shadow: 0 0 20px #0C69C8;
+  background: #0c69c8;
+  box-shadow: 0 0 20px #0c69c8;
 }
 
 .typeImage5 {
-  background: #F2D94E;
-  box-shadow: 0 0 20px #F2D94E;
+  background: #f2d94e;
+  box-shadow: 0 0 20px #f2d94e;
 }
 
 .typeImage7 {
-  background: #FBA54C;
-  box-shadow: 0 0 20px #FBA54C;
+  background: #fba54c;
+  box-shadow: 0 0 20px #fba54c;
 }
 
 .typeImage8 {
-  background: #EE90E6;
-  box-shadow: 0 0 20px #EE90E6;
+  background: #ee90e6;
+  box-shadow: 0 0 20px #ee90e6;
 }
 
 .typeImage10 {
-  background: #D3425F;
-  box-shadow: 0 0 20px #D3425F;
+  background: #d3425f;
+  box-shadow: 0 0 20px #d3425f;
 }
 
 .typeImage18 {
-  background: #A1BBEC;
-  box-shadow: 0 0 20px #A1BBEC;
+  background: #a1bbec;
+  box-shadow: 0 0 20px #a1bbec;
 }
 
 .typeImage6 {
-  background: #5F6DBC;
-  box-shadow: 0 0 20px #5F6DBC;
+  background: #5f6dbc;
+  box-shadow: 0 0 20px #5f6dbc;
 }
 
 .typeImage12 {
-  background: #5FBD58;
-  box-shadow: 0 0 20px #5FBD58;
+  background: #5fbd58;
+  box-shadow: 0 0 20px #5fbd58;
 }
 
 .typeImage16 {
-  background: #DA7C4D;
-  box-shadow: 0 0 20px #DA7C4D;
+  background: #da7c4d;
+  box-shadow: 0 0 20px #da7c4d;
 }
 
 .typeImage9 {
-  background: #75D0C1;
-  box-shadow: 0 0 20px #75D0C1;
+  background: #75d0c1;
+  box-shadow: 0 0 20px #75d0c1;
 }
 
 .typeImage11 {
-  background: #A0A29F;
-  box-shadow: 0 0 20px #A0A29F;
+  background: #a0a29f;
+  box-shadow: 0 0 20px #a0a29f;
 }
 
 .typeImage17 {
-  background: #B763CF;
-  box-shadow: 0 0 20px #B763CF;
+  background: #b763cf;
+  box-shadow: 0 0 20px #b763cf;
 }
 
 .typeImage13 {
-  background: #FA8581;
-  box-shadow: 0 0 20px #FA8581;
+  background: #fa8581;
+  box-shadow: 0 0 20px #fa8581;
 }
 
 .typeImage14 {
-  background: #C9BB8A;
-  box-shadow: 0 0 20px #C9BB8A;
+  background: #c9bb8a;
+  box-shadow: 0 0 20px #c9bb8a;
 }
 
 .typeImage1 {
-  background: #5695A3;
-  box-shadow: 0 0 20px #5695A3;
+  background: #5695a3;
+  box-shadow: 0 0 20px #5695a3;
 }
 
 .typeImage2 {
-  background: #539DDF;
-  box-shadow: 0 0 20px #539DDF;
+  background: #539ddf;
+  box-shadow: 0 0 20px #539ddf;
 }
 
-.img_pkm {
+/* .img_pkm {
   position: absolute;
   transform-style: preserve-3d;
   top: 0;
   left: 0;
   margin: 0;
   animation: loader_animation_reverse 1.2s linear;
-}
+} */
 
-@keyframes loader_animation_reverse {
+/* @keyframes loader_animation_reverse {
   0% {
     left: 50%;
     top: 50%;
@@ -126,4 +260,4 @@
   100% {
     transform: translate(0, 0) rotateY(0deg);
   }
-}
+} */
