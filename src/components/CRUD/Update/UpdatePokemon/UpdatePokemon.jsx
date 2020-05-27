@@ -73,7 +73,7 @@ export default class UpdatePokemon extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]:  type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -88,7 +88,7 @@ export default class UpdatePokemon extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]:  type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -103,14 +103,14 @@ export default class UpdatePokemon extends Component {
         }
 
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]:  type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type === ('number' || 'select') ? parseInt(value) : value
+            [name]:  type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
