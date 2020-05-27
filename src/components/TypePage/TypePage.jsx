@@ -62,7 +62,12 @@ export default class TypePage extends Component {
                                         {pokemon.name}
                                     </Link>
                                 </td>
-                                <td><img src={pokemonImages[pokemon.image]} /></td>
+                                <td>
+                                    <img
+                                        src={pokemonImages[pokemon.image]}
+                                        alt={pokemon.name}
+                                    />
+                                    </td>
                             </tr>
                         )}
                     </tbody>
