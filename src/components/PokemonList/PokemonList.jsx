@@ -43,16 +43,20 @@ export default class PokemonList extends Component {
         const repeatedSkeletons = 8;
         for (let i = 0; i < repeatedSkeletons; i++) {
             skeletonArray.push(
-                <RectShape key={i} ready={false} className="background_loading" style={{ width: 230, height: 330 }}
+                <RectShape
+                    key={i}
+                    ready={false}
+                    className="background_loading"
+                    style={{ width: 230, height: 330 }}
                 />
             )
         }
 
         return (
-            <section id="pokemonlist_page">
+            <section id="pokemonlist_page" className="list_page">
                 <PageTitle>Lista Pokémon</PageTitle>
                 <SearchBox
-                    placeholder="Buscar Pokémon"
+                    placeholder="Buscar pokémon"
                     handleChange={this.handleChange}
                 />
                 <CardGrid>
@@ -62,7 +66,7 @@ export default class PokemonList extends Component {
                         </>
                         :
                         filteredPokemon.map(pokemon =>
-                            <Link key={pokemon.numPokedex} to={`/pokemon/${pokemon.numPokedex}`}>
+                            <Link key={pokemon.numPokedex} to={`/pokemon/${pokemon.name}`}>
                                 <PokemonCard pokemon={pokemon} />
                             </Link>
                         )
