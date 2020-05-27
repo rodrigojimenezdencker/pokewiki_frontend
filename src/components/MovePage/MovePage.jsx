@@ -64,9 +64,9 @@ export default class MovePage extends Component {
                 </Table>
                 <h2>Pokémon que pueden aprender {move.name}</h2>
                 <table className="table table-striped">
-                    <thead>
+                    <thead className="thead-dark">
                         <tr>
-                            <th># Pokedex</th>
+                            <th># Pokédex</th>
                             <th>Pokémon</th>
                             <th>Imagen</th>
                         </tr>
