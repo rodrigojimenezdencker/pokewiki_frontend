@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { getJSON } from '../CRUD/requests';
-import {PageTitle} from '../PageTitle/PageTitle';
+import { PageTitle } from '../PageTitle/PageTitle';
 import './MovePage.css';
+import { Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 export default class MovePage extends Component {
     constructor(props) {
@@ -35,17 +37,37 @@ export default class MovePage extends Component {
             <main id="move_page">
                 <PageTitle>Movimiento {move.name}</PageTitle>
                 <p>{move.description}</p>
-                <p>{move.power}</p>
-                <p>{move.accuracy}</p>
-                <p>{move.quantity}</p>
-                <img
-                    src={secondaryTypesImages[move.type.secondaryImage]}
-                />
+                <Table bordered>
+                    <thead className="thead-dark">
+                        <tr>
+                            <th>Poder</th>
+                            <th>Precisión</th>
+                            <th>Cantidad</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{move.power}</td>
+                            <td>{move.accuracy}</td>
+                            <td>{move.quantity}</td>
+                            <td>
+                                <Link to={`/tipos/${move.type.name}`}>
+                                    <img
+                                        src={secondaryTypesImages[move.type.secondaryImage]}
+                                        alt={move.type.name}
+                                    />
+                                </Link>
+                            </td>
+                        </tr>
+                    </tbody>
+                </Table>
+                <h2>Pokémon que pueden aprender {move.name}</h2>
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th>Num Pokedex</th>
-                            <th>Pokemon</th>
+                            <th># Pokedex</th>
+                            <th>Pokémon</th>
                             <th>Imagen</th>
                         </tr>
                     </thead>
@@ -53,8 +75,16 @@ export default class MovePage extends Component {
                         {move.pokemons.map(pokemon =>
                             <tr key={pokemon.numPokedex}>
                                 <td>{pokemon.numPokedex}</td>
-                                <td>{pokemon.name}</td>
-                                <td><img src={pokemonImages[pokemon.image]} /></td>
+                                <td>
+                                    <Link to={`/pokemon/${pokemon.name}`}>
+                                        {pokemon.name}
+                                    </Link>
+                                </td>
+                                <td>
+                                    <img
+                                        src={pokemonImages[pokemon.image]}
+                                        alt={pokemon.name} />
+                                </td>
                             </tr>
                         )}
                     </tbody>
