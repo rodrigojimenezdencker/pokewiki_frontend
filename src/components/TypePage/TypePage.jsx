@@ -48,7 +48,7 @@ export default class TypePage extends Component {
                     <thead className="thead-dark">
                         <tr>
                             <th># Pokédex</th>
-                            <th>Pokemon</th>
+                            <th>Pokémon</th>
                             <th>Imagen</th>
                         </tr>
                     </thead>
