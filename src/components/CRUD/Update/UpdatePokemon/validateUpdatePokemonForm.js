@@ -235,6 +235,8 @@ export function checkInputs (event) {
         icon: 'success',
         title: 'Correcto',
         text: 'Pokémon ' + name + ' modificado correctamente'
-    })
+    }).then((result) => {
+        window.history.back();
+    });
     return true;
 }
