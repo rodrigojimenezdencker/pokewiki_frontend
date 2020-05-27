@@ -31,17 +31,14 @@ export default class Delete extends Component {
             typeId: 0,
             typeId2: null,
             subtype: false,
+            type1: null,
+            type2: null,
             types: [],
             pokemons: []
         }
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/types')
-            .then(data => this.setState({ types: data }));
-        getJSON('https://localhost:44316/api/pokemon')
-            .then(data => this.setState({ pokemons: data }));
-
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
