@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TypeCard from '../../TypeCard/TypeCard';
+import { TypeCard } from '../../TypeCard/TypeCard';
 import { PageTitle } from '../../PageTitle/PageTitle';
 import './TypesList.css';
 import { CardGrid } from '../../CardGrid/CardGrid';
