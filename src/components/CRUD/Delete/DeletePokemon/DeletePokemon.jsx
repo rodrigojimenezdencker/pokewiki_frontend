@@ -63,7 +63,6 @@ export default class Delete extends Component {
     }
 
     render() {
-        const { types, pokemons } = this.state;
         return (
             <Container>
                 <h1 className="d-flex justify-content-center">Eliminando {this.state.name}</h1>
@@ -73,10 +72,10 @@ export default class Delete extends Component {
                         <ListGroupItem>Num. Pokédex: {this.state.numPokedex}</ListGroupItem>
                         <ListGroupItem>Nombre: {this.state.name}</ListGroupItem>
                         <ListGroupItem>Habilidad: {this.state.ability}</ListGroupItem>
-                        {this.state.secondaryAbility == null || this.state.hiddenAbility == "" ? null : <ListGroupItem>Habilidad secundaria: {this.state.secondaryAbility}</ListGroupItem>}
-                        {this.state.hiddenAbility == null || this.state.hiddenAbility == "" ? null : <ListGroupItem>Habilidad oculta: {this.state.hiddenAbility}</ListGroupItem>}
-                        <ListGroupItem>Tipo primario: {this.state.type1 == null ? "" : this.state.type1.name}</ListGroupItem>
-                        {this.state.type2 == null ? null : <ListGroupItem> Tipo secundario: {this.state.type2.name} </ListGroupItem>}
+                        {this.state.secondaryAbility === null || this.state.hiddenAbility === "" ? null : <ListGroupItem>Habilidad secundaria: {this.state.secondaryAbility}</ListGroupItem>}
+                        {this.state.hiddenAbility === null || this.state.hiddenAbility === "" ? null : <ListGroupItem>Habilidad oculta: {this.state.hiddenAbility}</ListGroupItem>}
+                        <ListGroupItem>Tipo primario: {this.state.type1 === null ? "" : this.state.type1.name}</ListGroupItem>
+                        {this.state.type2 === null ? null : <ListGroupItem> Tipo secundario: {this.state.type2.name} </ListGroupItem>}
                     </ListGroup>
                 </Container>
                 <br />

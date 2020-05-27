@@ -5,27 +5,27 @@ export function checkInputs (event) {
 
     event.preventDefault();
 
-    if (widget.querySelector('[data-hook="name"]').value != null) {
+    if (widget.querySelector('[data-hook="name"]').value !== null) {
         var name = widget.querySelector('[data-hook="name"]').value;
     } 
 
-    if (widget.querySelector('[data-hook="description"]').value != null) {
+    if (widget.querySelector('[data-hook="description"]').value !== null) {
         var description = widget.querySelector('[data-hook="description"]').value;
     }
 
-    if (widget.querySelector('[data-hook="power"]').value != null) {
+    if (widget.querySelector('[data-hook="power"]').value !== null) {
         var power = widget.querySelector('[data-hook="power"]').value;
     }
 
-    if (widget.querySelector('[data-hook="accuracy"]').value != null) {
+    if (widget.querySelector('[data-hook="accuracy"]').value !== null) {
         var accuracy = widget.querySelector('[data-hook="accuracy"]').value;
     }
 
-    if (widget.querySelector('[data-hook="quantity"]').value != null) {
+    if (widget.querySelector('[data-hook="quantity"]').value !== null) {
         var quantity = widget.querySelector('[data-hook="quantity"]').value;
     }
 
-    if (widget.querySelector('[data-hook="typeId"]').value != null) {
+    if (widget.querySelector('[data-hook="typeId"]').value !== null) {
         var typeId = widget.querySelector('[data-hook="typeId"]').value;
     }
 
@@ -74,7 +74,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (quantity == 0) {
+    if (quantity === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -92,7 +92,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (typeId == 0) {
+    if (typeId === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',

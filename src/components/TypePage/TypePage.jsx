@@ -30,7 +30,6 @@ export default class TypePage extends Component {
     render() {
         const pokemonImages = this.importAllImages(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
         const typesImages = this.importAllImages(require.context('../../Assets/svg/types', false, /\.(svg)$/));
-        const secondaryTypesImages = this.importAllImages(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
         const { type } = this.state;
 
         if (type == null) return null;
