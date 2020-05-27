@@ -8,19 +8,21 @@ export default class TypeCard extends Component {
             r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
             return images;
         }
-        
+
         const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
-        const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
 
         return (
-            <div>
-                <p>{this.props.typeId}</p>
+            <div
+                className="custom_card types"
+                style={{ borderColor: this.props.color, borderStyle: "solid", borderWidth: 5 }}
+            >
                 <p>{this.props.name}</p>
-                <p>{this.props.color}</p>
                 <div className={`icon typeImage${this.props.typeId}`}>
-                    <img src={typesImages[this.props.image]} />
+                    <img
+                        src={typesImages[this.props.image]}
+                        alt={this.props.name}
+                    />
                 </div>
-                <img src={secondaryTypesImages[this.props.secondaryImage]} />
             </div>
         )
     }
