@@ -5,13 +5,15 @@ import './TypesList.css';
 import { CardGrid } from '../../CardGrid/CardGrid';
 import { Link } from 'react-router-dom';
 import { SearchBox } from '../../SearchBox/SearchBox';
+import { RectShape } from 'react-placeholder/lib/placeholders';
 
 export default class TypesList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             types: [],
-            textoBuscador: ''
+            textoBuscador: '',
+            isLoading: true
         }
     }
 
@@ -20,7 +22,9 @@ export default class TypesList extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({ types: data });
-                console.log(this.state.typeslist);
+                setTimeout(() =>
+                    this.setState({ isLoading: false })
+                    , 1000)
             })
     }
 
@@ -29,29 +33,51 @@ export default class TypesList extends Component {
     }
 
     render() {
-        const filteredTypes = this.state.types.filter(pokemon =>
+        const { isLoading, types } = this.state;
+
+        const filteredTypes = types.filter(pokemon =>
             pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
         )
+
+        const skeletonArray = [];
+        const repeatedSkeletons = 8;
+        for (let i = 0; i < repeatedSkeletons; i++) {
+            skeletonArray.push(
+                <RectShape
+                    key={i}
+                    ready={false}
+                    className="background_loading"
+                    style={{ width: 230, height: 330 }}
+                />
+            )
+        }
+
         return (
-            <div id="typelist_page" className="list_page">
+            <main id="typelist_page" className="list_page">
                 <PageTitle>Lista de tipos</PageTitle>
                 <SearchBox
                     placeholder="Buscar tipo"
                     handleChange={this.handleChange}
                 />
                 <CardGrid>
-                    {filteredTypes.map(type =>
-                        <Link key={type.typeId} to={`/tipos/${type.name}`}>
-                            <TypeCard
-                                typeId={type.typeId}
-                                name={type.name}
-                                color={type.color}
-                                image={type.image}
-                            />
-                        </Link>
-                    )}
+                    {isLoading ?
+                        <>
+                            {skeletonArray.map(element => element)}
+                        </>
+                        :
+                        filteredTypes.map(type =>
+                            <Link key={type.typeId} to={`/tipos/${type.name}`}>
+                                <TypeCard
+                                    typeId={type.typeId}
+                                    name={type.name}
+                                    color={type.color}
+                                    image={type.image}
+                                />
+                            </Link>
+                        )
+                    }
                 </CardGrid>
-            </div >
+            </main>
         )
     }
 }

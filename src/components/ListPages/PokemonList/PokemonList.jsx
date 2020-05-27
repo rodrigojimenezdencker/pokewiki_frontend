@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { getJSON } from '../../CRUD/requests';
 import { PokemonCard } from '../../PokemonCard/PokemonCard';
-import './PokemonList.css';
 import { Link } from 'react-router-dom';
 import { SearchBox } from '../../SearchBox/SearchBox';
 import { PageTitle } from '../../PageTitle/PageTitle';
 import { RectShape } from 'react-placeholder/lib/placeholders';
 import { CardGrid } from '../../CardGrid/CardGrid';
+import './PokemonList.css';
 import '../index.css';
 
 export default class PokemonList extends Component {
@@ -54,7 +54,7 @@ export default class PokemonList extends Component {
         }
 
         return (
-            <section id="pokemonlist_page" className="list_page">
+            <main id="pokemonlist_page" className="list_page">
                 <PageTitle>Lista Pokémon</PageTitle>
                 <SearchBox
                     placeholder="Buscar pokémon"
@@ -73,7 +73,7 @@ export default class PokemonList extends Component {
                         )
                     }
                 </CardGrid>
-            </section>
+            </main>
         )
     }
 }
