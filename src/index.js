@@ -33,6 +33,7 @@ ReactDOM.render(
   <Router>
     <Navbar />
     <Switch>
+      <Route exact path="/" component={Home} />
       <Route exact path="/pokemon" component={PokemonList} />
       <Route path="/pokemon/:id" component={PokemonPage} />
       <Route path="/pokemon/:name" component={PokemonPage} />
@@ -61,7 +62,6 @@ ReactDOM.render(
       <Route path="/dashboard/moves/eliminar/:id" component={DeleteMove} />
       <Route path="/dashboard/moves/eliminar/:name" component={DeleteMove} />
 
-      <Route path="/" component={Home} />
     </Switch>
   </Router>,
   document.getElementById('root')
