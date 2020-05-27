@@ -62,7 +62,7 @@ export function checkInputs (event) {
         title: 'Correcto',
         text: 'Tipo ' + name + ' modificado correctamente'
     }).then((result) => {
-        widget.reset();
+        window.history.back();
     });
     return true;
 }

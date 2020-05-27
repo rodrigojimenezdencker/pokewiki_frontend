@@ -35,7 +35,7 @@ export default class Delete extends Component {
             text: 'Tipo ' + this.state.name + ' eliminado correctamente'
         }).then((result) => {
             window.history.back();
-          })
+        })
     }
 
     render() {

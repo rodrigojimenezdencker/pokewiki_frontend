@@ -106,7 +106,7 @@ export function checkInputs (event) {
         title: 'Correcto',
         text: 'Movimiento ' + name + ' creado correctamente'
     }).then((result) => {
-        widget.reset();
+        window.history.back();
     });
     return true;
 }
