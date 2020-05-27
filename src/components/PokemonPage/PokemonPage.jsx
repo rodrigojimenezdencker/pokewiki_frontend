@@ -186,8 +186,8 @@ export default class PokemonPage extends Component {
                             null
                         }
                         <div className="component_section movements">
-                            <table id="moves_table" className="table table-striped">
-                                <thead>
+                            <table id="moves_table" className="table table-striped ">
+                                <thead className="thead-dark">
                                     <tr>
                                         <th>Nivel</th>
                                         <th>Movimiento</th>

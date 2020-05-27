@@ -40,7 +40,7 @@ export default class MovesList extends Component {
                     handleChange={this.handleChange}
                 />
                 <Table striped className="bg-light moves_table">
-                    <thead>
+                    <thead className="thead-dark">
                         <tr>
                             <th>Nombre</th>
                             <th>Descripción</th>

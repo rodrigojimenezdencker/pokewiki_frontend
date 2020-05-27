@@ -45,7 +45,7 @@ export default class TypePage extends Component {
                 </div>
                 <h2>Lista de Pokémon</h2>
                 <Table striped>
-                    <thead>
+                    <thead className="thead-dark">
                         <tr>
                             <th># Pokédex</th>
                             <th>Pokemon</th>
@@ -75,7 +75,7 @@ export default class TypePage extends Component {
                     <>
                         <h2>Lista de movimientos</h2>
                         <Table striped>
-                            <thead>
+                            <thead className="thead-dark">
                                 <tr>
                                     <th>Ataque</th>
                                     <th>Poder</th>
