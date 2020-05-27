@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import './TypePage.css'
+import { getJSON } from '../CRUD/requests';
 
 export default class TypePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: null,
-            isLoading: true
+            type: null
         }
     }
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        const { name } = this.props.match.params;
+        const { id, name } = this.props.match.params;
 
         let typesToFetch = id ? id : name;
 
-        fetch('https://localhost:44316/api/types/' + typesToFetch)
-            .then(response => response.json())
+        getJSON('https://localhost:44316/api/types/' + typesToFetch)
             .then(data => {
                 this.setState({ type: data });
-                setTimeout(() => {
-                    this.setState({ isLoading: false })
-                }, 2500);
             })
     }
     render() {
@@ -35,7 +30,7 @@ export default class TypePage extends Component {
         const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
         const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
         const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
-        const { type, isLoading } = this.state;
+        const { type } = this.state;
         if (type == null) return null;
         
         return (

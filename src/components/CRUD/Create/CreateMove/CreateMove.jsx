@@ -36,7 +36,7 @@ export default class CreateType extends Component {
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -119,7 +119,6 @@ export default class CreateType extends Component {
                     </FormGroup>
                         
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Crear" />
-                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )

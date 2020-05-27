@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { deleteJSON, getJSON } from '../../requests';
 import './DeletePokemon.css';
 import { Link } from 'react-router-dom';
-import { Input, Form, FormGroup, Label, Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem } from 'reactstrap';
 import Swal from 'sweetalert2';
 
 export default class Delete extends Component {

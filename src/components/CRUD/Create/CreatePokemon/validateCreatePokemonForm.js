@@ -69,7 +69,7 @@ export function checkInputs (event) {
         var type1 = widget.querySelector('[data-hook="type1"]').value;
     }
     
-    if (numPokedex == 0) {
+    if (numPokedex === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -141,7 +141,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (ps == 0) {
+    if (ps === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -159,7 +159,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (attack == 0) {
+    if (attack === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -168,7 +168,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (defense == 0) {
+    if (defense === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -177,7 +177,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (spAttack == 0) {
+    if (spAttack === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -186,7 +186,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (spDefense == 0) {
+    if (spDefense === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -195,7 +195,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (speed == 0) {
+    if (speed === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -204,7 +204,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution != "DEFAULT" && evolutionRequirements == "") {
+    if (evolution !== "DEFAULT" && evolutionRequirements === "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -213,7 +213,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution == "DEFAULT" && evolutionRequirements != "") {
+    if (evolution === "DEFAULT" && evolutionRequirements !== "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -222,7 +222,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (type1 == "DEFAULT") {
+    if (type1 === "DEFAULT") {
         Swal.fire({
             icon: 'error',
             title: 'Error',

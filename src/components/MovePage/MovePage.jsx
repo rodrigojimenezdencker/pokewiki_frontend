@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import './MovePage.css'
+import { getJSON } from '../CRUD/requests';
 
 export default class MovePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            move: null,
-            isLoading: true
+            move: null
         }
     }
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        const { name } = this.props.match.params;
+        const { id, name } = this.props.match.params;
 
         let movesToFetch = id ? id : name;
 
-        fetch('https://localhost:44316/api/moves/' + movesToFetch)
-            .then(response => response.json())
+        getJSON('https://localhost:44316/api/moves/' + movesToFetch)
             .then(data => {
                 this.setState({ move: data });
-                setTimeout(() => {
-                    this.setState({ isLoading: false })
-                }, 2500);
             })
     }
     render() {
@@ -34,7 +29,7 @@ export default class MovePage extends Component {
         
         const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
         const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
-        const { move, isLoading } = this.state;
+        const { move } = this.state;
         if (move == null) return null;
         
         return (

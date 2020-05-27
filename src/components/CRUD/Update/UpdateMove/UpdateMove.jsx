@@ -45,7 +45,7 @@ export default class UpdateMove extends Component {
         this.setState({ typeId: this.state.type.typeId });
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
@@ -132,7 +132,6 @@ export default class UpdateMove extends Component {
                         </Input>
                     </FormGroup>
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Modificar" />
-                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )

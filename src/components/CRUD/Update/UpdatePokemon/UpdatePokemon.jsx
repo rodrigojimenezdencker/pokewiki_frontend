@@ -62,7 +62,7 @@ export default class UpdatePokemon extends Component {
     handleChangeAbility = event => {
         const { name, value, type} = event.target;
 
-        if (value != "" && name == "ability") {
+        if (value !== "" && name === "ability") {
             document.getElementById("secondaryAbility").disabled = false;
             document.getElementById("hiddenAbility").disabled = false;
         } else {
@@ -80,7 +80,7 @@ export default class UpdatePokemon extends Component {
     handleChangeEvolution = event => {
         const { name, value, type} = event.target;
 
-        if (value != "DEFAULT" && name == "evolution") {
+        if (value !== "DEFAULT" && name === "evolution") {
             document.getElementById("evolutionRequirements").disabled = false;
         } else {
             document.getElementById("evolutionRequirements").disabled = true;
@@ -95,7 +95,7 @@ export default class UpdatePokemon extends Component {
     handleChangeType = event => {
         const { name, value, type} = event.target;
 
-        if (value != "DEFAULT" && name == "typeId") {
+        if (value !== "DEFAULT" && name === "typeId") {
             document.getElementById("typeId2").disabled = false;
         } else {
             document.getElementById("typeId2").disabled = true;
@@ -360,7 +360,6 @@ export default class UpdatePokemon extends Component {
                         </Input>
                     </FormGroup>
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Modificar" />
-                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )

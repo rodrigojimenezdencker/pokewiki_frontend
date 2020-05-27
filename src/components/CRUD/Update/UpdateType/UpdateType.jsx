@@ -38,12 +38,11 @@ export default class UpdateType extends Component {
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
     render() {
-        const { types, pokemons } = this.state;
         return (
         <Container className="create_container">
             <h1>Modificando {this.state.name}</h1>
@@ -113,7 +112,6 @@ export default class UpdateType extends Component {
                         </Col>
                     </Row>  
                     <input type="submit" className="btn btn-success" onClick={this.submitForm} value="Modificar" />
-                    {/* <input type="button" onClick={() => console.log(JSON.stringify(this.state))} value="ESTADO" /> */}
                 </Form>
             </Container>
         )
