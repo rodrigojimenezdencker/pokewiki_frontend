@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Container, Table, Button } from 'reactstrap';
 import { SearchBox } from '../../SearchBox/SearchBox';
 
-export default class CRUDList extends Component {
+export default class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -69,8 +69,8 @@ export default class CRUDList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredObject.map(obj =>
-                            <tr>
+                        {filteredObject.map((obj, i) =>
+                            <tr key={i}>
                                 <th scope="row">
                                     {id === 'pokemon' ? obj.numPokedex : id === 'types' ? obj.typeId : id === 'moves' ? obj.moveId : undefined}
                                 </th>
