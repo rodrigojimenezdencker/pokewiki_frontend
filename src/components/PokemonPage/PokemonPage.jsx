@@ -18,15 +18,24 @@ const secondaryTypesImages = importAll(require.context('../../Assets/img/seconda
 export default class PokemonPage extends Component {
     constructor(props) {
         super(props);
+        const {
+            match: { params }
+        } = this.props;
+
         this.state = {
             pokemon: null,
-            isLoading: false
+            isLoading: false,
+            id: params.id
         }
     }
     statsChart = React.createRef();
 
 
     componentDidMount() {
+        this.getPokemon();
+    }
+
+    getPokemon = () => {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
@@ -40,8 +49,21 @@ export default class PokemonPage extends Component {
             })
     }
 
+    componentDidUpdate(prevProps) {
+        const { id } = this.props.match.params;
+        if (id !== this.state.id) {
+            this.setState({
+                id
+            });
+        }
+        if (prevProps.match.params.id !== id) {
+            this.Chart.destroy();
+            this.getPokemon();
+        }
+    }
+
     loadChart = (pokemon) => {
-        this.myChart = new Chart(this.statsChart.current, {
+        this.Chart = new Chart(this.statsChart.current, {
             type: 'bar',
             data: {
                 labels: ['PS', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed'],
@@ -121,18 +143,33 @@ export default class PokemonPage extends Component {
                             <div className="component_section evolutions">
                                 {pokemon.prevolution ?
                                     <>
-                                        <div>
-                                            <img
-                                                src={pokemonImages[pokemon.prevolution.image]}
-                                                alt={pokemon.prevolution}
-                                            />
-                                            <p>{pokemon.prevolution.name}</p>
-                                        </div>
-
+                                        {pokemon.prevolution.prevolution ?
+                                            <>
+                                                <Link to={`${pokemon.prevolution.prevolution.numPokedex}`}>
+                                                    <div>
+                                                        <img
+                                                            src={pokemonImages[pokemon.prevolution.prevolution.image]}
+                                                            alt={pokemon.prevolution.prevolution.name}
+                                                        />
+                                                        <p>{pokemon.prevolution.prevolution.name}</p>
+                                                    </div>
+                                                </Link>
+                                                <p className="evolution_requirements">{pokemon.prevolution.prevolution.evolutionRequirements}</p>
+                                            </>
+                                            : null
+                                        }
+                                        <Link to={`${pokemon.prevolution.numPokedex}`}>
+                                            <div>
+                                                <img
+                                                    src={pokemonImages[pokemon.prevolution.image]}
+                                                    alt={pokemon.prevolution.name}
+                                                />
+                                                <p>{pokemon.prevolution.name}</p>
+                                            </div>
+                                        </Link>
                                         <p className="evolution_requirements">{pokemon.prevolution.evolutionRequirements}</p>
                                     </>
-                                    :
-                                    null
+                                    : null
                                 }
                                 <div>
                                     <img src={pokemonImages[pokemon.image]} alt={pokemon.name} />
@@ -141,13 +178,30 @@ export default class PokemonPage extends Component {
                                 {pokemon.evolution ?
                                     <>
                                         <p className="evolution_requirements">{pokemon.evolutionRequirements}</p>
-                                        <div>
-                                            <img
-                                                src={pokemonImages[pokemon.evolution.image]}
-                                                alt={pokemon.evolution}
-                                            />
-                                            <p>{pokemon.evolution.name}</p>
-                                        </div>
+                                        <Link to={`${pokemon.evolution.numPokedex}`}>
+                                            <div>
+                                                <img
+                                                    src={pokemonImages[pokemon.evolution.image]}
+                                                    alt={pokemon.evolution.name}
+                                                />
+                                                <p>{pokemon.evolution.name}</p>
+                                            </div>
+                                        </Link>
+                                        {pokemon.evolution.evolution ?
+                                            <>
+                                                <p className="evolution_requirements">{pokemon.evolution.evolutionRequirements}</p>
+                                                <Link to={`${pokemon.evolution.evolution.numPokedex}`}>
+                                                    <div>
+                                                        <img
+                                                            src={pokemonImages[pokemon.evolution.evolution.image]}
+                                                            alt={pokemon.evolution.evolution.name}
+                                                        />
+                                                        <p>{pokemon.evolution.evolution.name}</p>
+                                                    </div>
+                                                </Link>
+                                            </>
+                                            : null
+                                        }
                                     </>
                                     :
                                     null
