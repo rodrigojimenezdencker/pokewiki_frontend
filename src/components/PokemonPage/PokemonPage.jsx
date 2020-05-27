@@ -3,8 +3,8 @@ import './PokemonPage.css'
 import { getJSON } from '../CRUD/requests';
 import { PokemonCard } from '../PokemonCard/PokemonCard';
 import { LoadingCardContainer } from '../LoadingCardContainer/LoadingCardContainer';
-import Chart from "chart.js";
 import { Link } from 'react-router-dom';
+import { Table } from 'reactstrap';
 
 function importAll(r) {
     let images = {};
@@ -44,7 +44,6 @@ export default class PokemonPage extends Component {
                 this.setState({ pokemon: data });
                 setTimeout(() => {
                     this.setState({ isLoading: false })
-                    this.loadChart(this.state.pokemon);
                 }, 2500);
             })
     }
@@ -57,48 +56,8 @@ export default class PokemonPage extends Component {
             });
         }
         if (prevProps.match.params.id !== id) {
-            this.Chart.destroy();
             this.getPokemon();
         }
-    }
-
-    loadChart = (pokemon) => {
-        this.Chart = new Chart(this.statsChart.current, {
-            type: 'bar',
-            data: {
-                labels: ['PS', 'Attack', 'Defense', 'Sp. Attack', 'Sp. Defense', 'Speed'],
-                datasets: [{
-                    label: "Stats",
-                    data: [pokemon.ps, pokemon.attack, pokemon.defense, pokemon.spAttack, pokemon.spDefense, pokemon.speed],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        })
     }
 
 
@@ -134,9 +93,28 @@ export default class PokemonPage extends Component {
                         <div className="component_section characteristics">
                             <p>Peso: {pokemon.weight}</p>
                             <p>Altura: {pokemon.height}</p>
-                            <canvas
-                                ref={this.statsChart}
-                            />
+                            <Table bordered>
+                                <thead className="thead-dark">
+                                    <tr>
+                                        <th>PS</th>
+                                        <th>Ataque</th>
+                                        <th>Defensa</th>
+                                        <th>Ataque especial</th>
+                                        <th>Defensa especial</th>
+                                        <th>Velocidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{pokemon.ps}</td>
+                                        <td>{pokemon.attack}</td>
+                                        <td>{pokemon.defense}</td>
+                                        <td>{pokemon.spAttack}</td>
+                                        <td>{pokemon.spDefense}</td>
+                                        <td>{pokemon.speed}</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
                         </div>
                         {pokemon.prevolution || pokemon.evolution ?
                             <div className="component_section evolutions">
