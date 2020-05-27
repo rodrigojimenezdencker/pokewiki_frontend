@@ -62,7 +62,7 @@ export default class Create extends Component {
 
         postJSON('https://localhost:44316/api/typepokemon', type1)
             .then(() => {
-                if (this.state.typeId2 != null) this.addSecondaryType();
+                if (this.state.typeId2 !== null) this.addSecondaryType();
             })
             .catch(error => console.log(error));
     }
@@ -80,7 +80,7 @@ export default class Create extends Component {
     handleChangeAbility = event => {
         const { name, value, type} = event.target;
 
-        if (value != "" && name == "ability") {
+        if (value !== "" && name === "ability") {
             document.getElementById("secondaryAbility").disabled = false;
             document.getElementById("hiddenAbility").disabled = false;
         } else {
@@ -91,14 +91,14 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
     handleChangeEvolution = event => {
         const { name, value, type} = event.target;
 
-        if (value != "DEFAULT" && name == "evolution") {
+        if (value !== "DEFAULT" && name === "evolution") {
             document.getElementById("evolutionRequirements").disabled = false;
         } else {
             document.getElementById("evolutionRequirements").disabled = true;
@@ -106,14 +106,14 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
     handleChangeType = event => {
         const { name, value, type} = event.target;
 
-        if (value != "DEFAULT" && name == "typeId") {
+        if (value !== "DEFAULT" && name === "typeId") {
             document.getElementById("typeId2").disabled = false;
         } else {
             document.getElementById("typeId2").disabled = true;
@@ -121,14 +121,14 @@ export default class Create extends Component {
         }
 
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 
     handleChangeInput = event => {
         const { name, value, type } = event.target;
         this.setState({
-            [name]: type == 'number' || type == 'select-one' ? parseInt(value) : value
+            [name]: type === 'number' || type === 'select-one' ? parseInt(value) : value
         });
     }
 

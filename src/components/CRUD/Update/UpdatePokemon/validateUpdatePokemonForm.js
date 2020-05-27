@@ -5,71 +5,71 @@ export function checkInputs (event) {
 
     event.preventDefault();
 
-    if (widget.querySelector('[data-hook="numPokedex"]').value != null) {
+    if (widget.querySelector('[data-hook="numPokedex"]').value !== null) {
         var numPokedex = widget.querySelector('[data-hook="numPokedex"]').value;
     }
 
-    if (widget.querySelector('[data-hook="name"]').value != null) {
+    if (widget.querySelector('[data-hook="name"]').value !== null) {
         var name = widget.querySelector('[data-hook="name"]').value;
     } 
 
-    if (widget.querySelector('[data-hook="description"]').value != null) {
+    if (widget.querySelector('[data-hook="description"]').value !== null) {
         var description = widget.querySelector('[data-hook="description"]').value;
     }
 
-    if (widget.querySelector('[data-hook="ability"]').value != null) {
+    if (widget.querySelector('[data-hook="ability"]').value !== null) {
         var ability = widget.querySelector('[data-hook="ability"]').value;
     }
 
-    if (widget.querySelector('[data-hook="image"]').value != null) {
+    if (widget.querySelector('[data-hook="image"]').value !== null) {
         var image = widget.querySelector('[data-hook="image"]').value;
     }
 
-    if (widget.querySelector('[data-hook="weight"]').value != null) {
+    if (widget.querySelector('[data-hook="weight"]').value !== null) {
         var weight = widget.querySelector('[data-hook="weight"]').value;
     }
 
-    if (widget.querySelector('[data-hook="height"]').value != null) {
+    if (widget.querySelector('[data-hook="height"]').value !== null) {
         var height = widget.querySelector('[data-hook="height"]').value;
     }
 
-    if (widget.querySelector('[data-hook="ps"]').value != null) {
+    if (widget.querySelector('[data-hook="ps"]').value !== null) {
         var ps = widget.querySelector('[data-hook="ps"]').value;
     }
 
-    if (widget.querySelector('[data-hook="attack"]').value != null) {
+    if (widget.querySelector('[data-hook="attack"]').value !== null) {
         var attack = widget.querySelector('[data-hook="attack"]').value;
     }
 
-    if (widget.querySelector('[data-hook="defense"]').value != null) {
+    if (widget.querySelector('[data-hook="defense"]').value !== null) {
         var defense = widget.querySelector('[data-hook="defense"]').value;
     }
 
-    if (widget.querySelector('[data-hook="spAttack"]').value != null) {
+    if (widget.querySelector('[data-hook="spAttack"]').value !== null) {
         var spAttack = widget.querySelector('[data-hook="spAttack"]').value;
     }
 
-    if (widget.querySelector('[data-hook="spDefense"]').value != null) {
+    if (widget.querySelector('[data-hook="spDefense"]').value !== null) {
         var spDefense = widget.querySelector('[data-hook="spDefense"]').value;
     }
 
-    if (widget.querySelector('[data-hook="speed"]').value != null) {
+    if (widget.querySelector('[data-hook="speed"]').value !== null) {
         var speed = widget.querySelector('[data-hook="speed"]').value;
     }
 
-    if (widget.querySelector('[data-hook="evolution"]').value != null) {
+    if (widget.querySelector('[data-hook="evolution"]').value !== null) {
         var evolution = widget.querySelector('[data-hook="evolution"]').value;
     }
 
-    if (widget.querySelector('[data-hook="evolutionRequirements"]').value != null) {
+    if (widget.querySelector('[data-hook="evolutionRequirements"]').value !== null) {
         var evolutionRequirements = widget.querySelector('[data-hook="evolutionRequirements"]').value;
     }
 
-    if (widget.querySelector('[data-hook="type1"]').value != null) {
+    if (widget.querySelector('[data-hook="type1"]').value !== null) {
         var type1 = widget.querySelector('[data-hook="type1"]').value;
     }
     
-    if (numPokedex == 0) {
+    if (numPokedex === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -141,7 +141,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (ps == 0) {
+    if (ps === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -159,7 +159,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (attack == 0) {
+    if (attack === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -168,7 +168,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (defense == 0) {
+    if (defense === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -177,7 +177,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (spAttack == 0) {
+    if (spAttack === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -186,7 +186,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (spDefense == 0) {
+    if (spDefense === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -195,7 +195,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (speed == 0) {
+    if (speed === 0) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -204,7 +204,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution != "DEFAULT" && evolutionRequirements == "") {
+    if (evolution !== "DEFAULT" && evolutionRequirements === "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -213,7 +213,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (evolution == "DEFAULT" && evolutionRequirements != "") {
+    if (evolution === "DEFAULT" && evolutionRequirements !== "") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -222,7 +222,7 @@ export function checkInputs (event) {
         return false;
     }
 
-    if (type1 == "DEFAULT") {
+    if (type1 === "DEFAULT") {
         Swal.fire({
             icon: 'error',
             title: 'Error',
