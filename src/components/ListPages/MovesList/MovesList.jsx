@@ -3,8 +3,9 @@ import { MoveRow } from '../../MoveRow/MoveRow.jsx';
 import { PageTitle } from '../../PageTitle/PageTitle.jsx';
 import { SearchBox } from '../../SearchBox/SearchBox.jsx';
 import { Table } from 'reactstrap';
-import '../index.css';
 import { getJSON } from '../../CRUD/requests.js';
+import '../index.css';
+import './MovesList.css';
 
 export default class MovesList extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export default class MovesList extends Component {
                     placeholder="Buscar movimiento"
                     handleChange={this.handleChange}
                 />
-                <Table striped className="bg-light">
+                <Table striped className="bg-light moves_table">
                     <thead>
                         <tr>
                             <th>Nombre</th>
