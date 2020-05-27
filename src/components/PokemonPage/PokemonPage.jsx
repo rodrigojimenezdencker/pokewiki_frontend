@@ -120,7 +120,7 @@ export default class PokemonPage extends Component {
                                     <>
                                         {pokemon.prevolution.prevolution ?
                                             <>
-                                                <Link to={`${pokemon.prevolution.prevolution.numPokedex}`}>
+                                                <Link to={`${pokemon.prevolution.prevolution.name}`}>
                                                     <div>
                                                         <img
                                                             src={pokemonImages[pokemon.prevolution.prevolution.image]}
@@ -133,7 +133,7 @@ export default class PokemonPage extends Component {
                                             </>
                                             : null
                                         }
-                                        <Link to={`${pokemon.prevolution.numPokedex}`}>
+                                        <Link to={`${pokemon.prevolution.name}`}>
                                             <div>
                                                 <img
                                                     src={pokemonImages[pokemon.prevolution.image]}
@@ -147,13 +147,16 @@ export default class PokemonPage extends Component {
                                     : null
                                 }
                                 <div>
-                                    <img src={pokemonImages[pokemon.image]} alt={pokemon.name} />
+                                    <img
+                                        src={pokemonImages[pokemon.image]}
+                                        alt={pokemon.name}
+                                    />
                                     <p>{pokemon.name}</p>
                                 </div>
                                 {pokemon.evolution ?
                                     <>
                                         <p className="evolution_requirements">{pokemon.evolutionRequirements}</p>
-                                        <Link to={`${pokemon.evolution.numPokedex}`}>
+                                        <Link to={`${pokemon.evolution.name}`}>
                                             <div>
                                                 <img
                                                     src={pokemonImages[pokemon.evolution.image]}
@@ -165,7 +168,7 @@ export default class PokemonPage extends Component {
                                         {pokemon.evolution.evolution ?
                                             <>
                                                 <p className="evolution_requirements">{pokemon.evolution.evolutionRequirements}</p>
-                                                <Link to={`${pokemon.evolution.evolution.numPokedex}`}>
+                                                <Link to={`${pokemon.evolution.evolution.name}`}>
                                                     <div>
                                                         <img
                                                             src={pokemonImages[pokemon.evolution.evolution.image]}
