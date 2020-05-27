@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import TypeCard from '../TypeCard/TypeCard';
-import { PageTitle } from '../PageTitle/PageTitle';
+import TypeCard from '../../TypeCard/TypeCard';
+import { PageTitle } from '../../PageTitle/PageTitle';
 import './TypesList.css';
-import { CardGrid } from '../CardGrid/CardGrid';
+import { CardGrid } from '../../CardGrid/CardGrid';
 import { Link } from 'react-router-dom';
-import { SearchBox } from '../SearchBox/SearchBox';
+import { SearchBox } from '../../SearchBox/SearchBox';
 
 export default class TypesList extends Component {
     constructor(props) {

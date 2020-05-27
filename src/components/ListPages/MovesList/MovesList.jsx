@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MoveRow from '../MoveRow/MoveRow.jsx';
+import MoveRow from '../../MoveRow/MoveRow.jsx';
 
 export default class MovesList extends Component {
     constructor(props){

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { getJSON } from '../CRUD/requests';
-import { PokemonCard } from '../PokemonCard/PokemonCard';
+import { getJSON } from '../../CRUD/requests';
+import { PokemonCard } from '../../PokemonCard/PokemonCard';
 import './PokemonList.css';
 import { Link } from 'react-router-dom';
-import { SearchBox } from '../SearchBox/SearchBox';
-import { PageTitle } from '../PageTitle/PageTitle';
+import { SearchBox } from '../../SearchBox/SearchBox';
+import { PageTitle } from '../../PageTitle/PageTitle';
 import { RectShape } from 'react-placeholder/lib/placeholders';
-import { CardGrid } from '../CardGrid/CardGrid';
+import { CardGrid } from '../../CardGrid/CardGrid';
+import '../index.css';
 
 export default class PokemonList extends Component {
     constructor(props) {
