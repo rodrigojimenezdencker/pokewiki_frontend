@@ -46,19 +46,23 @@ export default class MovePage extends Component {
                 <p>{move.accuracy}</p>
                 <p>{move.quantity}</p>
                 <img src={secondaryTypesImages[move.type.secondaryImage]}></img>
-                <table>
-                    <tr>
-                        <th>Num Pokedex</th>
-                        <th>Pokemon</th>
-                        <th>Imagen</th>
-                    </tr>
-                    {move.pokemons.map(pokemon => {
-                        return <tr>
-                            <td>{pokemon.numPokedex}</td>
-                            <td>{pokemon.name}</td>
-                            <td><img src={pokemonImages[pokemon.image]} /></td>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Num Pokedex</th>
+                            <th>Pokemon</th>
+                            <th>Imagen</th>
                         </tr>
-                    })}
+                    </thead>
+                    <tbody>
+                        {move.pokemons.map(pokemon => 
+                            <tr key={pokemon.numPokedex}>
+                                <td>{pokemon.numPokedex}</td>
+                                <td>{pokemon.name}</td>
+                                <td><img src={pokemonImages[pokemon.image]} /></td>
+                            </tr>
+                        )}
+                    </tbody>
                 </table>
             </div>
         )

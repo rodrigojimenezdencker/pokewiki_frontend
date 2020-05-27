@@ -32,6 +32,7 @@ export default class TypePage extends Component {
             return images;
         }
         
+        const pokemonImages = importAll(require.context('../../Assets/img/pokemon', false, /\.(png)$/));
         const typesImages = importAll(require.context('../../Assets/svg/types', false, /\.(svg)$/));
         const secondaryTypesImages = importAll(require.context('../../Assets/img/secondaryTypes', false, /\.(png)$/));
         const { type, isLoading } = this.state;
@@ -46,6 +47,44 @@ export default class TypePage extends Component {
                     <img src={typesImages[type.image]}></img>
                 </div>
                 <img src={secondaryTypesImages[type.secondaryImage]}></img>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Num Pokedex</th>
+                            <th>Pokemon</th>
+                            <th>Imagen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {type.pokemons.map(pokemon => 
+                            <tr key={pokemon.numPokedex}>
+                                <td>{pokemon.numPokedex}</td>
+                                <td>{pokemon.name}</td>
+                                <td><img src={pokemonImages[pokemon.image]} /></td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ataque</th>
+                            <th>Poder</th>
+                            <th>Precisión</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {type.moves.map(move => 
+                            <tr key={move.moveId}>
+                                <td>{move.name}</td>
+                                <td>{move.power}</td>
+                                <td>{move.accuracy}</td>
+                                <td>{move.quantity}</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
             </div>
         )
     }
