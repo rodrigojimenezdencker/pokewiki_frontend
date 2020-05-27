@@ -1,39 +1,66 @@
 import React, { Component } from 'react'
-import MoveRow from '../../MoveRow/MoveRow.jsx';
+import { MoveRow } from '../../MoveRow/MoveRow.jsx';
+import { PageTitle } from '../../PageTitle/PageTitle.jsx';
+import { SearchBox } from '../../SearchBox/SearchBox.jsx';
+import { Table } from 'reactstrap';
+import '../index.css';
+import { getJSON } from '../../CRUD/requests.js';
 
 export default class MovesList extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            moveslist: []
+            moves: [],
+            textoBuscador: ''
         }
     }
 
     componentDidMount() {
-        fetch('https://localhost:44316/api/moves')
-        .then(response => response.json())
-        .then(data => {
-            this.setState({moveslist: data});
-            console.log(this.state.moveslist);
-        } )
+        getJSON('https://localhost:44316/api/moves')
+            .then(data => {
+                this.setState({ moves: data });
+            })
     }
+
+    handleChange = (e) => {
+        this.setState({ textoBuscador: e.target.value });
+    }
+
     render() {
+        const filteredMovements = this.state.moves.filter(move =>
+            move.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
+        )
+
         return (
-            <div>
-                <table>
-                    {this.state.moveslist.map(item => {
-                        return (
-                                <MoveRow 
-                                    key={item.moveId}
-                                    moveId={item.moveId}
-                                    name={item.name}
-                                    type={item.type.secondaryImage}
-                                    color={item.type.color}
-                                />
+            <main id="typelist_page" className="list_page">
+                <PageTitle>Lista de movimientos</PageTitle>
+                <SearchBox
+                    placeholder="Buscar movimiento"
+                    handleChange={this.handleChange}
+                />
+                <Table striped className="bg-light">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filteredMovements.map(move => (
+                            <MoveRow
+                                key={move.moveId}
+                                name={move.name}
+                                description={move.description}
+                                typeName={move.type.name}
+                                typeImage={move.type.secondaryImage}
+                                color={move.type.color}
+                            />
                         )
-                    })}
-                </table>
-            </div>
+                        )}
+                    </tbody>
+                </Table>
+            </main>
         )
     }
 }
