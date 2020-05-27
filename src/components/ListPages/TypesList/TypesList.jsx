@@ -6,6 +6,7 @@ import { CardGrid } from '../../CardGrid/CardGrid';
 import { Link } from 'react-router-dom';
 import { SearchBox } from '../../SearchBox/SearchBox';
 import { RectShape } from 'react-placeholder/lib/placeholders';
+import { getJSON } from '../../CRUD/requests';
 
 export default class TypesList extends Component {
     constructor(props) {
@@ -18,8 +19,7 @@ export default class TypesList extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:44316/api/types')
-            .then(response => response.json())
+        getJSON('https://localhost:44316/api/types')
             .then(data => {
                 this.setState({ types: data });
                 setTimeout(() =>
@@ -35,8 +35,8 @@ export default class TypesList extends Component {
     render() {
         const { isLoading, types } = this.state;
 
-        const filteredTypes = types.filter(pokemon =>
-            pokemon.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
+        const filteredTypes = types.filter(type =>
+            type.name.toLowerCase().includes(this.state.textoBuscador.toLowerCase())
         )
 
         const skeletonArray = [];
