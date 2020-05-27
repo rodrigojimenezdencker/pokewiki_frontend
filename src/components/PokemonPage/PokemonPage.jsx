@@ -189,37 +189,41 @@ export default class PokemonPage extends Component {
                             null
                         }
                         <div className="component_section movements">
-                            <table id="moves_table" className="table table-striped ">
-                                <thead className="thead-dark">
-                                    <tr>
-                                        <th>Nivel</th>
-                                        <th>Movimiento</th>
-                                        <th>Tipo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {pokemon.moves.map(move =>
-                                        (
-                                            <tr key={move.moveId}>
-                                                <td>{move.level}</td>
-                                                <td>
-                                                    <Link to={`../../movimientos/${move.moveId}`}>
-                                                        {move.name}
-                                                    </Link>
-                                                </td>
-                                                <td>
-                                                    <Link to={`../../tipos/${move.typeId}`}>
-                                                        <img
-                                                            src={secondaryTypesImages[move.typeImage]}
-                                                            alt={move.name}
-                                                        />
-                                                    </Link>
-                                                </td>
-                                            </tr>
-                                        )
-                                    )}
-                                </tbody>
-                            </table>
+                            {pokemon.moves.length !== 0 ?
+                                <table id="moves_table" className="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nivel</th>
+                                            <th>Movimiento</th>
+                                            <th>Tipo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {pokemon.moves.map(move =>
+                                            (
+                                                <tr key={move.moveId}>
+                                                    <td>{move.level}</td>
+                                                    <td>
+                                                        <Link to={`../../movimientos/${move.name}`}>
+                                                            {move.name}
+                                                        </Link>
+                                                    </td>
+                                                    <td>
+                                                        <Link to={`../../tipos/${move.typeName}`}>
+                                                            <img
+                                                                src={secondaryTypesImages[move.typeImage]}
+                                                                alt={move.name}
+                                                            />
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        )}
+                                    </tbody>
+                                </table>
+                                :
+                                <p>{pokemon.name} no aprende ningún movimiento.</p>
+                            }
                         </div>
                     </div>
                 </main>
