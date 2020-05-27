@@ -68,6 +68,10 @@ export function checkInputs (event) {
     if (widget.querySelector('[data-hook="type1"]').value != null) {
         var type1 = widget.querySelector('[data-hook="type1"]').value;
     }
+
+    if (widget.querySelector('[data-hook="type2"]').value != null) {
+        var type2 = widget.querySelector('[data-hook="type2"]').value;
+    }
     
     if (numPokedex === 0) {
         Swal.fire({
@@ -227,6 +231,15 @@ export function checkInputs (event) {
             icon: 'error',
             title: 'Error',
             text: 'El campo tipo primario es obligatorio!'
+        });
+        return false;
+    }
+
+    if (type1 === type2) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El campo tipo primario no puede ser igual al tipo secundario!'
         });
         return false;
     }
