@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38c814905c34001d6406263e8d9f5a3d",
+    "revision": "9863174603f153e320ae8a25b75917c7",
     "url": "/pokewiki_frontend/index.html"
   },
   {
-    "revision": "b55bb62a487f769a9fcb",
+    "revision": "a3caa6f991e525ef9176",
     "url": "/pokewiki_frontend/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "d94d0edb8d3dfaa74a6b",
-    "url": "/pokewiki_frontend/static/css/main.346f1a1a.chunk.css"
+    "revision": "4a05e4247f0d34c2043d",
+    "url": "/pokewiki_frontend/static/css/main.f1d8e8bf.chunk.css"
   },
   {
-    "revision": "b55bb62a487f769a9fcb",
-    "url": "/pokewiki_frontend/static/js/2.38664bf6.chunk.js"
+    "revision": "a3caa6f991e525ef9176",
+    "url": "/pokewiki_frontend/static/js/2.3da0a3cd.chunk.js"
   },
   {
-    "revision": "eaaf63558baae456918a991a401208d7",
-    "url": "/pokewiki_frontend/static/js/2.38664bf6.chunk.js.LICENSE.txt"
+    "revision": "3453b8997016469371284a28c0e873e2",
+    "url": "/pokewiki_frontend/static/js/2.3da0a3cd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d94d0edb8d3dfaa74a6b",
-    "url": "/pokewiki_frontend/static/js/main.eda86727.chunk.js"
+    "revision": "4a05e4247f0d34c2043d",
+    "url": "/pokewiki_frontend/static/js/main.386dfe5f.chunk.js"
   },
   {
     "revision": "5c74d6df055ef8e47c76",

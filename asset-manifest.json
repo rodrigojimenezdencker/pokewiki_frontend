@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/pokewiki_frontend/static/css/main.346f1a1a.chunk.css",
-    "main.js": "/pokewiki_frontend/static/js/main.eda86727.chunk.js",
-    "main.js.map": "/pokewiki_frontend/static/js/main.eda86727.chunk.js.map",
+    "main.css": "/pokewiki_frontend/static/css/main.f1d8e8bf.chunk.css",
+    "main.js": "/pokewiki_frontend/static/js/main.386dfe5f.chunk.js",
+    "main.js.map": "/pokewiki_frontend/static/js/main.386dfe5f.chunk.js.map",
     "runtime-main.js": "/pokewiki_frontend/static/js/runtime-main.ff3ba227.js",
     "runtime-main.js.map": "/pokewiki_frontend/static/js/runtime-main.ff3ba227.js.map",
     "static/css/2.af3c1da9.chunk.css": "/pokewiki_frontend/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.38664bf6.chunk.js": "/pokewiki_frontend/static/js/2.38664bf6.chunk.js",
-    "static/js/2.38664bf6.chunk.js.map": "/pokewiki_frontend/static/js/2.38664bf6.chunk.js.map",
+    "static/js/2.3da0a3cd.chunk.js": "/pokewiki_frontend/static/js/2.3da0a3cd.chunk.js",
+    "static/js/2.3da0a3cd.chunk.js.map": "/pokewiki_frontend/static/js/2.3da0a3cd.chunk.js.map",
     "index.html": "/pokewiki_frontend/index.html",
-    "precache-manifest.4a0b839b60a7cca36799c4ce45e40343.js": "/pokewiki_frontend/precache-manifest.4a0b839b60a7cca36799c4ce45e40343.js",
+    "precache-manifest.d32d5498194d0f4a6232fa847de5a1b7.js": "/pokewiki_frontend/precache-manifest.d32d5498194d0f4a6232fa847de5a1b7.js",
     "service-worker.js": "/pokewiki_frontend/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/pokewiki_frontend/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.346f1a1a.chunk.css.map": "/pokewiki_frontend/static/css/main.346f1a1a.chunk.css.map",
-    "static/js/2.38664bf6.chunk.js.LICENSE.txt": "/pokewiki_frontend/static/js/2.38664bf6.chunk.js.LICENSE.txt",
+    "static/css/main.f1d8e8bf.chunk.css.map": "/pokewiki_frontend/static/css/main.f1d8e8bf.chunk.css.map",
+    "static/js/2.3da0a3cd.chunk.js.LICENSE.txt": "/pokewiki_frontend/static/js/2.3da0a3cd.chunk.js.LICENSE.txt",
     "static/media/index.css": "/pokewiki_frontend/static/media/RobotoMono-Medium.7cfbd428.ttf",
     "static/media/alakazam.png": "/pokewiki_frontend/static/media/alakazam.cb764576.png",
     "static/media/arcanine.png": "/pokewiki_frontend/static/media/arcanine.96b56a64.png",
@@ -76,8 +76,8 @@
   "entrypoints": [
     "static/js/runtime-main.ff3ba227.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.38664bf6.chunk.js",
-    "static/css/main.346f1a1a.chunk.css",
-    "static/js/main.eda86727.chunk.js"
+    "static/js/2.3da0a3cd.chunk.js",
+    "static/css/main.f1d8e8bf.chunk.css",
+    "static/js/main.386dfe5f.chunk.js"
   ]
 }
