@@ -37,7 +37,7 @@ export default class PokemonPage extends Component {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
-        getJSON('https://localhost:44316/api/pokemon/' + pokemonToFetch)
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon/' + pokemonToFetch)
             .then(async data => {
                 this.setState({ pokemon: data });
                 setTimeout(() => {

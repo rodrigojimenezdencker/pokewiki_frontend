@@ -20,13 +20,13 @@ export default class UpdateMove extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/types')
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types')
             .then(data => this.setState({ types: data }));
 
         const { id, name } = this.props.match.params;
         let moveToFetch = id ? id : name;
 
-        getJSON('https://localhost:44316/api/moves/' + moveToFetch)
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves/' + moveToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
@@ -37,7 +37,7 @@ export default class UpdateMove extends Component {
     }
 
     modifyMove = () => {
-        putJSON('https://localhost:44316/api/moves/' + this.state.moveId, this.state)
+        putJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves/' + this.state.moveId, this.state)
             .catch(error => error)
     }
 

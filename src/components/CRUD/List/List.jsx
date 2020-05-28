@@ -16,7 +16,7 @@ export default class List extends Component {
 
     componentDidMount() {
         const { objectName } = this.props.match.params;
-        getJSON('https://localhost:44316/api/' + objectName)
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/' + objectName)
             .then(data => this.setState({ object: data }));
     }
 

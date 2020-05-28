@@ -19,7 +19,7 @@ export default class TypesList extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/types')
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types')
             .then(data => {
                 this.setState({ types: data });
                 setTimeout(() =>

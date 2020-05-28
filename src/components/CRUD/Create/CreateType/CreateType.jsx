@@ -22,7 +22,7 @@ export default class CreateType extends Component {
     }
 
     addType = () => {
-        postJSON('https://localhost:44316/api/types', this.state);
+        postJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types', this.state);
     }
 
     handleChangeInput = event => {

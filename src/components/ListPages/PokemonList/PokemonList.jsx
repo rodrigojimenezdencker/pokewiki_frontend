@@ -20,7 +20,7 @@ export default class PokemonList extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/pokemon')
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon')
             .then(data => {
                 this.setState({ pokemon: data });
                 setTimeout(() =>

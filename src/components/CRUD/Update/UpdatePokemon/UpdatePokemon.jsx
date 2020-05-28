@@ -36,15 +36,15 @@ export default class UpdatePokemon extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/types')
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types')
             .then(data => this.setState({ types: data }));
-        getJSON('https://localhost:44316/api/pokemon')
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon')
             .then(data => this.setState({ pokemons: data }));
 
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
-        getJSON('https://localhost:44316/api/pokemon/' + pokemonToFetch)
+        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon/' + pokemonToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
@@ -55,7 +55,7 @@ export default class UpdatePokemon extends Component {
     }
 
     modifyPokemon = () => {
-        putJSON('https://localhost:44316/api/pokemon/' + this.state.pokemonId, this.state)
+        putJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon/' + this.state.pokemonId, this.state)
             .catch(error => error)
     }
 
