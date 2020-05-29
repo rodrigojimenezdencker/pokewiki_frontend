@@ -87,7 +87,7 @@ export default class TypePage extends Component {
                                 {type.moves.map(move =>
                                     <tr key={move.moveId}>
                                         <td>
-                                            <Link to={`/movimientos/${move.name.replace(" ", "_")}`}>
+                                            <Link to={`/movimientos/${move.name.replace(/ /g, "_")}`}>
                                                 {move.name}
                                             </Link>
                                         </td>

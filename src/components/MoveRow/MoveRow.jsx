@@ -13,7 +13,7 @@ const secondaryTypesImages = importAll(require.context('../../Assets/img/seconda
 export const MoveRow = props => (
     <tr>
         <td>
-            <Link to={`/movimientos/${props.name.replace(" ", "_")}`}>
+            <Link to={`/movimientos/${props.name.replace(/ /g, "_")}`}>
                 {props.name}
             </Link>
         </td>

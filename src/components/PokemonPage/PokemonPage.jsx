@@ -204,7 +204,7 @@ export default class PokemonPage extends Component {
                                                 <tr key={move.moveId}>
                                                     <td>{move.level}</td>
                                                     <td>
-                                                        <Link to={`../../movimientos/${move.name.replace(" ", "_")}`}>
+                                                        <Link to={`../../movimientos/${move.name.replace(/ /g, "_")}`}>
                                                             {move.name}
                                                         </Link>
                                                     </td>
