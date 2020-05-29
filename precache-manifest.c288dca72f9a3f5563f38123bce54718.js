@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0808021933ace949658ca9bdf7c10fe9",
+    "revision": "afb301d66e30d9cc295f95655c13e8d2",
     "url": "/index.html"
   },
   {
-    "revision": "a3caa6f991e525ef9176",
+    "revision": "7b5f78572fb158ce5ba1",
     "url": "/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "00ee70de00d14c393822",
-    "url": "/static/css/main.df723caa.chunk.css"
+    "revision": "edaea4248420e52f0a59",
+    "url": "/static/css/main.c59e3490.chunk.css"
   },
   {
-    "revision": "a3caa6f991e525ef9176",
-    "url": "/static/js/2.3da0a3cd.chunk.js"
+    "revision": "7b5f78572fb158ce5ba1",
+    "url": "/static/js/2.74cfe342.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/static/js/2.3da0a3cd.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.74cfe342.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "00ee70de00d14c393822",
-    "url": "/static/js/main.d5c19979.chunk.js"
+    "revision": "edaea4248420e52f0a59",
+    "url": "/static/js/main.38c39362.chunk.js"
   },
   {
     "revision": "81148fd510e83de29f05",
@@ -226,6 +226,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2d59a4e6924c40c0901d9c35ed92a224",
     "url": "/static/media/pokeball.2d59a4e6.svg"
+  },
+  {
+    "revision": "954726e6657811f203677a48f719c933",
+    "url": "/static/media/pokeball.954726e6.png"
   },
   {
     "revision": "92337fc6346df63a79917e79db975a6c",
