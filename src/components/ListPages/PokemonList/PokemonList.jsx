@@ -20,7 +20,7 @@ export default class PokemonList extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://pokewikiapi.azurewebsites.net/api/pokemon')
+        getJSON('https://localhost:44316/api/pokemon')
             .then(data => {
                 this.setState({ pokemon: data });
                 setTimeout(() =>

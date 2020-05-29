@@ -20,7 +20,7 @@ export default class UpdateType extends Component {
         const { id, name } = this.props.match.params;
         let typesToFetch = id ? id : name;
 
-        getJSON('https://pokewikiapi.azurewebsites.net/api/types/' + typesToFetch)
+        getJSON('https://localhost:44316/api/types/' + typesToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
@@ -31,7 +31,7 @@ export default class UpdateType extends Component {
     }
 
     updateType = () => {
-        putJSON('https://pokewikiapi.azurewebsites.net/api/types/' + this.state.typeId, this.state)
+        putJSON('https://localhost:44316/api/types/' + this.state.typeId, this.state)
         .catch(error => error);
     }
 

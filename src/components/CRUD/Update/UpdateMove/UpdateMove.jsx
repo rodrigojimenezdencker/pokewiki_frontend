@@ -20,13 +20,13 @@ export default class UpdateMove extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://pokewikiapi.azurewebsites.net/api/types')
+        getJSON('https://localhost:44316/api/types')
             .then(data => this.setState({ types: data }));
 
         const { id, name } = this.props.match.params;
         let moveToFetch = id ? id : name;
 
-        getJSON('https://pokewikiapi.azurewebsites.net/api/moves/' + moveToFetch)
+        getJSON('https://localhost:44316/api/moves/' + moveToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
@@ -37,7 +37,7 @@ export default class UpdateMove extends Component {
     }
 
     modifyMove = () => {
-        putJSON('https://pokewikiapi.azurewebsites.net/api/moves/' + this.state.moveId, this.state)
+        putJSON('https://localhost:44316/api/moves/' + this.state.moveId, this.state)
             .catch(error => error)
     }
 

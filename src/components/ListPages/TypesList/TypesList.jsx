@@ -19,7 +19,7 @@ export default class TypesList extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://pokewikiapi.azurewebsites.net/api/types')
+        getJSON('https://localhost:44316/api/types')
             .then(data => {
                 this.setState({ types: data });
                 setTimeout(() =>

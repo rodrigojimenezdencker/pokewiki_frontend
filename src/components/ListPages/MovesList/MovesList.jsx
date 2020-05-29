@@ -17,7 +17,7 @@ export default class MovesList extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://pokewikiapi.azurewebsites.net/api/moves')
+        getJSON('https://localhost:44316/api/moves')
             .then(data => {
                 this.setState({ moves: data });
             })

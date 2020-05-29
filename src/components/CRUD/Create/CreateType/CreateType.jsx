@@ -22,7 +22,7 @@ export default class CreateType extends Component {
     }
 
     addType = () => {
-        postJSON('https://pokewikiapi.azurewebsites.net/api/types', this.state);
+        postJSON('https://localhost:44316/api/types', this.state);
     }
 
     handleChangeInput = event => {
