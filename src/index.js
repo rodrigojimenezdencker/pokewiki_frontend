@@ -16,7 +16,7 @@ import TypesList from './components/ListPages/TypesList/TypesList.jsx';
 import TypePage from './components/TypePage/TypePage.jsx';
 import MovesList from './components/ListPages/MovesList/MovesList';
 import MovePage from './components/MovePage/MovePage';
-import NotFound from './components/NotFound/NotFound';
+import { NotFound } from './components/NotFound/NotFound';
 import CreatePokemon from './components/CRUD/Create/CreatePokemon/CreatePokemon';
 import { Dashboard } from './components/CRUD/Dashboard/Dashboard';
 import List from './components/CRUD/List/List';
@@ -33,7 +33,7 @@ ReactDOM.render(
   <Router>
     <Navbar />
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
       <Route exact path="/pokemon" component={PokemonList} />
       <Route path="/pokemon/:id" component={PokemonPage} />
       <Route path="/pokemon/:name" component={PokemonPage} />
@@ -61,7 +61,7 @@ ReactDOM.render(
       <Route path="/dashboard/moves/modificar/:name" component={UpdateMove} />
       <Route path="/dashboard/moves/eliminar/:id" component={DeleteMove} />
       <Route path="/dashboard/moves/eliminar/:name" component={DeleteMove} />
-
+      <Route path="*" component={NotFound} />
     </Switch>
   </Router>,
   document.getElementById('root')

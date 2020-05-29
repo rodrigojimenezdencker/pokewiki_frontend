@@ -1,0 +1,60 @@
+#not_found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto Mono", cursive;
+  background-color: beige;
+}
+
+#not_found img {
+  width: 300px;
+  filter: contrast(80%);
+}
+
+#not_found h1 {
+  font-size: 300px;
+  color: gray;
+}
+
+#not_found p {
+  font-size: 32px;
+}
+
+#not_found button {
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  background-color: #cc0018;
+  transition: 300ms ease;
+}
+
+#not_found button:hover {
+  transform: translateY(-2px);
+  filter: brightness(110%);
+}
+
+@media (max-width: 600px) {
+  #not_found {
+    justify-content: center;
+    padding: 25px;
+  }
+  #not_found img {
+    width: 100px;
+  }
+
+  #not_found h1 {
+    font-size: 100px;
+  }
+
+  #not_found p {
+    font-size: 24px;
+  }
+
+  #not_found button {
+    font-size: 18px;
+  }
+}
