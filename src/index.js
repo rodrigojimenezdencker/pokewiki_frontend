@@ -34,33 +34,32 @@ ReactDOM.render(
     <Navbar />
     <Switch>
       <Route exact path={process.env.PUBLIC_URL + "/"} component={Home} />
-      <Route exact path="/pokemon" component={PokemonList} />
-      <Route path="/pokemon/:id" component={PokemonPage} />
-      <Route path="/pokemon/:name" component={PokemonPage} />
-      <Route exact path="/tipos" component={TypesList} />
-      <Route path="/tipos/:id" component={TypePage} />
-      <Route path="/tipos/:name" component={TypePage} />
-      <Route exact path="/movimientos" component={MovesList} />
-      <Route path="/movimientos/:id" component={MovePage} />
-      <Route path="/movimientos/:name" component={MovePage} />
-      <Route path="/notfound" component={NotFound} />
-      <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/dashboard/:objectName" component={List} />
-      <Route path="/dashboard/pokemon/crear" component={CreatePokemon} />
-      <Route path="/dashboard/pokemon/modificar/:id" component={UpdatePokemon} />
-      <Route path="/dashboard/pokemon/modificar/:name" component={UpdatePokemon} />
-      <Route path="/dashboard/pokemon/eliminar/:id" component={DeletePokemon} />
-      <Route path="/dashboard/pokemon/eliminar/:name" component={DeletePokemon} />
-      <Route path="/dashboard/types/crear" component={CreateType} />
-      <Route path="/dashboard/types/modificar/:id" component={UpdateType} />
-      <Route path="/dashboard/types/modificar/:name" component={UpdateType} />
-      <Route path="/dashboard/types/eliminar/:id" component={DeleteType} />
-      <Route path="/dashboard/types/eliminar/:name" component={DeleteType} />
-      <Route path="/dashboard/moves/crear" component={CreateMove} />
-      <Route path="/dashboard/moves/modificar/:id" component={UpdateMove} />
-      <Route path="/dashboard/moves/modificar/:name" component={UpdateMove} />
-      <Route path="/dashboard/moves/eliminar/:id" component={DeleteMove} />
-      <Route path="/dashboard/moves/eliminar/:name" component={DeleteMove} />
+      <Route exact path={process.env.PUBLIC_URL + "/pokemon"} component={PokemonList} />
+      <Route path={process.env.PUBLIC_URL + "/pokemon/:id"} component={PokemonPage} />
+      <Route path={process.env.PUBLIC_URL + "/pokemon/:name"} component={PokemonPage} />
+      <Route exact path={process.env.PUBLIC_URL + "/tipos"} component={TypesList} />
+      <Route path={process.env.PUBLIC_URL + "/tipos/:id"} component={TypePage} />
+      <Route path={process.env.PUBLIC_URL + "/tipos/:name"} component={TypePage} />
+      <Route exact path={process.env.PUBLIC_URL + "/movimientos"} component={MovesList} />
+      <Route path={process.env.PUBLIC_URL + "/movimientos/:id"}component={MovePage} />
+      <Route path={process.env.PUBLIC_URL + "/movimientos/:name"} component={MovePage} />
+      <Route exact path={process.env.PUBLIC_URL + "/dashboard"} component={Dashboard} />
+      <Route exact path={process.env.PUBLIC_URL + "/dashboard/:objectName"} component={List} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/pokemon/crear"} component={CreatePokemon} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/pokemon/modificar/:id"} component={UpdatePokemon} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/pokemon/modificar/:name"} component={UpdatePokemon} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/pokemon/eliminar/:id"} component={DeletePokemon} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/pokemon/eliminar/:name"} component={DeletePokemon} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/types/crear"} component={CreateType} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/types/modificar/:id"} component={UpdateType} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/types/modificar/:name"} component={UpdateType} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/types/eliminar/:id"} component={DeleteType} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/types/eliminar/:name"} component={DeleteType} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/moves/crear"} component={CreateMove} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/moves/modificar/:id"} component={UpdateMove} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/moves/modificar/:name"} component={UpdateMove} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/moves/eliminar/:id"} component={DeleteMove} />
+      <Route path={process.env.PUBLIC_URL + "/dashboard/moves/eliminar/:name"} component={DeleteMove} />
       <Route path="*" component={NotFound} />
     </Switch>
   </Router>,
