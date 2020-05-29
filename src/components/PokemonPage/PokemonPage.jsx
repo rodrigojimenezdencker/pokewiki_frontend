@@ -24,7 +24,7 @@ export default class PokemonPage extends Component {
 
         this.state = {
             pokemon: null,
-            isLoading: false,
+            isLoading: true,
             id: params.id
         }
     }
