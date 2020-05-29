@@ -17,7 +17,7 @@ export default class MovePage extends Component {
         const { id, name } = this.props.match.params;
         let movesToFetch = id ? id : name;
 
-        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves/' + movesToFetch)
+        getJSON('https://pokewikiapi.azurewebsites.net/api/moves/' + movesToFetch)
             .then(data => this.setState({ move: data }));
     }
 

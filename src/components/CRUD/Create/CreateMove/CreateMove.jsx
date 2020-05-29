@@ -19,7 +19,7 @@ export default class CreateType extends Component {
     }
 
     componentDidMount() {
-        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types')
+        getJSON('https://pokewikiapi.azurewebsites.net/api/types')
             .then(data => this.setState({ types: data }));
     }
 
@@ -30,7 +30,7 @@ export default class CreateType extends Component {
     }
 
     addMove = () => {
-        postJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves', this.state);
+        postJSON('https://pokewikiapi.azurewebsites.net/api/moves', this.state);
     }
 
     handleChangeInput = event => {

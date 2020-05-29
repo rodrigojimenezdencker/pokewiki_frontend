@@ -23,12 +23,12 @@ export default class DeleteMove extends Component {
         const { id, name } = this.props.match.params;
         let moveToFetch = id ? id : name;
 
-        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves/' + moveToFetch)
+        getJSON('https://pokewikiapi.azurewebsites.net/api/moves/' + moveToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
     deleteMove = () => {
-        deleteJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/moves/' + this.state.moveId, this.state)
+        deleteJSON('https://pokewikiapi.azurewebsites.net/api/moves/' + this.state.moveId, this.state)
             .catch(error => console.log(error))
 
         Swal.fire({

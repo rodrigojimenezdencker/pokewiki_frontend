@@ -42,12 +42,12 @@ export default class Delete extends Component {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
-        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon/' + pokemonToFetch)
+        getJSON('https://pokewikiapi.azurewebsites.net/api/pokemon/' + pokemonToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
     deletePokemon = () => {
-        deleteJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/pokemon/' + this.state.pokemonId, this.state)
+        deleteJSON('https://pokewikiapi.azurewebsites.net/api/pokemon/' + this.state.pokemonId, this.state)
             .catch(error => console.log(error))
 
         Swal.fire({

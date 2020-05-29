@@ -17,7 +17,7 @@ export default class TypePage extends Component {
         const { id, name } = this.props.match.params;
         let typesToFetch = id ? id : name;
 
-        getJSON('http://pokewikiapi.eu-west-3.elasticbeanstalk.com/api/types/' + typesToFetch)
+        getJSON('https://pokewikiapi.azurewebsites.net/api/types/' + typesToFetch)
             .then(data => this.setState({ type: data }));
     }
 
