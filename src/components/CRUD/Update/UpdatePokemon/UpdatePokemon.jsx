@@ -44,7 +44,7 @@ export default class UpdatePokemon extends Component {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
-        getJSON('https://localhost:44316t/api/pokemon/' + pokemonToFetch)
+        getJSON('https://localhost:44316/api/pokemon/' + pokemonToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
