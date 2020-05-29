@@ -42,12 +42,12 @@ export default class Delete extends Component {
         const { id, name } = this.props.match.params;
         let pokemonToFetch = id ? id : name;
 
-        getJSON('https://localhost:44316/api/pokemon/' + pokemonToFetch)
+        getJSON('https://pokewikiapi.azurewebsites.net/api/pokemon/' + pokemonToFetch)
             .then(data => this.setState({ ...this.state, ...data}));
     }
 
     deletePokemon = () => {
-        deleteJSON('https://localhost:44316/api/pokemon/' + this.state.pokemonId, this.state)
+        deleteJSON('https://nopuedesborrar.net/api/pokemon/' + this.state.pokemonId, this.state)
             .catch(error => console.log(error))
 
         Swal.fire({

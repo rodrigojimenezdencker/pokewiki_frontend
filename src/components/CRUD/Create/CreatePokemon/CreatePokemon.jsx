@@ -36,9 +36,9 @@ export default class Create extends Component {
     }
 
     componentDidMount() {
-        getJSON('https://localhost:44316/api/types')
+        getJSON('https://pokewikiapi.azurewebsites.net/api/types')
             .then(data => this.setState({ types: data }));
-        getJSON('https://localhost:44316/api/pokemon')
+        getJSON('https://pokewikiapi.azurewebsites.net/api/pokemon')
             .then(data => this.setState({ pokemons: data }));
     }
 
@@ -49,7 +49,7 @@ export default class Create extends Component {
     }
 
     addPokemon = () => {
-        postJSON('https://localhost:44316/api/pokemon', this.state)
+        postJSON('https://pokewikiapi.azurewebsites.net/api/pokemon', this.state)
             .then(() => this.addPrimaryType());
     }
 
@@ -60,7 +60,7 @@ export default class Create extends Component {
             subtype: false
         }
 
-        postJSON('https://localhost:44316/api/typepokemon', type1)
+        postJSON('https://pokewikiapi.azurewebsites.net/api/typepokemon', type1)
             .then(() => {
                 if (this.state.typeId2 !== null) this.addSecondaryType();
             })
@@ -74,7 +74,7 @@ export default class Create extends Component {
             subtype: true
         }
 
-        postJSON('https://localhost:44316/api/typepokemon', type2);
+        postJSON('https://pokewikiapi.azurewebsites.net/api/typepokemon', type2);
     }
 
     handleChangeAbility = event => {
