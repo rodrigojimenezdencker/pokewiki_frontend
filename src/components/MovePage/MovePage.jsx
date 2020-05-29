@@ -63,32 +63,36 @@ export default class MovePage extends Component {
                     </tbody>
                 </Table>
                 <h2>Pokémon que pueden aprender {move.name}</h2>
-                <table className="table table-striped">
-                    <thead className="thead-dark">
-                        <tr>
-                            <th># Pokédex</th>
-                            <th>Pokémon</th>
-                            <th>Imagen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {move.pokemons.map(pokemon =>
-                            <tr key={pokemon.numPokedex}>
-                                <td>{pokemon.numPokedex}</td>
-                                <td>
-                                    <Link to={`/pokemon/${pokemon.name}`}>
-                                        {pokemon.name}
-                                    </Link>
-                                </td>
-                                <td>
-                                    <img
-                                        src={pokemonImages[pokemon.image]}
-                                        alt={pokemon.name} />
-                                </td>
+                {move.pokemons.length !== 0 ? 
+                    <table className="table table-striped">
+                        <thead className="thead-dark">
+                            <tr>
+                                <th># Pokédex</th>
+                                <th>Pokémon</th>
+                                <th>Imagen</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {move.pokemons.map(pokemon =>
+                                <tr key={pokemon.numPokedex}>
+                                    <td>{pokemon.numPokedex}</td>
+                                    <td>
+                                        <Link to={`/pokemon/${pokemon.name}`}>
+                                            {pokemon.name}
+                                        </Link>
+                                    </td>
+                                    <td>
+                                        <img
+                                            src={pokemonImages[pokemon.image]}
+                                            alt={pokemon.name} />
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                :
+                <p>{move.name} no es aprendido por ningún Pokémon.</p>
+            }
             </main>
         )
     }
